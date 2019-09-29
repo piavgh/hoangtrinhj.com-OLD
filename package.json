@@ -17,6 +17,7 @@
     "gatsby-plugin-sharp": "^2.0.37",
     "gatsby-plugin-sitemap": "^2.1.0",
     "gatsby-plugin-twitter": "^2.0.13",
+    "gatsby-plugin-typescript": "^2.1.11",
     "gatsby-plugin-typography": "^2.3.6",
     "gatsby-remark-autolink-headers": "^2.0.16",
     "gatsby-remark-copy-linked-files": "^2.0.12",
@@ -55,6 +56,7 @@
     "stylefmt": "^6.0.3",
     "stylelint": "^10.0.1",
     "stylelint-config-standard": "^18.3.0",
+    "typescript": "^3.6.3",
     "write-good": "^1.0.1"
   },
   "keywords": [
@@ -73,7 +75,8 @@
     "lint:js": "eslint --ext .js,.jsx .",
     "lint:md": "remark content/posts/",
     "write-good": "write-good $(glob 'content/posts/**/*.md')",
-    "format:js": "prettier '**/*.{js,jsx}' --write"
+    "format:js": "prettier '**/*.{js,jsx}' --write",
+    "type-check": "tsc"
   },
   "remarkConfig": {
     "plugins": [
