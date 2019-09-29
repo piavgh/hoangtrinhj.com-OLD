@@ -4,6 +4,8 @@
   "version": "1.1.0",
   "author": "Ruben Harutyunyan <vagr9k@gmail.com>",
   "dependencies": {
+    "@types/lodash": "^4.14.141",
+    "@types/react-helmet": "^5.0.11",
     "gatsby": "^2.4.3",
     "gatsby-image": "^2.0.41",
     "gatsby-plugin-catch-links": "^2.0.13",
