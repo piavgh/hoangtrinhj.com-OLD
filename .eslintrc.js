@@ -29,7 +29,7 @@ module.exports = {
     sourceType: 'module', // Allows for the use of imports
   },
   rules: {
-    'prettier/prettier': ['error'],
+    'prettier/prettier': ['error', { singleQuote: true, semi: false }],
     'react/prefer-stateless-function': 'off',
     'react/prop-types': 'off', // Disable prop-types as we use TypeScript for type checking
     'react/no-danger': 'off',
