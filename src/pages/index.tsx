@@ -6,19 +6,18 @@ import PostListing from '../components/PostListing/PostListing'
 import SEO from '../components/SEO/SEO'
 import config from '../../data/SiteConfig'
 
-class Index extends React.Component {
-  render() {
-    const postEdges = this.props.data.allMarkdownRemark.edges
-    return (
-      <Layout>
-        <div className="index-container">
-          <Helmet title={config.siteTitle} />
-          <SEO />
-          <PostListing postEdges={postEdges} />
-        </div>
-      </Layout>
-    )
-  }
+const Index = ({ data }) => {
+  const postEdges = data.allMarkdownRemark.edges
+
+  return (
+    <Layout>
+      <div className="index-container">
+        <Helmet title={config.siteTitle} />
+        <SEO />
+        <PostListing postEdges={postEdges} />
+      </div>
+    </Layout>
+  )
 }
 
 export default Index
