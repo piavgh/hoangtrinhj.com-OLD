@@ -25,22 +25,22 @@ const config = {
     {
       label: 'GitHub',
       url: 'https://github.com/Vagr9K/gatsby-advanced-starter',
-      iconClassName: 'fa fa-github'
+      iconClassName: 'fa fa-github',
     },
     {
       label: 'Twitter',
       url: 'https://twitter.com/Vagr9K',
-      iconClassName: 'fa fa-twitter'
+      iconClassName: 'fa fa-twitter',
     },
     {
       label: 'Email',
       url: 'mailto:vagr9k@gmail.com',
-      iconClassName: 'fa fa-envelope'
-    }
+      iconClassName: 'fa fa-envelope',
+    },
   ],
   copyright: 'Copyright © 2019. Advanced User', // Copyright string for the footer of the website and RSS feed.
   themeColor: '#c62828', // Used for setting manifest and progress theme colors.
-  backgroundColor: '#e0e0e0' // Used for setting manifest background color.
+  backgroundColor: '#e0e0e0', // Used for setting manifest background color.
 }
 
 // Validate
@@ -54,11 +54,9 @@ if (config.pathPrefix === '/') {
 }
 
 // Make sure siteUrl doesn't have an ending forward slash
-if (config.siteUrl.substr(-1) === '/')
-  config.siteUrl = config.siteUrl.slice(0, -1)
+if (config.siteUrl.substr(-1) === '/') config.siteUrl = config.siteUrl.slice(0, -1)
 
 // Make sure siteRss has a starting forward slash
-if (config.siteRss && config.siteRss[0] !== '/')
-  config.siteRss = `/${config.siteRss}`
+if (config.siteRss && config.siteRss[0] !== '/') config.siteRss = `/${config.siteRss}`
 
 module.exports = config

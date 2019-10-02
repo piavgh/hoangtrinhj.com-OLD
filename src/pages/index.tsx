@@ -25,10 +25,7 @@ export default Index
 /* eslint no-undef: "off" */
 export const pageQuery = graphql`
   query IndexQuery {
-    allMarkdownRemark(
-      limit: 2000
-      sort: { fields: [fields___date], order: DESC }
-    ) {
+    allMarkdownRemark(limit: 2000, sort: { fields: [fields___date], order: DESC }) {
       edges {
         node {
           fields {

@@ -13,9 +13,7 @@ class SEO extends Component {
     if (postSEO) {
       const postMeta = postNode.frontmatter
       ;({ title } = postMeta)
-      description = postMeta.description
-        ? postMeta.description
-        : postNode.excerpt
+      description = postMeta.description ? postMeta.description : postNode.excerpt
       image = postMeta.cover
       postURL = urljoin(config.siteUrl, config.pathPrefix, postPath)
     } else {
@@ -32,8 +30,8 @@ class SEO extends Component {
         '@type': 'WebSite',
         url: blogURL,
         name: title,
-        alternateName: config.siteTitleAlt ? config.siteTitleAlt : ''
-      }
+        alternateName: config.siteTitleAlt ? config.siteTitleAlt : '',
+      },
     ]
     if (postSEO) {
       schemaOrgJSONLD.push(
@@ -47,10 +45,10 @@ class SEO extends Component {
               item: {
                 '@id': postURL,
                 name: title,
-                image
-              }
-            }
-          ]
+                image,
+              },
+            },
+          ],
         },
         {
           '@context': 'http://schema.org',
@@ -61,9 +59,9 @@ class SEO extends Component {
           headline: title,
           image: {
             '@type': 'ImageObject',
-            url: image
+            url: image,
           },
-          description
+          description,
         }
       )
     }
@@ -74,9 +72,7 @@ class SEO extends Component {
         <meta name="image" content={image} />
 
         {/* Schema.org tags */}
-        <script type="application/ld+json">
-          {JSON.stringify(schemaOrgJSONLD)}
-        </script>
+        <script type="application/ld+json">{JSON.stringify(schemaOrgJSONLD)}</script>
 
         {/* OpenGraph tags */}
         <meta property="og:url" content={postSEO ? postURL : blogURL} />
@@ -84,17 +80,11 @@ class SEO extends Component {
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:image" content={image} />
-        <meta
-          property="fb:app_id"
-          content={config.siteFBAppID ? config.siteFBAppID : ''}
-        />
+        <meta property="fb:app_id" content={config.siteFBAppID ? config.siteFBAppID : ''} />
 
         {/* Twitter Card tags */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:creator"
-          content={config.userTwitter ? config.userTwitter : ''}
-        />
+        <meta name="twitter:creator" content={config.userTwitter ? config.userTwitter : ''} />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content={image} />

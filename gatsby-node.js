@@ -27,13 +27,12 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
         slug = `/${_.kebabCase(node.frontmatter.slug)}`
       if (Object.prototype.hasOwnProperty.call(node.frontmatter, 'date')) {
         const date = moment(node.frontmatter.date, siteConfig.dateFromFormat)
-        if (!date.isValid)
-          console.warn(`WARNING: Invalid date.`, node.frontmatter)
+        if (!date.isValid) console.warn(`WARNING: Invalid date.`, node.frontmatter)
 
         createNodeField({
           node,
           name: 'date',
-          value: date.toISOString()
+          value: date.toISOString(),
         })
       }
     }
@@ -114,8 +113,8 @@ exports.createPages = async ({ graphql, actions }) => {
         nexttitle: nextEdge.node.frontmatter.title,
         nextslug: nextEdge.node.fields.slug,
         prevtitle: prevEdge.node.frontmatter.title,
-        prevslug: prevEdge.node.fields.slug
-      }
+        prevslug: prevEdge.node.fields.slug,
+      },
     })
   })
 
@@ -124,8 +123,8 @@ exports.createPages = async ({ graphql, actions }) => {
       path: `/tags/${_.kebabCase(tag)}/`,
       component: tagPage,
       context: {
-        tag
-      }
+        tag,
+      },
     })
   })
   categorySet.forEach(category => {
@@ -133,8 +132,8 @@ exports.createPages = async ({ graphql, actions }) => {
       path: `/categories/${_.kebabCase(category)}/`,
       component: categoryPage,
       context: {
-        category
-      }
+        category,
+      },
     })
   })
 }

@@ -11,9 +11,7 @@ const CategoryTemplate = ({ pageContext, data }) => {
   return (
     <Layout>
       <div className="category-container">
-        <Helmet
-          title={`Posts in category "${category}" | ${config.siteTitle}`}
-        />
+        <Helmet title={`Posts in category "${category}" | ${config.siteTitle}`} />
         <PostListing postEdges={postEdges} />
       </div>
     </Layout>
