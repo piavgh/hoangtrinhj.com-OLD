@@ -1,11 +1,11 @@
-import React from "react";
-import Helmet from "react-helmet";
-import config from "../../data/SiteConfig";
-import "./index.css";
+import React from 'react'
+import Helmet from 'react-helmet'
+import config from '../../data/SiteConfig'
+import './index.css'
 
 export default class MainLayout extends React.Component {
   render() {
-    const { children } = this.props;
+    const { children } = this.props
     return (
       <div>
         <Helmet>
@@ -13,6 +13,6 @@ export default class MainLayout extends React.Component {
         </Helmet>
         {children}
       </div>
-    );
+    )
   }
 }
