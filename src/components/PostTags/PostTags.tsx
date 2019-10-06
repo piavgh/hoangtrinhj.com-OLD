@@ -2,7 +2,11 @@ import React from 'react'
 import _ from 'lodash'
 import { Link } from 'gatsby'
 
-const PostTags = ({ tags }) => {
+interface Props {
+  tags: Array<string>
+}
+
+const PostTags = ({ tags }: Props) => {
   return (
     <div className="post-tag-container">
       {tags &&

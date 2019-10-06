@@ -1,9 +1,27 @@
-import React from 'react'
+import React, { FC } from 'react'
 import { Link } from 'gatsby'
 
-const PostListing = ({ postEdges }) => {
+interface PostEdge {
+  node: any
+}
+
+interface PostList {
+  path: string
+  tags: Array<string>
+  cover: string
+  title: string
+  date: string
+  excerpt: string
+  timeToRead: number
+}
+
+interface Props {
+  postEdges: Array<PostEdge>
+}
+
+const PostListing: FC<Props> = ({ postEdges }) => {
   const getPostList = () => {
-    const postList = []
+    const postList: Array<PostList> = []
     postEdges.forEach(postEdge => {
       postList.push({
         path: postEdge.node.fields.slug,
