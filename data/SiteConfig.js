@@ -25,7 +25,7 @@ const config = {
   userLinks: [
     {
       label: 'GitHub',
-      url: 'https://github.com/Vagr9K/gatsby-advanced-starter',
+      url: 'https://github.com/piavgh',
       iconClassName: 'fa fa-github',
     },
     {
@@ -37,6 +37,20 @@ const config = {
       label: 'Email',
       url: 'mailto:hoang.trinhj@gmail.com',
       iconClassName: 'fa fa-envelope',
+    },
+  ],
+  menuLinks: [
+    {
+      title: 'Me',
+      link: '/me/',
+    },
+    {
+      title: 'Articles',
+      link: '/blog/',
+    },
+    {
+      title: 'Contact',
+      link: '/contact/',
     },
   ],
   copyright: 'Copyright © 2019. hoangtrinhj.com', // Copyright string for the footer of the website and RSS feed.
