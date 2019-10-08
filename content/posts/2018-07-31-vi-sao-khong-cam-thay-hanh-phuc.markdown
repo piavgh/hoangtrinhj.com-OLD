@@ -7,6 +7,7 @@ layout: post
 link: https://hoangtrinhj.com/vi-sao-khong-cam-thay-hanh-phuc/
 slug: vi-sao-khong-cam-thay-hanh-phuc
 title: Vì sao thế hệ 8x, 9x không cảm thấy hạnh phúc?
+template: post
 category:
   - Nhảm
 ---

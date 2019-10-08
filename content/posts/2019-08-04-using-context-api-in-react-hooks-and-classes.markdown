@@ -7,6 +7,7 @@ layout: post
 link: https://jetbeaver.com/using-context-api-in-react-hooks-and-classes/
 slug: using-context-api-in-react-hooks-and-classes
 title: Using Context API in React (Hooks and Classes)
+template: post
 category:
   - React.js
 tags:

@@ -8,6 +8,7 @@ link: https://jetbeaver.com/bon-tang-lop-kiem-tien-trong-xa-hoi/
 published: false
 slug: bon-tang-lop-kiem-tien-trong-xa-hoi
 title: Bốn tầng lớp kiếm tiền trong xã hội
+template: post
 category:
   - Trading
 tags:

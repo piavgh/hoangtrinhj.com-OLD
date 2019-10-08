@@ -7,6 +7,7 @@ layout: post
 link: https://jetbeaver.com/http-request-voi-golang/
 slug: http-request-voi-golang
 title: HTTP Request với Golang
+template: post
 category:
   - Golang
 tags:

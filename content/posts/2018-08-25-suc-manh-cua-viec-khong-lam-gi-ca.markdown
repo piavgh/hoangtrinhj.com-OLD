@@ -7,6 +7,7 @@ layout: post
 link: https://jetbeaver.com/suc-manh-cua-viec-khong-lam-gi-ca/
 slug: suc-manh-cua-viec-khong-lam-gi-ca
 title: Sức mạnh của việc không làm gì cả
+template: post
 category:
   - Nhảm
 ---

@@ -8,6 +8,7 @@ link: https://jetbeaver.com/khong-ai-muon-lam-giau-cham-ca/
 published: false
 slug: khong-ai-muon-lam-giau-cham-ca
 title: Không ai muốn làm giàu chậm cả!
+template: post
 category:
   - Trading
 tags:

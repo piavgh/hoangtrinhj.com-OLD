@@ -7,6 +7,7 @@ layout: post
 link: https://jetbeaver.com/10-sai-lam-ngoc-nghech-ma-nguoi-thong-minh-thuong-mac-phai/
 slug: 10-sai-lam-ngoc-nghech-ma-nguoi-thong-minh-thuong-mac-phai
 title: 10 sai lầm mà người thông minh thường mắc phải
+template: post
 category:
   - Nhảm
 ---

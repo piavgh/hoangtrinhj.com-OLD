@@ -7,6 +7,7 @@ layout: post
 link: https://jetbeaver.com/react-lifecycle/
 slug: react-lifecycle
 title: Bàn một chút về React Lifecycle
+template: post
 category:
   - React.js
 ---

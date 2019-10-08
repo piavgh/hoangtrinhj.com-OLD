@@ -7,6 +7,7 @@ layout: post
 link: https://jetbeaver.com/controlled-form-input-vs-uncontrolled-form-input/
 slug: controlled-form-input-vs-uncontrolled-form-input
 title: Controlled form input vs Uncontrolled form input
+template: post
 category:
   - React.js
 ---

@@ -7,6 +7,7 @@ layout: post
 link: https://jetbeaver.com/tu-duy-nhu-mot-lap-trinh-vien/
 slug: tu-duy-nhu-mot-lap-trinh-vien
 title: Tư duy như một lập trình viên
+template: post
 category:
   - Nhảm
 ---

@@ -7,6 +7,7 @@ layout: post
 link: https://jetbeaver.com/mot-thang-lam-blockchain/
 slug: mot-thang-lam-blockchain
 title: Một tháng làm việc với blockchain
+template: post
 category:
   - Blockchain
 tags:

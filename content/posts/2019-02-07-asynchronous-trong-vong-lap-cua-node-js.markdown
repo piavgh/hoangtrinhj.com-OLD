@@ -7,6 +7,7 @@ layout: post
 link: https://jetbeaver.com/asynchronous-trong-vong-lap-cua-node-js/
 slug: asynchronous-trong-vong-lap-cua-node-js
 title: Asynchronous trong vòng lặp của Node.js
+template: post
 category:
   - Node.js
 tags:
