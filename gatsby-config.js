@@ -153,7 +153,7 @@ module.exports = {
                       title
                       cover
                       date
-                      category
+                      categories
                       tags
                     }
                   }
@@ -173,5 +173,14 @@ module.exports = {
       },
     },
     `gatsby-plugin-typescript`,
+    {
+      resolve: `gatsby-plugin-material-ui`,
+      options: {
+        stylesProvider: {
+          injectFirst: true,
+        },
+      },
+    },
+    `gatsby-plugin-emotion`,
   ],
 }

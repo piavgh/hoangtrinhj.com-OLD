@@ -1,6 +1,8 @@
 import React, { FC } from 'react'
 import { Link } from 'gatsby'
 
+import { PostItem } from '../Styles/Styles'
+
 interface PostEdge {
   node: any
 }
@@ -37,12 +39,16 @@ const PostListing: FC<Props> = ({ postEdges }) => {
   }
 
   const postList = getPostList()
+
   return (
     <div>
-      {/* Your post list here. */}
       {postList.map(post => (
         <Link to={post.path} key={post.title}>
-          <h1>{post.title}</h1>
+          <PostItem>
+            <div className="each">
+              <h2>{post.title}</h2>
+            </div>
+          </PostItem>
         </Link>
       ))}
     </div>
