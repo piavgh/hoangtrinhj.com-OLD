@@ -8,11 +8,11 @@ link: https://jetbeaver.com/using-context-api-in-react-hooks-and-classes/
 slug: using-context-api-in-react-hooks-and-classes
 title: Using Context API in React (Hooks and Classes)
 template: post
-category:
+categories:
   - React.js
 tags:
   - context-api
-  - reactjs
+  - react.js
 ---
 
 React Context API is a way to essentially create global variables that can be passed around in a React app. This is the alternative to "prop drilling", or passing props from grandparent to parent to child, and so on. Context is often touted as a simpler, lighter solution to using Redux for state management.

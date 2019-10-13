@@ -8,11 +8,11 @@ link: https://jetbeaver.com/asynchronous-trong-vong-lap-cua-node-js/
 slug: asynchronous-trong-vong-lap-cua-node-js
 title: Asynchronous trong vòng lặp của Node.js
 template: post
-category:
-  - Node.js
+categories:
+  - Popular
 tags:
   - async
-  - javascript
+  - node.js
 ---
 
 Đây chắc hẳn là một vấn đề khá đau đầu đối với khá nhiều developer mới làm quen với Node.js.

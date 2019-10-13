@@ -8,8 +8,8 @@ link: https://jetbeaver.com/tu-duy-nhu-mot-lap-trinh-vien/
 slug: tu-duy-nhu-mot-lap-trinh-vien
 title: Tư duy như một lập trình viên
 template: post
-category:
-  - Nhảm
+categories:
+  - Popular
 ---
 
 Nếu bạn quan tâm đến lập trình, bạn có thể đã thấy câu nói này trước đây:

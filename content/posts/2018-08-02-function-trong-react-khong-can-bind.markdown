@@ -8,7 +8,7 @@ link: https://jetbeaver.com/function-trong-react-khong-can-bind/
 slug: function-trong-react-khong-can-bind
 title: Function trong React không cần bind
 template: post
-category:
+categories:
   - React.js
 ---
 

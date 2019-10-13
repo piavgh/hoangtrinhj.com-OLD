@@ -8,8 +8,10 @@ link: https://hoangtrinhj.com/vi-sao-khong-cam-thay-hanh-phuc/
 slug: vi-sao-khong-cam-thay-hanh-phuc
 title: Vì sao thế hệ 8x, 9x không cảm thấy hạnh phúc?
 template: post
-category:
-  - Nhảm
+categories:
+  - Popular
+tags:
+  - nhảm
 ---
 
 Giới thiệu với các bạn, đây là Tuấn (tóc Tuấn rẽ ngôi theo kiểu ... Đan Trường ngày xưa)

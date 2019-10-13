@@ -8,7 +8,7 @@ link: https://jetbeaver.com/toi-uu-performance-cho-react/
 slug: toi-uu-performance-cho-react
 title: Tối ưu performance cho React
 template: post
-category:
+categories:
   - React.js
 ---
 

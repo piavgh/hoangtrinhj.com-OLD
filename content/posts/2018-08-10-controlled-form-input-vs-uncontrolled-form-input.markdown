@@ -8,8 +8,10 @@ link: https://jetbeaver.com/controlled-form-input-vs-uncontrolled-form-input/
 slug: controlled-form-input-vs-uncontrolled-form-input
 title: Controlled form input vs Uncontrolled form input
 template: post
-category:
+categories:
   - React.js
+tags:
+  - react.js
 ---
 
 ![controlled-vs-uncontrolled-cover](https://lecoder.io/wp-content/uploads/2018/08/controlled-vs-uncontrolled-cover.png)

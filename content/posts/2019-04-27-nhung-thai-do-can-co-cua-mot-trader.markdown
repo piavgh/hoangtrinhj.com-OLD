@@ -9,7 +9,7 @@ published: false
 slug: nhung-thai-do-can-co-cua-mot-trader
 title: Những thái độ cần có của một trader
 template: post
-category:
+categories:
   - Trading
 tags:
   - forex

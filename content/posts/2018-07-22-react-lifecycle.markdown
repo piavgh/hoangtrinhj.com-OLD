@@ -8,8 +8,10 @@ link: https://jetbeaver.com/react-lifecycle/
 slug: react-lifecycle
 title: Bàn một chút về React Lifecycle
 template: post
-category:
-  - React.js
+categories:
+  - Popular
+tags:
+  - react.js
 ---
 
 ![react lifecycle](https://lecoder.io/wp-content/uploads/2018/07/react-lifecycle-1024x520.png)

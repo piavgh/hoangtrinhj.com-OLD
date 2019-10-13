@@ -8,7 +8,7 @@ link: https://hoangtrinhj.com/map-va-foreach-khac-nhau-o-diem-nao/
 slug: map-va-foreach-khac-nhau-o-diem-nao
 title: Map và forEach khác nhau ở điểm nào?
 template: post
-category:
+categories:
   - Javascript
 ---
 

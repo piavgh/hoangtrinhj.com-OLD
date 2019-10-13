@@ -46,12 +46,12 @@
     "react": "^16.8.6",
     "react-disqus-comments": "^1.4.0",
     "react-dom": "^16.8.6",
+    "react-github-btn": "^1.0.6",
     "react-helmet": "^5.2.1",
     "react-share": "^2.4.0",
     "react-twitter-widgets": "^1.7.1",
     "react-typography": "^0.16.19",
     "typography": "^0.16.19",
-    "typography-theme-fairy-gates": "^0.16.19",
     "url-join": "^4.0.0"
   },
   "devDependencies": {

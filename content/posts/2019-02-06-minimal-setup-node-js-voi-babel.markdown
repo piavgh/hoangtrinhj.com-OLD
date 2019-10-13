@@ -8,8 +8,10 @@ link: https://jetbeaver.com/minimal-setup-node-js-voi-babel/
 slug: minimal-setup-node-js-voi-babel
 title: Minimal Setup Node.js với Babel
 template: post
-category:
+categories:
   - Node.js
+tags:
+  - node.js
 ---
 
 ### Setup một project Node.js mới

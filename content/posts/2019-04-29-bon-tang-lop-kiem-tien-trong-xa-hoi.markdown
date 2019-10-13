@@ -9,7 +9,7 @@ published: false
 slug: bon-tang-lop-kiem-tien-trong-xa-hoi
 title: Bốn tầng lớp kiếm tiền trong xã hội
 template: post
-category:
+categories:
   - Trading
 tags:
   - kien-thuc-xa-hoi

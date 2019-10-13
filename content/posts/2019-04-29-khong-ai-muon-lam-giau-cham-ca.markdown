@@ -9,7 +9,7 @@ published: false
 slug: khong-ai-muon-lam-giau-cham-ca
 title: Không ai muốn làm giàu chậm cả!
 template: post
-category:
+categories:
   - Trading
 tags:
   - forex
