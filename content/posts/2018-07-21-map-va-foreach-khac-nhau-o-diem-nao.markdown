@@ -16,12 +16,13 @@ categories:
 
 Nhiều bạn mới code javascript có thể là sẽ có biểu cảm như trên ^^ Nhưng nếu bạn đã làm việc với javascript tầm 3-6 tháng trở lên thì có thể là bạn đã gặp 2 phương thức na ná nhau:
 
-    Array.prototype.map()
+```javascript
+Array.prototype.map()
+```
 
-
-
-
-    Array.prototype.forEach()
+```javascript
+Array.prototype.forEach()
+```
 
 Thế nó khác nhau ở đâu nhỉ?
 
@@ -46,7 +47,9 @@ Nếu vẫn chưa hình dung được (giống mình hồi xưa) thì cùng mìn
 
 Ví dụ mình có mảng này
 
-    let arr = [1, 2, 3, 4, 5];
+```javascript
+let arr = [1, 2, 3, 4, 5]
+```
 
 Và mình muốn nhân đôi giá trị của mỗi phần tử trong mảng. Giờ phải làm sao đây? Mình hoàn toàn có thể dùng vòng lặp for (khá cổ), nhưng trong bài này mình đang so sánh map và forEach nên mình sẽ sử dụng 2 phương thức này.
 
@@ -54,23 +57,31 @@ Và mình muốn nhân đôi giá trị của mỗi phần tử trong mảng. Gi
 
 Lưu ý là đừng return gì từ phương thức forEach() này, vì có return thì nó cũng chỉ trả về "undefined" thôi à.
 
-    arr.forEach((num, index) => {
-      return arr[index] = num * 2;
-    });
+```javascript
+arr.forEach((num, index) => {
+  return (arr[index] = num * 2)
+})
+```
 
 ##### Kết quả:
 
-    // arr = [2, 4, 6, 8, 10]
+```javascript
+// arr = [2, 4, 6, 8, 10]
+```
 
 #### Map:
 
-    let doubled = arr.map(num => {
-        return num * 2;
-    });
+```javascript
+let doubled = arr.map(num => {
+  return num * 2
+})
+```
 
 ##### Kết quả:
 
-    // doubled = [2, 4, 6, 8, 10]
+```javascript
+// doubled = [2, 4, 6, 8, 10]
+```
 
 Giờ mình sẽ so sánh tốc độ của 2 thằng này
 

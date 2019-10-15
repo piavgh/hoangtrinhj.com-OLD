@@ -23,16 +23,20 @@ Cũng đúng thôi, vì có lẽ đến tận gần đây mình cũng vẫn th�
 
 Với những ai đến với Javascript từ các ngôn ngữ khác như PHP hay Java thì sẽ viết for loop kiểu này:
 
-    for (var i=0; i < array.length; i++) {
-      var item = array[i];
-      // do something with item
-    }
+```javascript
+for (var i = 0; i < array.length; i++) {
+  var item = array[i]
+  // do something with item
+}
+```
 
 Cách này rất ổn nhưng nhìn khá xấu, nên là với Javascript, mọi người thường hay viết thế này:
 
-    array.forEach((item) => {
-      // do something with item
-    });
+```javascript
+array.forEach(item => {
+  // do something with item
+})
+```
 
 Cách viết này rất gọn gàng, và hoạt động cũng rất mượt với synchronous code (function bên trong là synchronous), nhưng với asynchronous code thì sao?
 
@@ -42,81 +46,89 @@ Lúc này vấn đề mới bắt đầu nảy sinh, gây ra rất nhiều sự 
 
 Xem đoạn code này nhé:
 
-    const example = async () => {
-      const nums = [1, 2, 3]
-      nums.forEach(async num => {
-        const result = await returnNum(num)
-        console.log(result)
-      })
-      console.log('after forEach')
-    }
+```javascript
+const example = async () => {
+  const nums = [1, 2, 3]
+  nums.forEach(async num => {
+    const result = await returnNum(num)
+    console.log(result)
+  })
+  console.log('after forEach')
+}
 
-    const returnNum = x => {
-      return new Promise((resolve, reject) => {
-        setTimeout(() => {
-          resolve(x)
-        }, 500)
-      })
-    }
+const returnNum = x => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(x)
+    }, 500)
+  })
+}
 
-    example().then(() => {
-      console.log('done')
-    })
+example().then(() => {
+  console.log('done')
+})
+```
 
 Kết quả:
 
-    after forEach
-    done
-    1
-    2
-    3
+```javascript
+after forEach
+done
+1
+2
+3
+```
 
 Nhưng cái bạn muốn là như thế này đúng không?
 
-    1
-    2
-    3
-    after foreach
-    done
+```javascript
+1
+2
+3
+after foreach
+done
+```
 
 Vì sao lại thế nhỉ?
 
 Thử viết lại dùng vòng for bình thường xem sao:
 
-    const example = async () => {
-      const nums = [1, 2, 3]
-      for (let i = 0; i < nums.length; i++) {
-        const result = await returnNum(nums[i])
-        console.log(result)
-      }
-      console.log('after forEach')
-    }
+```javascript
+const example = async () => {
+  const nums = [1, 2, 3]
+  for (let i = 0; i < nums.length; i++) {
+    const result = await returnNum(nums[i])
+    console.log(result)
+  }
+  console.log('after forEach')
+}
 
-    const returnNum = x => {
-      return new Promise((resolve, reject) => {
-        setTimeout(() => {
-          resolve(x)
-        }, 500)
-      })
-    }
+const returnNum = x => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(x)
+    }, 500)
+  })
+}
 
-    example().then(() => {
-      console.log('done')
-    })
+example().then(() => {
+  console.log('done')
+})
+```
 
 Kết quả:
 
-    1
-    2
-    3
-    after foreach
-    done
+```javascript
+1
+2
+3
+after foreach
+done
+```
 
 Đúng như mong đợi! Vậy là do một lí do nào đó mà hàm .forEach chạy không đúng như mình muốn, trong khi vòng for bình thường lại đúng?
 
-<blockquote>**_Chính xác thì là vì .forEach không làm gì với cái kết quả trả về trong hàm cả, nó cứ thế chạy tiếp vòng lặp tiếp theo mà không đợi hàm return._**
->
-> </blockquote>
+<b>Chính xác thì là vì .forEach không làm gì với cái kết quả trả về trong hàm cả, nó cứ thế chạy tiếp vòng lặp tiếp theo mà không đợi hàm return.</b>
 
 Trong khi vòng for bình thường thì sẽ đợi hàm trả về kết quả trước khi thực hiện tiếp vòng lặp tiếp theo.
 
@@ -124,26 +136,28 @@ Ngoài ra trong version mới hơn của Javascript, chúng ta có thêm syntax 
 
 Nhưng cách viết dùng for...of sẽ dễ đọc hơn nhiều so với vòng for bình thường, như thế này:
 
-    const example = async () => {
-      const nums = [1, 2, 3]
-      for (const num of nums) {
-        const result = await returnNum(num)
-        console.log(result)
-      }
-      console.log('after forEach')
-    }
+```javascript
+const example = async () => {
+  const nums = [1, 2, 3]
+  for (const num of nums) {
+    const result = await returnNum(num)
+    console.log(result)
+  }
+  console.log('after forEach')
+}
 
-    const returnNum = x => {
-      return new Promise((resolve, reject) => {
-        setTimeout(() => {
-          resolve(x)
-        }, 500)
-      })
-    }
+const returnNum = x => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(x)
+    }, 500)
+  })
+}
 
-    example().then(() => {
-      console.log('done')
-    })
+example().then(() => {
+  console.log('done')
+})
+```
 
 Vậy là giờ các bạn sẽ không nhầm lẫn và không sợ sử dụng asynchronous code trong vòng for nữa rồi nhé.
 

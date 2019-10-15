@@ -18,34 +18,29 @@ Chào các bạn, hôm nay mình sẽ nói về một chủ đề mình tưởng
 
 Ví dụ:
 
-    class Toggle extends React.Component {
-      constructor(props) {
-        super(props);
-        this.state = {isToggleOn: true};
+```jsx
+class Toggle extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = { isToggleOn: true }
 
-        // This binding is necessary to make `this` work in the callback
-        this.handleClick = this.handleClick.bind(this);
-      }
+    // This binding is necessary to make `this` work in the callback
+    this.handleClick = this.handleClick.bind(this)
+  }
 
-      handleClick() {
-        this.setState(prevState => ({
-          isToggleOn: !prevState.isToggleOn
-        }));
-      }
+  handleClick() {
+    this.setState(prevState => ({
+      isToggleOn: !prevState.isToggleOn,
+    }))
+  }
 
-      render() {
-        return (
-          <button onClick={this.handleClick}>
-            {this.state.isToggleOn ? 'ON' : 'OFF'}
-          </button>
-        );
-      }
-    }
+  render() {
+    return <button onClick={this.handleClick}>{this.state.isToggleOn ? 'ON' : 'OFF'}</button>
+  }
+}
 
-    ReactDOM.render(
-      <Toggle />,
-      document.getElementById('root')
-    );
+ReactDOM.render(<Toggle />, document.getElementById('root'))
+```
 
 Đây là ví dụ từ chính official website của React https://reactjs.org/docs/handling-events.html
 
@@ -53,31 +48,26 @@ Nhưng thực ra bạn hoàn toàn không cần phải làm như vậy, có mộ
 
 Nó được gọi là "**public class fields syntax**", đơn giản thế này thôi:
 
-    class Toggle extends React.Component {
-        constructor(props) {
-            super(props);
-            this.state = {isToggleOn: true};
-        }
+```jsx
+class Toggle extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = { isToggleOn: true }
+  }
 
-        handleClick = () => {
-            this.setState(prevState => ({
-                isToggleOn: !prevState.isToggleOn
-            }));
-        }
+  handleClick = () => {
+    this.setState(prevState => ({
+      isToggleOn: !prevState.isToggleOn,
+    }))
+  }
 
-        render() {
-            return (
-                <button onClick={this.handleClick}>
-                    {this.state.isToggleOn ? 'ON' : 'OFF'}
-                </button>
-            );
-        }
-    }
+  render() {
+    return <button onClick={this.handleClick}>{this.state.isToggleOn ? 'ON' : 'OFF'}</button>
+  }
+}
 
-    ReactDOM.render(
-        <Toggle />,
-        document.getElementById('root')
-    );
+ReactDOM.render(<Toggle />, document.getElementById('root'))
+```
 
 Các bạn thấy đấy, mình viết lại ví dụ phải dùng bind bằng cách này, nhanh hơn đúng không nào?
 
