@@ -32,35 +32,38 @@ Tuy nhiên, bạn không cần phải lo lắng nữa. Bây giờ, mình sẽ ch
 
 **Uncontrolled input** giống những dạng HTML form input truyền thống:
 
-    class Form extends Component {
-      render() {
-        return (
-          <div>
-            <input type="text" />
-          </div>
-        );
-      }
-    }
+```javascript
+class Form extends Component {
+  render() {
+    return (
+      <div>
+        <input type="text" />
+      </div>
+    )
+  }
+}
+```
 
 Chúng nhớ tất cả những gì bạn mà đã gõ.
 
 Sau đó bạn có thể nhận được giá trị của chúng bằng cách sử dụng [Ref](https://reactjs.org/docs/refs-and-the-dom.html) . Ví dụ: trong hàm xử lí nút onClick:
 
-    class Form extends Component {
-      handleSubmitClick = () => {
-        const name = this._name.value;
-        // do something with `name`
-      }
+```jsx
+class Form extends Component {
+  handleSubmitClick = () => {
+    const name = this._name.value;
+    // do something with `name`
 
-      render() {
-        return (
-          <div>
-            <input type="text" ref={input => this._name = input} />
-            <button onClick={this.handleSubmitClick}>Sign up</button>
-          </div>
-        );
-      }
-    }
+  render() {
+    return (
+      <div>
+        <input type="text" ref={input => this._name = input} />
+        <button onClick={this.handleSubmitClick}>Sign up</button>
+      </div>
+    );
+  }
+}
+```
 
 Nói cách khác, **bạn phải 'lấy' các giá trị từ các trường mỗi khi bạn cần đến chúng**.
 
@@ -84,30 +87,28 @@ Tuy nhiên giá trị của input này sẽ phải nằm ở đâu đó trong  
 
 Thông thường, các component mà render cái input này (chính là form component đó) sẽ lưu cái giá trị đó trong state của nó:
 
-    class Form extends Component {
-      constructor() {
-        super();
-        this.state = {
-          name: '',
-        };
-      }
-
-      handleNameChange = (event) => {
-        this.setState({ name: event.target.value });
-      };
-
-      render() {
-        return (
-          <div>
-            <input
-              type="text"
-              value={this.state.name}
-              onChange={this.handleNameChange}
-            />
-          </div>
-        );
-      }
+```jsx
+class Form extends Component {
+  constructor() {
+    super()
+    this.state = {
+      name: '',
     }
+  }
+
+  handleNameChange = event => {
+    this.setState({ name: event.target.value })
+  }
+
+  render() {
+    return (
+      <div>
+        <input type="text" value={this.state.name} onChange={this.handleNameChange} />
+      </div>
+    )
+  }
+}
+```
 
 (Tất nhiên, nó cũng có thể nằm trong state của component khác hay thậm chí là trong state store riêng biệt [như Redux](https://goshakkk.name/should-i-put-form-state-into-redux/))
 

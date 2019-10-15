@@ -57,28 +57,30 @@ Okay!, giờ code cho mấy cái route này nào.
 
 Step 1: (App.js)
 
-    import React from 'react';
-    import ReactDOM from 'react-dom';
-    import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+```jsx
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 
-    import HomePage from '../path/to/components/HomePage';
-    import AboutUs from '../path/to/components/AboutUs';
-    import Promotion from '../path/to/components/Promotion';
+import HomePage from '../path/to/components/HomePage'
+import AboutUs from '../path/to/components/AboutUs'
+import Promotion from '../path/to/components/Promotion'
 
-    const App = () => (
-        <Router>
-            <div>
-                <Link to="/">Trang chủ</Link>
-                <Link to="/about">Về chúng tôi</Link>
-                <Link to="/promotion">Nhận khuyến mãi ngay</Link>
-                <Route exact path="/" component={HomePage} />
-                <Route path="/about" component={AboutUs} />
-                <Route path="promotion" component={Promotion} />
-            </div>
-        </Router>
-    );
+const App = () => (
+  <Router>
+    <div>
+      <Link to="/">Trang chủ</Link>
+      <Link to="/about">Về chúng tôi</Link>
+      <Link to="/promotion">Nhận khuyến mãi ngay</Link>
+      <Route exact path="/" component={HomePage} />
+      <Route path="/about" component={AboutUs} />
+      <Route path="promotion" component={Promotion} />
+    </div>
+  </Router>
+)
 
-    ReactDOM.render(<App />, document.getElementById('app'));
+ReactDOM.render(<App />, document.getElementById('app'))
+```
 
 Xong, chạy app lên bạn sễ thấy file bundle của bạn nặng 2Mb(giả sử). Trong có soure code của HomePage tầm 300kB,
 AboutUs tầm 200Kb, Promotion tầm 500Kb, mấy cái viện như React, Lodash tổng cộng… tầm 1Mb đi chẳng hạn.
@@ -94,33 +96,41 @@ https://github.com/jamiebuilds/react-loadable
 
 Step 2:(App.js)
 
-    import React from 'react';
-    import Loadable from 'react-loadable';
-    import ReactDOM from 'react-dom';
-    import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+```jsx
+import React from 'react'
+import Loadable from 'react-loadable'
+import ReactDOM from 'react-dom'
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 
-    const Spinner = () => <span className="spinner" />; // Một cái icon xoay xoay loading thôi
+const Spinner = () => <span className="spinner" /> // Một cái icon xoay xoay loading thôi
 
-    const HomePage = Loadable({ loader: () => import('../path/to/components/HomePage'), loading: Spinner });
-    const About = Loadable({ loader: () => import('../path/to/components/About'), loading: Spinner });
-    const KhuyenMai = Loadable({ loader: () => import('../path/to/components/Promotion'), loading: Spinner });
-    // loader có nghĩa là đã load xong sẽ trả về Component trong cái import
-    // loading có nghĩa đang load soure chưa xong tạm thời load component nào đó tạm. Ở đây là Spinner
+const HomePage = Loadable({
+  loader: () => import('../path/to/components/HomePage'),
+  loading: Spinner,
+})
+const About = Loadable({ loader: () => import('../path/to/components/About'), loading: Spinner })
+const KhuyenMai = Loadable({
+  loader: () => import('../path/to/components/Promotion'),
+  loading: Spinner,
+})
+// loader có nghĩa là đã load xong sẽ trả về Component trong cái import
+// loading có nghĩa đang load soure chưa xong tạm thời load component nào đó tạm. Ở đây là Spinner
 
-    const App = () => (
-        <Router>
-            <div>
-                <Link to="/">Trang chủ</Link>
-                <Link to="/about">Về chúng tôi</Link>
-                <Link to="/promotion">Nhận khuyến mãi ngay</Link>
-                <Route exact path="/" component={HomePage} />
-                <Route path="/about" component={AboutUs} />
-                <Route path="promotion" component={Promotion} />
-            </div>
-        </Router>
-    );
+const App = () => (
+  <Router>
+    <div>
+      <Link to="/">Trang chủ</Link>
+      <Link to="/about">Về chúng tôi</Link>
+      <Link to="/promotion">Nhận khuyến mãi ngay</Link>
+      <Route exact path="/" component={HomePage} />
+      <Route path="/about" component={AboutUs} />
+      <Route path="promotion" component={Promotion} />
+    </div>
+  </Router>
+)
 
-    ReactDOM.render(<App />, document.getElementById('app'));
+ReactDOM.render(<App />, document.getElementById('app'))
+```
 
 Xong, bây giờ thì từ 1 file bundle.js nặng 2Mb ta có các file sau chẳng hạn:
 
@@ -177,24 +187,30 @@ cho người dùng thấy nên cảm giác nó nhanh chứ thực tế nó lấy
 
 Ví dụ với server nodejs.
 
-    import HomePage from '../path/to/components/HomePage'; // Ví dụ const HomePage = () => <div>This is HomePage</div>;
-    app.get('/homepage', (res, req) => res.send(`
+```javascript
+import HomePage from '../path/to/components/HomePage' // Ví dụ const HomePage = () => <div>This is HomePage</div>;
+app.get('/homepage', (res, req) =>
+  res.send(`
         <html>
         <body>
-            <div id="app">${ReactDOMServer.renderToString(<HomePage/>)}</div>
+            <div id="app">${ReactDOMServer.renderToString(<HomePage />)}</div>
             <script src="/bundle.js"></script>
         </body>
         </html>
-    `));
+    `)
+)
+```
 
 Lúc này nếu bạn F12 và check phần network và xem respone của localhost:3000/ bạn sẽ thấy như này
 
-    <html>
-    <body>
-        <div id="app"><div>This is HomePage</div></div>
-        <script src="/bundle.js"></script>
-    </body>
-    </html>
+```html
+<html>
+  <body>
+    <div id="app"><div>This is HomePage</div></div>
+    <script src="/bundle.js"></script>
+  </body>
+</html>
+```
 
 Khi sử dụng SSR bạn nên sử dụng ReactDOM.hydrate thay cho ReactDOM.render, vì nó sẽ tối đa performace render hơn, vì
 dù sau cũng render một phần HTML ở server rồi mà. Việc còn lại chỉ là render ở Browser để có React Application.

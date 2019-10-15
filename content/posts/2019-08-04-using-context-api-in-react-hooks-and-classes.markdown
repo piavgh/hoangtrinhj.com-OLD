@@ -63,27 +63,20 @@ The provider always needs to exist as a wrapper around the parent element, no ma
 
 **src/App.js**
 
+```javascript
 import React from 'react'
-
 import HomePage from './HomePage'
-
 import { UserProvider } from './UserContext'
 
 function App() {
-
-const user = { name: 'Tania', loggedIn: true }
-
-return (
-
-<UserProvider value={user}>
-
-<HomePage />
-
-</UserProvider>
-
-)
-
+  const user = { name: 'Tania', loggedIn: true }
+  return (
+    <UserProvider value={user}>
+      <HomePage />
+    </UserProvider>
+  )
 }
+```
 
 Now any child, grandchild, great-grandchild, and so on will have access to `user` as a prop. Unfortunately, retrieving that value is slightly more involved than simply getting it like you might with `this.props` or `this.state`.
 
@@ -97,59 +90,44 @@ The traditional way to retrieve Context values was by wrapping the child compone
 
 **src/HomePage.js (class example)**
 
+```javascript
 import React, { Component } from 'react'
-
 import { UserConsumer } from './UserContext'
 
 class HomePage extends Component {
-
-render() {
-
-return (
-
-<UserConsumer>
-
-{props => {
-
-return <div>{props.name}</div>
-
-}}
-
-</UserConsumer>
-
-)
-
+  render() {
+    return (
+      <UserConsumer>
+        {props => {
+          return <div>{props.name}</div>
+        }}
+      </UserConsumer>
+    )
+  }
 }
-
-}
+```
 
 But what about lifecycle methods? What if I need the value from Context outside of `render`? The wrapper method was limited. Instead, we can do this in a class with `contextType`, which is a static variable on the class.
 
 **src/HomePage.js (class example)**
 
+```javascript
 import React, { Component } from 'react'
-
 import UserContext from './UserContext'
 
 class HomePage extends Component {
+  static contextType = UserContext
 
-static contextType = UserContext
+  componentDidMount() {
+    const user = this.context
+    console.log(user) // { name: 'Tania', loggedIn: true }
+  }
 
-componentDidMount() {
-
-const user = this.context
-
-console.log(user) // { name: 'Tania', loggedIn: true }
-
+  render() {
+    return null
+  }
 }
-
-render() {
-
-return null
-
-}
-
-}
+```
 
 ### Functional component and Hooks
 
@@ -157,19 +135,17 @@ For functional components, you'll use `useContext`, such as in the example below
 
 **src/HomePage.js**
 
+```javascript
 import React, { useContext } from 'react'
-
 import UserContext from './UserContext'
 
 function HomePage() {
+  const user = useContext(UserContext)
+  console.log(user) // { name: 'Hoang', loggedIn: true }
 
-const user = useContext(UserContext)
-
-console.log(user) // { name: 'Tania', loggedIn: true }
-
-return null
-
+  return null
 }
+```
 
 ## Conclusion
 

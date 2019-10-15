@@ -57,23 +57,23 @@ Tóm lại lifecycle mới sẽ có dạng tóm tắt như sau:
 
 Ví dụ:
 
-    class DemoComponent extends React.Component {
-        constructor(props) {
-            super(props);
-            this.state = {};
-            this.handleClick = this.handleClick.bind(this);
-        }
+```jsx
+class DemoComponent extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {}
+    this.handleClick = this.handleClick.bind(this)
+  }
 
-        handleClick() {
-            this.setState({});
-        }
+  handleClick() {
+    this.setState({})
+  }
 
-        render() {
-            return (
-                <button onClick={this.handleClick}>Click</button>
-            );
-        }
-    }
+  render() {
+    return <button onClick={this.handleClick}>Click</button>
+  }
+}
+```
 
 ☆ static getDerivedStateFromProps(props, state): object
 
@@ -83,7 +83,7 @@ Ví dụ:
 - return về một object chính là state.
   Ví dụ với lifecycle cũ:
 
-
+```jsx
     class DemoComponent extends React.Component {
         constructor(props) {
             super(props);
@@ -97,35 +97,37 @@ Ví dụ:
         }
         ...
     }
+```
 
 hoặc
 
-    class DemoComponent extends React.Component {
-        componentWillMount() {
-            this.setState({fullName: `${this.props.lastName} ${this.props.firstName}`});
-        }
+```jsx
+class DemoComponent extends React.Component {
+  componentWillMount() {
+    this.setState({ fullName: `${this.props.lastName} ${this.props.firstName}` })
+  }
 
-        componentWillReceiveProps(nextProps, state) {
-            this.setState({fullName: `${nextProps.lastName} ${nextProps.firstName}`});
-        }
-    }
+  componentWillReceiveProps(nextProps, state) {
+    this.setState({ fullName: `${nextProps.lastName} ${nextProps.firstName}` })
+  }
+}
+```
 
 => Khá là cực đúng không bạn?
 
 Hãy chuyển sang lifecycle mới, nó sẽ trông như thế nào nhỉ?. Như này này:
 
-    class DemoComponent extends React.Component {
-        state = {
+```jsx
+class DemoComponent extends React.Component {
+  state = {}
 
-        };
-
-        static getDerivedStateFromProps(props, state) {
-            return {
-                fullName: `${props.lastName} ${props.firstName}`,
-            };
-        }
-    ...
+  static getDerivedStateFromProps(props, state) {
+    return {
+      fullName: `${props.lastName} ${props.firstName}`,
     }
+  }
+}
+```
 
 ☆ render(): ReactNode
 
