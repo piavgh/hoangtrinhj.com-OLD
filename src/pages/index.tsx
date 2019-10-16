@@ -8,13 +8,7 @@ import PostListing from '../components/PostListing/PostListing'
 import SEO from '../components/SEO/SEO'
 import config from '../../data/SiteConfig'
 import hoangAvatar from '../../content/images/hoangtrinh.jpg'
-import {
-  Container,
-  IntroductionSection,
-  HeadlineSection,
-  NewsletterSection,
-  NewsletterAvatar,
-} from '../components/Styles/Styles'
+import { Container, Section } from '../components/Styles/Styles'
 
 const Index = ({ data }) => {
   const latestPostEdges = data.latest.edges
@@ -25,8 +19,8 @@ const Index = ({ data }) => {
       <Helmet title={config.siteTitle} />
       <SEO />
       <Container>
-        <IntroductionSection>
-          <HeadlineSection>
+        <div className="lead">
+          <div className="elevator">
             <h1>I'm Hoang</h1>
             <p>
               I build products on Google Cloud Platform and write about modern JavaScript, Node.js,
@@ -54,22 +48,23 @@ const Index = ({ data }) => {
                 </GitHubButton>
               </div>
             </div>
-          </HeadlineSection>
-          <NewsletterSection>
-            <NewsletterAvatar src={hoangAvatar} className="newsletter-avatar" alt="Hoang Avatar" />
+          </div>
+
+          <div className="newsletter-section">
+            <img src={hoangAvatar} className="newsletter-avatar" alt="Hoang Avatar" />
             <div>
               <h3>Get updates</h3>
               <p>Open source projects and development tutorials</p>
-              <a className="button" href="https://taniarascia.substack.com">
+              <a className="button" href="https://hoangtrinhj.substack.com">
                 Subscribe
               </a>
             </div>
-          </NewsletterSection>
-        </IntroductionSection>
+          </div>
+        </div>
       </Container>
 
       <Container className="front-page">
-        <section className="section">
+        <Section>
           <h2>
             Latest Articles
             <Link to="/blog" className="view-all">
@@ -77,11 +72,9 @@ const Index = ({ data }) => {
             </Link>
           </h2>
           <PostListing postEdges={latestPostEdges} />
-        </section>
-      </Container>
+        </Section>
 
-      <Container className="front-page">
-        <section className="section">
+        <Section>
           <h2>
             Most Popular
             <Link to="/categories/popular" className="view-all">
@@ -89,7 +82,7 @@ const Index = ({ data }) => {
             </Link>
           </h2>
           <PostListing postEdges={popularPostEdges} />
-        </section>
+        </Section>
       </Container>
     </Layout>
   )
@@ -101,7 +94,7 @@ export default Index
 export const pageQuery = graphql`
   query IndexQuery {
     latest: allMarkdownRemark(
-      limit: 6
+      limit: 100
       sort: { fields: [fields___date], order: DESC }
       filter: { frontmatter: { template: { eq: "post" } } }
     ) {
