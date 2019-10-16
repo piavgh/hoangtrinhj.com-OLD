@@ -21,9 +21,23 @@ const GlobalStyles = () => (
         display: block;
         text-decoration: none;
         background-color: transparent;
+        color: rgba(0,0,0,.45)
+        font-weight: 500;
 
         &:hover {
-          background-color: #f2f2f2;
+          color: #f2f2f2;
+        }
+
+        &:visited {
+          color: rgba(0, 0, 0, 0.45);
+        }
+
+        &:active {
+          color: #f2f2f2;
+        }
+
+        &:focus {
+          color: #f2f2f2;
         }
       }
     `}

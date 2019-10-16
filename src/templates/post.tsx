@@ -6,6 +6,7 @@ import UserInfo from '../components/UserInfo/UserInfo'
 import PostTags from '../components/PostTags/PostTags'
 import SocialLinks from '../components/SocialLinks/SocialLinks'
 import SEO from '../components/SEO/SEO'
+import { Container } from '../components/Styles/Styles'
 import config from '../../data/SiteConfig'
 import './b16-tomorrow-dark.css'
 import './post.css'
@@ -29,7 +30,7 @@ export default class PostTemplate extends React.Component {
             <title>{`${post.title} | ${config.siteTitle}`}</title>
           </Helmet>
           <SEO postPath={slug} postNode={postNode} postSEO />
-          <div>
+          <Container>
             <h1>{post.title}</h1>
             <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
             <div className="post-meta">
@@ -37,7 +38,7 @@ export default class PostTemplate extends React.Component {
               <SocialLinks postPath={slug} postNode={postNode} />
             </div>
             <UserInfo config={config} />
-          </div>
+          </Container>
         </div>
       </Layout>
     )
