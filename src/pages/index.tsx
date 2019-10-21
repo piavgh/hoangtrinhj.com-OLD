@@ -1,5 +1,5 @@
 import React from 'react'
-import Helmet from 'react-helmet'
+import { Helmet } from 'react-helmet'
 import { graphql, Link } from 'gatsby'
 import GitHubButton from 'react-github-btn'
 
@@ -7,8 +7,8 @@ import Layout from '../layout'
 import PostListing from '../components/PostListing/PostListing'
 import SEO from '../components/SEO/SEO'
 import config from '../../data/SiteConfig'
-import hoangAvatar from '../../content/images/hoangtrinh.jpg'
-import { Container, Section } from '../components/Styles/Styles'
+import hoangAvatar from '../../content/images/hoang.jpg'
+import { Container, Section, SubscribeButton } from '../styles/Styles'
 
 const Index = ({ data }) => {
   const latestPostEdges = data.latest.edges
@@ -21,7 +21,7 @@ const Index = ({ data }) => {
       <Container>
         <div className="lead">
           <div className="elevator">
-            <h1>I'm Hoang</h1>
+            <h1>I&apos;m Hoang</h1>
             <p>
               I build products on Google Cloud Platform and write about modern JavaScript, Node.js,
               design and web development.
@@ -41,7 +41,7 @@ const Index = ({ data }) => {
                 <GitHubButton
                   href="https://github.com/piavgh"
                   data-size="large"
-                  data-show-count="true"
+                  data-show-count
                   aria-label="Follow @piavgh on GitHub"
                 >
                   Follow
@@ -55,9 +55,7 @@ const Index = ({ data }) => {
             <div>
               <h3>Get updates</h3>
               <p>Open source projects and development tutorials</p>
-              <a className="button" href="https://hoangtrinhj.substack.com">
-                Subscribe
-              </a>
+              <SubscribeButton href="https://hoangtrinhj.substack.com">Subscribe</SubscribeButton>
             </div>
           </div>
         </div>

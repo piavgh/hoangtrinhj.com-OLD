@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
 import { Link } from 'gatsby'
 
-import { PostItem } from '../Styles/Styles'
+import { PostItem } from '../../styles/Styles'
 
 interface PostEdge {
   node: any

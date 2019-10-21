@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import Grid from '@material-ui/core/Grid'
 
-import { NavContainer } from '../Styles/Styles'
+import { NavContainer } from '../../styles/Styles'
 
 interface ListLinkProps {
   to: string
