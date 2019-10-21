@@ -46,8 +46,8 @@ export const Container = styled.div`
         align-items: center;
       }
 
-      & > .social-buttons :first-child {
-        margin-right: 0.5rem;
+      & > .social-buttons div:first-of-type {
+        margin-right: 1rem;
         margin-bottom: 0;
       }
     }
@@ -65,7 +65,7 @@ export const Container = styled.div`
       & > img {
         margin-top: 0.5rem;
         border-radius: 8px;
-        width: 50px;
+        width: 100px;
       }
     }
   }
@@ -161,4 +161,32 @@ export const PostItem = styled.div`
     color: rgba(0, 0, 0, 0.6);
     margin: 0;
   }
+`
+
+export const CategoryContainer = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+`
+
+export const SubscribeButton = styled.a`
+  font-size: 1.5rem;
+  padding: 1.2rem;
+  -webkit-appearance: none;
+  display: inline-block;
+  border: 2px solid #5183f5;
+  border-radius: 4px;
+  background: #5183f5;
+  color: #fff;
+  font-weight: 600;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, Helvetica, Arial,
+    sans-serif;
+  text-transform: none;
+  margin: 0 0 0.5rem;
+  vertical-align: middle;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  line-height: 1;
 `

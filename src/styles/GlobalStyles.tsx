@@ -10,6 +10,9 @@ const GlobalStyles = () => (
 
       html {
         height: 100%;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-size: 84% !important;
       }
 
       body {
@@ -23,22 +26,10 @@ const GlobalStyles = () => (
         background-color: transparent;
         color: rgba(0,0,0,.45)
         font-weight: 500;
-
-        &:hover {
-          color: #f2f2f2;
-        }
-
-        &:visited {
-          color: rgba(0, 0, 0, 0.45);
-        }
-
-        &:active {
-          color: #f2f2f2;
-        }
-
-        &:focus {
-          color: #f2f2f2;
-        }
+      }
+      
+      .twitter-follow-button {
+        margin-bottom: 0;
       }
     `}
   />
