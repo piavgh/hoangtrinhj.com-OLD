@@ -1,5 +1,5 @@
 import React from 'react'
-import Helmet from 'react-helmet'
+import { Helmet } from 'react-helmet'
 
 import GlobalStyles from '../styles/GlobalStyles'
 import config from '../../data/SiteConfig'
