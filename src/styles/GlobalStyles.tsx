@@ -23,11 +23,9 @@ const GlobalStyles = () => (
       a {
         display: block;
         text-decoration: none;
-        background-color: transparent;
-        color: rgba(0,0,0,.45)
         font-weight: 500;
       }
-      
+
       .twitter-follow-button {
         margin-bottom: 0;
       }

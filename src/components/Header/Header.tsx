@@ -1,8 +1,7 @@
 import React from 'react'
-import { Link } from 'gatsby'
 import Grid from '@material-ui/core/Grid'
 
-import { NavContainer } from '../../styles/Styles'
+import { NavContainer, BrandLink, NavLink } from '../../styles/Styles'
 
 interface ListLinkProps {
   to: string
@@ -14,8 +13,8 @@ interface Props {
 }
 
 const ListLink: React.FC<ListLinkProps> = ({ to, children }) => (
-  <li style={{ display: `inline-block`, marginRight: `1rem`, marginBottom: 0 }}>
-    <Link to={to}>{children}</Link>
+  <li style={{ display: `inline-block`, marginBottom: 0 }}>
+    <NavLink to={to}>{children}</NavLink>
   </li>
 )
 
@@ -28,9 +27,9 @@ const Header: React.FC<Props> = ({ title, menuLinks }) => {
       <NavContainer style={{ height: '90px' }}>
         <Grid container alignItems="center" spacing={2} style={{ height: '100%' }}>
           <Grid item xs={3}>
-            <Link to="/" style={{ textShadow: `none` }}>
+            <BrandLink to="/" style={{ textShadow: `none` }}>
               <h3 style={{ display: `inline` }}>{title}</h3>
-            </Link>
+            </BrandLink>
           </Grid>
           <Grid item xs={9}>
             <ul style={{ listStyle: `none`, float: `right`, margin: 0 }}>

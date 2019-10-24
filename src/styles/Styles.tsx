@@ -1,7 +1,8 @@
+import { Link } from 'gatsby'
 import styled from '@emotion/styled'
 
-import { $light } from './Colors'
-import { $width } from './Variables'
+import { $light, $grey, $dark } from './Colors'
+import { $width, $mobile, $borderRadius } from './Variables'
 
 export const NavContainer = styled.div`
   max-width: ${$width};
@@ -10,65 +11,31 @@ export const NavContainer = styled.div`
   margin-right: auto;
 `
 
+export const BrandLink = styled(Link)`
+  color: ${$dark};
+  font-weight: 500;
+
+  &:hover {
+    color: #111;
+  }
+`
+
+export const NavLink = styled(Link)`
+  color: ${$grey};
+  font-weight: 500;
+  margin: 0 1rem;
+  padding: 1rem 0.5rem;
+
+  &:hover {
+    color: #111;
+  }
+`
+
 export const Container = styled.div`
   max-width: ${$width};
-  padding: 60px 2rem 0;
+  padding: 0 2rem 0;
   margin-left: auto;
   margin-right: auto;
-
-  & > .lead {
-    display: flex;
-    align-items: center;
-    font-size: 1.2rem;
-    margin: 0 auto;
-
-    & > .elevator {
-      margin-right: 2.5rem;
-
-      & > h1 {
-        margin-top: 0;
-        font-weight: 700;
-        font-size: 4rem;
-        margin-bottom: 1.5rem;
-      }
-
-      & > p {
-        font-size: 1.5rem;
-        max-width: 550px;
-      }
-
-      & > .button {
-        margin-right: 0.5rem;
-      }
-
-      & > .social-buttons {
-        display: flex;
-        align-items: center;
-      }
-
-      & > .social-buttons div:first-of-type {
-        margin-right: 1rem;
-        margin-bottom: 0;
-      }
-    }
-
-    & > .newsletter-section {
-      display: flex;
-      align-items: center;
-      flex-direction: column;
-      border-radius: $border-radius;
-      margin: 2rem 0;
-      padding: 1.5rem;
-      text-align: center;
-      background: ${$light};
-
-      & > img {
-        margin-top: 0.5rem;
-        border-radius: 8px;
-        width: 100px;
-      }
-    }
-  }
 `
 
 export const Section = styled.section`
@@ -79,24 +46,7 @@ export const Section = styled.section`
     align-items: center;
     border-bottom: 0;
     padding-bottom: 0;
-
-    & > a.view-all {
-      display: inline-block;
-      padding: 0.4rem 0.6rem;
-      background: #f2f2f2;
-      border-radius: 4px;
-      color: #5a5a5a;
-      font-size: 1rem;
-      font-weight: 500;
-      margin: 0.25rem 1rem 0 2rem;
-    }
   }
-`
-
-export const IntroductionSection = styled.div`
-  display: flex;
-  align-items: center;
-  font-size: 1.2rem;
 `
 
 export const HeadlineSection = styled.div`
@@ -115,23 +65,18 @@ export const HeadlineSection = styled.div`
   & > .button {
     margin-right: 0.5rem;
   }
+`
 
-  & > .social-buttons {
-    display: flex;
-    align-items: center;
-  }
-
-  & > .social-buttons :first-child {
-    margin-right: 0.5rem;
-    margin-bottom: 0;
-  }
+export const SocialButtons = styled.div`
+  display: flex;
+  align-items: center;
 `
 
 export const NewsletterSection = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  border-radius: $border-radius;
+  border-radius: ${$borderRadius};
   margin: 2rem 0;
   padding: 1.5rem;
   text-align: center;
@@ -142,6 +87,31 @@ export const NewsletterAvatar = styled.img`
   margin-top: 0.5rem;
   border-radius: 8px;
   width: 50px;
+
+  @media (min-width: ${$mobile}) {
+    width: 75px;
+  }
+`
+
+export const SubscribeButton = styled.a`
+  font-size: 1.2rem;
+  padding: 1.1rem;
+
+  @media (min-width: ${$mobile}) {
+    font-size: 1.5rem;
+    padding: 1.2rem;
+  }
+`
+
+export const ViewAllButton = styled(Link)`
+  display: inline-block;
+  padding: 0.4rem 0.6rem;
+  background: #f2f2f2;
+  border-radius: 4px;
+  color: #5a5a5a;
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0.25rem 1rem 0 2rem;
 `
 
 export const PostItem = styled.div`
@@ -168,25 +138,4 @@ export const CategoryContainer = styled.div`
   justify-content: flex-start;
   margin-bottom: 1.5rem;
   flex-wrap: wrap;
-`
-
-export const SubscribeButton = styled.a`
-  font-size: 1.5rem;
-  padding: 1.2rem;
-  -webkit-appearance: none;
-  display: inline-block;
-  border: 2px solid #5183f5;
-  border-radius: 4px;
-  background: #5183f5;
-  color: #fff;
-  font-weight: 600;
-  font-family: -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, Helvetica, Arial,
-    sans-serif;
-  text-transform: none;
-  margin: 0 0 0.5rem;
-  vertical-align: middle;
-  text-align: center;
-  cursor: pointer;
-  text-decoration: none;
-  line-height: 1;
 `
