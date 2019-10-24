@@ -1,14 +1,24 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
 import GitHubButton from 'react-github-btn'
+import Grid from '@material-ui/core/Grid'
 
 import Layout from '../layout'
 import PostListing from '../components/PostListing/PostListing'
 import SEO from '../components/SEO/SEO'
 import config from '../../data/SiteConfig'
-import hoangAvatar from '../../content/images/hoang.jpg'
-import { Container, Section, SubscribeButton } from '../styles/Styles'
+import hoangAvatar from '../../content/images/hoangtrinh.jpg'
+import {
+  Container,
+  Section,
+  HeadlineSection,
+  SocialButtons,
+  SubscribeButton,
+  NewsletterSection,
+  NewsletterAvatar,
+  ViewAllButton,
+} from '../styles/Styles'
 
 const Index = ({ data }) => {
   const latestPostEdges = data.latest.edges
@@ -19,55 +29,61 @@ const Index = ({ data }) => {
       <Helmet title={config.siteTitle} />
       <SEO />
       <Container>
-        <div className="lead">
-          <div className="elevator">
-            <h1>I&apos;m Hoang</h1>
-            <p>
-              I build products on Google Cloud Platform and write about modern JavaScript, Node.js,
-              design and web development.
-            </p>
-            <div className="social-buttons">
-              <div>
-                <a
-                  className="twitter-follow-button"
-                  href="https://twitter.com/hoangtrinhj"
-                  data-size="large"
-                  data-show-screen-name="false"
-                >
-                  Follow @hoangtrinhj
-                </a>
-              </div>
-              <div>
-                <GitHubButton
-                  href="https://github.com/piavgh"
-                  data-size="large"
-                  data-show-count
-                  aria-label="Follow @piavgh on GitHub"
-                >
-                  Follow
-                </GitHubButton>
-              </div>
-            </div>
-          </div>
+        <Grid container spacing={4} alignItems="center">
+          <Grid item xs={12} sm={7}>
+            <HeadlineSection>
+              <h1>I&apos;m Hoang</h1>
+              <p>
+                I build products on Google Cloud Platform and write about modern JavaScript,
+                Node.js, design and web development.
+              </p>
+              <SocialButtons>
+                <div>
+                  <a
+                    className="twitter-follow-button"
+                    href="https://twitter.com/hoangtrinhj"
+                    data-size="large"
+                    data-show-screen-name="false"
+                  >
+                    Follow @hoangtrinhj
+                  </a>
+                </div>
+                <div>
+                  <GitHubButton
+                    href="https://github.com/piavgh"
+                    data-size="large"
+                    data-show-count
+                    aria-label="Follow @piavgh on GitHub"
+                  >
+                    Follow
+                  </GitHubButton>
+                </div>
+              </SocialButtons>
+            </HeadlineSection>
+          </Grid>
 
-          <div className="newsletter-section">
-            <img src={hoangAvatar} className="newsletter-avatar" alt="Hoang Avatar" />
-            <div>
-              <h3>Get updates</h3>
-              <p>Open source projects and development tutorials</p>
-              <SubscribeButton href="https://hoangtrinhj.substack.com">Subscribe</SubscribeButton>
-            </div>
-          </div>
-        </div>
+          <Grid item xs={12} sm={5}>
+            <NewsletterSection>
+              <NewsletterAvatar
+                src={hoangAvatar}
+                className="newsletter-avatar"
+                alt="Hoang Avatar"
+              />
+              <div>
+                <h3>Get updates</h3>
+                <p>Open source projects and development tutorials</p>
+                <SubscribeButton href="https://hoangtrinhj.substack.com">Subscribe</SubscribeButton>
+              </div>
+            </NewsletterSection>
+          </Grid>
+        </Grid>
       </Container>
 
       <Container className="front-page">
         <Section>
           <h2>
             Latest Articles
-            <Link to="/blog" className="view-all">
-              View all
-            </Link>
+            <ViewAllButton to="/blog">View all</ViewAllButton>
           </h2>
           <PostListing postEdges={latestPostEdges} />
         </Section>
@@ -75,9 +91,7 @@ const Index = ({ data }) => {
         <Section>
           <h2>
             Most Popular
-            <Link to="/categories/popular" className="view-all">
-              View all
-            </Link>
+            <ViewAllButton to="/categories/popular">View all</ViewAllButton>
           </h2>
           <PostListing postEdges={popularPostEdges} />
         </Section>
