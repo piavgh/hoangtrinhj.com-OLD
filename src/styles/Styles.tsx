@@ -139,3 +139,22 @@ export const CategoryContainer = styled.div`
   margin-bottom: 1.5rem;
   flex-wrap: wrap;
 `
+
+export const StyledUserLinks = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+`
+
+export const FooterLink = styled.a`
+  color: ${$grey};
+  font-weight: 500;
+  margin: 0 1rem;
+  padding: 1rem 0.5rem;
+
+  &:hover {
+    color: #111;
+  }
+`

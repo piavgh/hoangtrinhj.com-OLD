@@ -1,21 +1,25 @@
 import React from 'react'
-import './UserLinks.css'
+
+import { StyledUserLinks, FooterLink } from '../styles/Styles'
 
 const UserLinks = ({ config, labeled }) => {
   const getLinkElements = () => {
     const { userLinks } = config
+
     return userLinks.map(link => (
-      <a key={link.label} href={link.url}>
+      <FooterLink key={link.label} href={link.url}>
         {labeled ? link.label : ''}
-      </a>
+      </FooterLink>
     ))
   }
 
   const { userLinks } = config
+
   if (!userLinks) {
     return null
   }
-  return <div className="user-links">{getLinkElements()}</div>
+
+  return <StyledUserLinks>{getLinkElements()}</StyledUserLinks>
 }
 
 export default UserLinks

@@ -3,8 +3,8 @@ import { Helmet } from 'react-helmet'
 
 import GlobalStyles from '../styles/GlobalStyles'
 import config from '../../data/SiteConfig'
-import Header from '../components/Header/Header'
-import Footer from '../components/Footer/Footer'
+import Header from '../components/Header'
+import Footer from '../components/Footer'
 
 const MainLayout = props => {
   const { children } = props
