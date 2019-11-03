@@ -11,7 +11,6 @@ module.exports = {
       title: config.siteTitle,
       description: config.siteDescription,
       image_url: `${urljoin(config.siteUrl, config.pathPrefix)}/logos/logo-512.png`,
-      copyright: config.copyright,
     },
   },
   plugins: [
@@ -98,7 +97,7 @@ module.exports = {
         setup(ref) {
           const ret = ref.query.site.siteMetadata.rssMetadata
           ret.allMarkdownRemark = ref.query.allMarkdownRemark
-          ret.generator = 'GatsbyJS Advanced Starter'
+          ret.generator = "Hoang's Blog"
           return ret
         },
         query: `
@@ -111,7 +110,6 @@ module.exports = {
                 title
                 description
                 image_url
-                copyright
               }
             }
           }

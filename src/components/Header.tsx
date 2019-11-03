@@ -1,7 +1,7 @@
 import React from 'react'
 import Grid from '@material-ui/core/Grid'
 
-import { NavContainer, BrandLink, NavLink } from '../../styles/Styles'
+import { NavContainer, BrandLink, NavLink } from '../styles/Styles'
 
 interface ListLinkProps {
   to: string

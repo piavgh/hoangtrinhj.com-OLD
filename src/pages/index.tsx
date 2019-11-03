@@ -5,8 +5,8 @@ import GitHubButton from 'react-github-btn'
 import Grid from '@material-ui/core/Grid'
 
 import Layout from '../layout'
-import PostListing from '../components/PostListing/PostListing'
-import SEO from '../components/SEO/SEO'
+import PostListing from '../components/PostListing'
+import SEO from '../components/SEO'
 import config from '../../data/SiteConfig'
 import hoangAvatar from '../../content/images/hoangtrinh.jpg'
 import {
@@ -79,7 +79,7 @@ const Index = ({ data }) => {
         </Grid>
       </Container>
 
-      <Container className="front-page">
+      <Container>
         <Section>
           <h2>
             Latest Articles
@@ -88,7 +88,7 @@ const Index = ({ data }) => {
           <PostListing postEdges={latestPostEdges} />
         </Section>
 
-        <Section>
+        <Section last>
           <h2>
             Most Popular
             <ViewAllButton to="/categories/popular">View all</ViewAllButton>

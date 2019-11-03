@@ -4,6 +4,14 @@ import styled from '@emotion/styled'
 import { $light, $grey, $dark } from './Colors'
 import { $width, $mobile, $borderRadius } from './Variables'
 
+interface SectionProps {
+  last?: boolean
+}
+
+interface StyledLinkGroupProps {
+  right?: boolean
+}
+
 export const NavContainer = styled.div`
   max-width: ${$width};
   padding: 0 2rem 0;
@@ -36,10 +44,11 @@ export const Container = styled.div`
   padding: 0 2rem 0;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 2rem;
 `
 
-export const Section = styled.section`
-  margin: 4rem 0;
+export const Section = styled.div<SectionProps>`
+  margin-bottom: ${props => (props.last ? '0' : '4rem')};
 
   & > h2 {
     display: flex;
@@ -138,4 +147,36 @@ export const CategoryContainer = styled.div`
   justify-content: flex-start;
   margin-bottom: 1.5rem;
   flex-wrap: wrap;
+`
+
+export const StyledLinkGroup = styled.div<StyledLinkGroupProps>`
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  @media (min-width: ${$mobile}) {
+    justify-content: ${props => (props.right ? 'flex-end' : 'flex-start')};
+  }
+`
+
+export const FooterLink = styled.a`
+  color: ${$grey};
+  margin: 0 1rem;
+  padding: 1rem 0.5rem;
+
+  &:hover {
+    color: #111;
+  }
+`
+
+export const FooterLinkImage = styled.a`
+  margin-right: 1.5rem;
+`
+
+export const FooterImage = styled.img`
+  height: 30px;
+  width: 30px;
+  margin-bottom: 0;
 `
