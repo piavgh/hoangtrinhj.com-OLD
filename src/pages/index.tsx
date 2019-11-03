@@ -79,7 +79,7 @@ const Index = ({ data }) => {
         </Grid>
       </Container>
 
-      <Container className="front-page">
+      <Container>
         <Section>
           <h2>
             Latest Articles
@@ -88,7 +88,7 @@ const Index = ({ data }) => {
           <PostListing postEdges={latestPostEdges} />
         </Section>
 
-        <Section>
+        <Section last>
           <h2>
             Most Popular
             <ViewAllButton to="/categories/popular">View all</ViewAllButton>

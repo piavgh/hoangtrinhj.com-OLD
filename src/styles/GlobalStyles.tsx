@@ -1,6 +1,8 @@
 import React from 'react'
 import { Global, css } from '@emotion/core'
 
+import { $mobile } from './Variables'
+
 const GlobalStyles = () => (
   <Global
     styles={css`
@@ -20,10 +22,16 @@ const GlobalStyles = () => (
         font-size: 1.2rem;
       }
 
+      h2 {
+        font-size: 1.5rem;
+
+        @media (min-width: ${$mobile}) {
+          font-size: 2.2rem;
+        }
+      }
+
       a {
-        display: block;
         text-decoration: none;
-        font-weight: 500;
       }
 
       .twitter-follow-button {
