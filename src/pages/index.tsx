@@ -106,7 +106,7 @@ export default Index
 export const pageQuery = graphql`
   query IndexQuery {
     latest: allMarkdownRemark(
-      limit: 100
+      limit: 6
       sort: { fields: [fields___date], order: DESC }
       filter: { frontmatter: { template: { eq: "post" } } }
     ) {
@@ -121,14 +121,20 @@ export const pageQuery = graphql`
           frontmatter {
             title
             tags
-            cover
             date
+            thumbnail {
+              childImageSharp {
+                fixed(width: 150, height: 150) {
+                  ...GatsbyImageSharpFixed
+                }
+              }
+            }
           }
         }
       }
     }
     popular: allMarkdownRemark(
-      limit: 7
+      limit: 6
       sort: { fields: [fields___date], order: DESC }
       filter: { frontmatter: { categories: { in: "Popular" } } }
     ) {
@@ -143,8 +149,14 @@ export const pageQuery = graphql`
           frontmatter {
             title
             tags
-            cover
             date
+            thumbnail {
+              childImageSharp {
+                fixed(width: 150, height: 150) {
+                  ...GatsbyImageSharpFixed
+                }
+              }
+            }
           }
         }
       }

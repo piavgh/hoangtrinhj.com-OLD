@@ -1,6 +1,7 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import { graphql } from 'gatsby'
+
 import Layout from '../layout'
 import UserInfo from '../components/UserInfo'
 import PostTags from '../components/PostTags'
@@ -54,10 +55,16 @@ export const pageQuery = graphql`
       excerpt
       frontmatter {
         title
-        cover
         date
         categories
         tags
+        thumbnail {
+          childImageSharp {
+            fixed(width: 150, height: 150) {
+              ...GatsbyImageSharpFixed
+            }
+          }
+        }
       }
       fields {
         slug

@@ -2,7 +2,7 @@
 title: Me
 slug: me
 template: page
-cover: 'https://miro.medium.com/max/1187/1*0FqDC0_r1f5xFz3IywLYRA.jpeg'
+thumbnail: '../thumbnails/js.png'
 ---
 
 I’m Hoang Trinh, a web developer, technical writer from Ha Noi, Viet Nam. I currently work as a CTO for a startup, and I've written for many [developer publications](/publications).
