@@ -1,13 +1,10 @@
 ---
 author: hoangth
-comments: true
 date: 2018-09-30 09:14:39+00:00
-cover: 'https://miro.medium.com/max/1187/1*0FqDC0_r1f5xFz3IywLYRA.jpeg'
-layout: post
-link: https://jetbeaver.com/tu-duy-nhu-mot-lap-trinh-vien/
 slug: tu-duy-nhu-mot-lap-trinh-vien
 title: Tư duy như một lập trình viên
 template: post
+thumbnail: '../thumbnails/writing.png'
 categories:
   - Popular
 ---

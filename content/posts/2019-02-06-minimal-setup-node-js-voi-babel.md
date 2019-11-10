@@ -1,13 +1,10 @@
 ---
 author: hoangth
-comments: true
 date: 2019-02-06 10:13:39+00:00
-cover: 'https://miro.medium.com/max/1187/1*0FqDC0_r1f5xFz3IywLYRA.jpeg'
-layout: post
-link: https://jetbeaver.com/minimal-setup-node-js-voi-babel/
 slug: minimal-setup-node-js-voi-babel
 title: Minimal Setup Node.js với Babel
 template: post
+thumbnail: '../thumbnails/node.png'
 categories:
   - Node.js
 tags:

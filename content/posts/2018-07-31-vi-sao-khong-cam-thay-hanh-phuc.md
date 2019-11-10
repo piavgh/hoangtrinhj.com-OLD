@@ -1,13 +1,10 @@
 ---
 author: hoangth
-comments: true
 date: 2018-07-31 15:18:37+00:00
-cover: 'https://miro.medium.com/max/1187/1*0FqDC0_r1f5xFz3IywLYRA.jpeg'
-layout: post
-link: https://hoangtrinhj.com/vi-sao-khong-cam-thay-hanh-phuc/
 slug: vi-sao-khong-cam-thay-hanh-phuc
 title: Vì sao thế hệ 8x, 9x không cảm thấy hạnh phúc?
 template: post
+thumbnail: '../thumbnails/writing.png'
 categories:
   - Popular
 tags:

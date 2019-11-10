@@ -1,13 +1,10 @@
 ---
 author: hoangth
-comments: true
 date: 2018-08-10 08:31:20+00:00
-cover: 'https://miro.medium.com/max/1187/1*0FqDC0_r1f5xFz3IywLYRA.jpeg'
-layout: post
-link: https://jetbeaver.com/controlled-form-input-vs-uncontrolled-form-input/
 slug: controlled-form-input-vs-uncontrolled-form-input
 title: Controlled form input vs Uncontrolled form input
 template: post
+thumbnail: '../thumbnails/react.png'
 categories:
   - React.js
 tags:

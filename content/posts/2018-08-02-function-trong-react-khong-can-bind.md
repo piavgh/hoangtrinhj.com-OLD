@@ -1,13 +1,10 @@
 ---
 author: hoangth
-comments: true
 date: 2018-08-02 07:36:58+00:00
-cover: 'https://miro.medium.com/max/1187/1*0FqDC0_r1f5xFz3IywLYRA.jpeg'
-layout: post
-link: https://jetbeaver.com/function-trong-react-khong-can-bind/
 slug: function-trong-react-khong-can-bind
 title: Function trong React không cần bind
 template: post
+thumbnail: '../thumbnails/react.png'
 categories:
   - React.js
 ---

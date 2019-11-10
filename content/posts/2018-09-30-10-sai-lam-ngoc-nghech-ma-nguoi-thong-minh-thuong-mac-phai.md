@@ -1,13 +1,10 @@
 ---
 author: hoangth
-comments: true
 date: 2018-09-30 04:44:37+00:00
-cover: 'https://miro.medium.com/max/1187/1*0FqDC0_r1f5xFz3IywLYRA.jpeg'
-layout: post
-link: https://jetbeaver.com/10-sai-lam-ngoc-nghech-ma-nguoi-thong-minh-thuong-mac-phai/
 slug: 10-sai-lam-ngoc-nghech-ma-nguoi-thong-minh-thuong-mac-phai
 title: 10 sai lầm mà người thông minh thường mắc phải
 template: post
+thumbnail: '../thumbnails/writing.png'
 categories:
   - Nhảm
 ---

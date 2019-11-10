@@ -1,13 +1,10 @@
 ---
 author: hoangth
-comments: true
 date: 2019-08-04 07:52:00+00:00
-cover: 'https://miro.medium.com/max/1187/1*0FqDC0_r1f5xFz3IywLYRA.jpeg'
-layout: post
-link: https://jetbeaver.com/using-context-api-in-react-hooks-and-classes/
 slug: using-context-api-in-react-hooks-and-classes
 title: Using Context API in React (Hooks and Classes)
 template: post
+thumbnail: '../thumbnails/react.png'
 categories:
   - React.js
 tags:
