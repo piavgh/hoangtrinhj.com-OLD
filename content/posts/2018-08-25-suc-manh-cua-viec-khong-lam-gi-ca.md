@@ -1,13 +1,10 @@
 ---
 author: hoangth
-comments: true
 date: 2018-08-25 04:01:31+00:00
-cover: 'https://miro.medium.com/max/1187/1*0FqDC0_r1f5xFz3IywLYRA.jpeg'
-layout: post
-link: https://jetbeaver.com/suc-manh-cua-viec-khong-lam-gi-ca/
 slug: suc-manh-cua-viec-khong-lam-gi-ca
 title: Sức mạnh của việc không làm gì cả
 template: post
+thumbnail: '../thumbnails/writing.png'
 categories:
   - Nhảm
 ---

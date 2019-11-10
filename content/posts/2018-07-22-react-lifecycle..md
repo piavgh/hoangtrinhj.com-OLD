@@ -1,13 +1,10 @@
 ---
 author: hoangth
-comments: true
 date: 2018-07-22 04:41:29+00:00
-cover: 'https://miro.medium.com/max/1187/1*0FqDC0_r1f5xFz3IywLYRA.jpeg'
-layout: post
-link: https://jetbeaver.com/react-lifecycle/
 slug: react-lifecycle
 title: Bàn một chút về React Lifecycle
 template: post
+thumbnail: '../thumbnails/react.png'
 categories:
   - Popular
 tags:

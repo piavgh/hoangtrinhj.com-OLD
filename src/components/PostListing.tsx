@@ -1,5 +1,6 @@
 import React, { FC } from 'react'
 import { Link } from 'gatsby'
+import Img from 'gatsby-image'
 
 import { PostItem } from '../styles/Styles'
 
@@ -10,7 +11,7 @@ interface PostEdge {
 interface PostList {
   path: string
   tags: Array<string>
-  cover: string
+  thumbnail: any
   title: string
   date: string
   excerpt: string
@@ -28,7 +29,7 @@ const PostListing: FC<Props> = ({ postEdges }) => {
       postList.push({
         path: postEdge.node.fields.slug,
         tags: postEdge.node.frontmatter.tags,
-        cover: postEdge.node.frontmatter.cover,
+        thumbnail: postEdge.node.frontmatter.thumbnail,
         title: postEdge.node.frontmatter.title,
         date: postEdge.node.fields.date,
         excerpt: postEdge.node.excerpt,
@@ -42,15 +43,21 @@ const PostListing: FC<Props> = ({ postEdges }) => {
 
   return (
     <div>
-      {postList.map(post => (
-        <Link to={post.path} key={post.title}>
-          <PostItem>
-            <div className="each">
+      {postList.map(post => {
+        let thumbnail
+        if (post.thumbnail) {
+          thumbnail = post.thumbnail.childImageSharp.fixed
+        }
+
+        return (
+          <Link to={post.path} key={post.title}>
+            <PostItem>
+              {thumbnail ? <Img fixed={thumbnail} /> : <div />}
               <h2>{post.title}</h2>
-            </div>
-          </PostItem>
-        </Link>
-      ))}
+            </PostItem>
+          </Link>
+        )
+      })}
     </div>
   )
 }

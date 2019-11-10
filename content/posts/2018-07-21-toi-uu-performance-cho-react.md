@@ -1,12 +1,9 @@
 ---
 author: hoangth
-comments: true
 date: 2018-07-21 11:30:48+00:00
-cover: 'https://miro.medium.com/max/1187/1*0FqDC0_r1f5xFz3IywLYRA.jpeg'
-layout: post
-link: https://jetbeaver.com/toi-uu-performance-cho-react/
 slug: toi-uu-performance-cho-react
 title: Tối ưu performance cho React
+thumbnail: '../thumbnails/react.png'
 template: post
 categories:
   - React.js

@@ -5,17 +5,20 @@ import config from '../../data/SiteConfig'
 
 class SEO extends Component {
   render() {
+    const replacePath = path => (path === `/` ? path : path.replace(/\/$/, ``))
     const { postNode, postPath, postSEO } = this.props
     let title
     let description
-    let image
+    let image = ''
     let postURL
     if (postSEO) {
       const postMeta = postNode.frontmatter
-      ;({ title } = postMeta)
+      title = postMeta.title
       description = postMeta.description ? postMeta.description : postNode.excerpt
-      image = postMeta.cover
-      postURL = urljoin(config.siteUrl, config.pathPrefix, postPath)
+      if (postMeta.thumbnail) {
+        image = postMeta.thumbnail.childImageSharp.fixed.src
+      }
+      postURL = urljoin(config.siteUrl, config.pathPrefix, replacePath(postPath))
     } else {
       title = config.siteTitle
       description = config.siteDescription

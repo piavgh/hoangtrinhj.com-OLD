@@ -43,6 +43,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
   const postPage = path.resolve('src/templates/post.tsx')
+  const pagePage = path.resolve('src/templates/page.tsx')
   const tagPage = path.resolve('src/templates/tag.tsx')
   const categoryPage = path.resolve('src/templates/category.tsx')
 
@@ -60,6 +61,7 @@ exports.createPages = async ({ graphql, actions }) => {
                 tags
                 categories
                 date
+                template
               }
             }
           }
@@ -107,17 +109,33 @@ exports.createPages = async ({ graphql, actions }) => {
     const nextEdge = postsEdges[nextID]
     const prevEdge = postsEdges[prevID]
 
-    createPage({
-      path: edge.node.fields.slug,
-      component: postPage,
-      context: {
-        slug: edge.node.fields.slug,
-        nexttitle: nextEdge.node.frontmatter.title,
-        nextslug: nextEdge.node.fields.slug,
-        prevtitle: prevEdge.node.frontmatter.title,
-        prevslug: prevEdge.node.fields.slug,
-      },
-    })
+    if (edge.node.frontmatter.template === 'post') {
+      createPage({
+        path: edge.node.fields.slug,
+        component: postPage,
+        context: {
+          slug: edge.node.fields.slug,
+          nexttitle: nextEdge.node.frontmatter.title,
+          nextslug: nextEdge.node.fields.slug,
+          prevtitle: prevEdge.node.frontmatter.title,
+          prevslug: prevEdge.node.fields.slug,
+        },
+      })
+    }
+
+    if (edge.node.frontmatter.template === 'page') {
+      createPage({
+        path: edge.node.fields.slug,
+        component: pagePage,
+        context: {
+          slug: edge.node.fields.slug,
+          nexttitle: nextEdge.node.frontmatter.title,
+          nextslug: nextEdge.node.fields.slug,
+          prevtitle: prevEdge.node.frontmatter.title,
+          prevslug: prevEdge.node.fields.slug,
+        },
+      })
+    }
   })
 
   tagSet.forEach(tag => {

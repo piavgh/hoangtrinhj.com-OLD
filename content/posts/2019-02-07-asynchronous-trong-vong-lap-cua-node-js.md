@@ -1,13 +1,10 @@
 ---
 author: hoangth
-comments: true
 date: 2019-02-07 09:03:26+00:00
-cover: 'https://miro.medium.com/max/1187/1*0FqDC0_r1f5xFz3IywLYRA.jpeg'
-layout: post
-link: https://jetbeaver.com/asynchronous-trong-vong-lap-cua-node-js/
 slug: asynchronous-trong-vong-lap-cua-node-js
 title: Asynchronous trong vòng lặp của Node.js
 template: post
+thumbnail: '../thumbnails/node.png'
 categories:
   - Popular
 tags:

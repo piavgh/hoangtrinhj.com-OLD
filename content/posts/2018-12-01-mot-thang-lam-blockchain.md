@@ -1,13 +1,10 @@
 ---
 author: hoangth
-comments: true
 date: 2018-12-01 12:28:49+00:00
-cover: 'https://miro.medium.com/max/1187/1*0FqDC0_r1f5xFz3IywLYRA.jpeg'
-layout: post
-link: https://jetbeaver.com/mot-thang-lam-blockchain/
 slug: mot-thang-lam-blockchain
 title: Một tháng làm việc với blockchain
 template: post
+thumbnail: '../thumbnails/writing.png'
 categories:
   - Blockchain
 tags:

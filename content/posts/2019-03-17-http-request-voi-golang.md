@@ -1,13 +1,10 @@
 ---
 author: hoangth
-comments: true
 date: 2019-03-17 03:54:03+00:00
-cover: 'https://miro.medium.com/max/1187/1*0FqDC0_r1f5xFz3IywLYRA.jpeg'
-layout: post
-link: https://jetbeaver.com/http-request-voi-golang/
 slug: http-request-voi-golang
 title: HTTP Request với Golang
 template: post
+thumbnail: '../thumbnails/http.png'
 categories:
   - Golang
 tags:

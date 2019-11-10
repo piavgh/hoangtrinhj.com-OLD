@@ -1,12 +1,11 @@
 ---
 author: hoangth
-comments: true
 date: 2018-07-21 11:42:41+00:00
-cover: 'https://miro.medium.com/max/1187/1*0FqDC0_r1f5xFz3IywLYRA.jpeg'
 layout: post
 link: https://hoangtrinhj.com/map-va-foreach-khac-nhau-o-diem-nao/
 slug: map-va-foreach-khac-nhau-o-diem-nao
 title: Map và forEach khác nhau ở điểm nào?
+thumbnail: '../thumbnails/js.png'
 template: post
 categories:
   - Javascript
