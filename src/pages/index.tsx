@@ -72,7 +72,7 @@ const Index = ({ data }) => {
               <div>
                 <h3>Get updates</h3>
                 <p>Open source projects and development tutorials</p>
-                <SubscribeButton href="https://hoangtrinhj.substack.com">Subscribe</SubscribeButton>
+                <SubscribeButton href="https://hoang.substack.com">Subscribe</SubscribeButton>
               </div>
             </NewsletterSection>
           </Grid>

@@ -17,7 +17,7 @@ I aim to create a beautiful corner of the web free of ads, sponsored posts, news
 
 I send out a message whenever I write something new. Sign up for the newsletter to get notified.
 
-<a class="button" href="https://hoangtrinhj.substack.com">Join the newsletter</a>
+<a class="button" href="https://hoang.substack.com">Join the newsletter</a>
 
 ![Me](../images/hoangtrinh.jpg)
 
