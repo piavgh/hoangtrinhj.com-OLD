@@ -76,6 +76,7 @@ module.exports = {
         background_color: config.backgroundColor,
         theme_color: config.themeColor,
         display: 'minimal-ui',
+        icon: `content/images/logo.png`,
         icons: [
           {
             src: '/logos/logo-192x192.png',

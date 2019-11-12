@@ -66,7 +66,7 @@ import HomePage from './HomePage'
 import { UserProvider } from './UserContext'
 
 function App() {
-  const user = { name: 'Tania', loggedIn: true }
+  const user = { name: 'Hoang', loggedIn: true }
   return (
     <UserProvider value={user}>
       <HomePage />
@@ -117,7 +117,7 @@ class HomePage extends Component {
 
   componentDidMount() {
     const user = this.context
-    console.log(user) // { name: 'Tania', loggedIn: true }
+    console.log(user) // { name: 'Hoang', loggedIn: true }
   }
 
   render() {
