@@ -1,8 +1,6 @@
 import React, { FC } from 'react'
-import { Link } from 'gatsby'
-import Img from 'gatsby-image'
 
-import { PostItem } from '../styles/Styles'
+import PostItem from '../PostItem'
 
 interface PostEdge {
   node: any
@@ -49,14 +47,7 @@ const PostListing: FC<Props> = ({ postEdges }) => {
           thumbnail = post.thumbnail.childImageSharp.fixed
         }
 
-        return (
-          <Link to={post.path} key={post.title}>
-            <PostItem>
-              {thumbnail ? <Img fixed={thumbnail} /> : <div />}
-              <h2>{post.title}</h2>
-            </PostItem>
-          </Link>
-        )
+        return <PostItem key={post.title} post={post} thumbnail={thumbnail} />
       })}
     </div>
   )
