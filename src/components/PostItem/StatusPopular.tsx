@@ -5,6 +5,7 @@ import { $green } from '../../styles/Colors'
 import { $borderRadius, $mobile } from '../../styles/Variables'
 
 const StatusPopular = styled.div`
+  justify-self: flex-end;
   display: inline-block;
   font-size: 0.8rem;
   background: ${lighten(0.5, $green)};

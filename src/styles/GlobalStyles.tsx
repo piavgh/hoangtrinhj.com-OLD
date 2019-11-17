@@ -26,6 +26,8 @@ const GlobalStyles = () => (
 
       h2 {
         font-size: 1.5rem;
+        font-family: -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, Helvetica, Arial,
+          sans-serif;
 
         @media (min-width: ${$mobile}) {
           font-size: 2.2rem;
