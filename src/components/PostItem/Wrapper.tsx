@@ -10,7 +10,6 @@ interface WrapperProps {
 const Wrapper = styled.div<WrapperProps>`
   display: flex;
   align-items: center;
-  margin: 0 -1rem;
   padding: ${props => (props.simple ? '0.5rem 0' : `1rem 0`)};
   border: 2px solid transparent;
   border-bottom-color: ${props => !props.simple && $light};
