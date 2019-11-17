@@ -5,6 +5,7 @@ import { $yellow } from '../../styles/Colors'
 import { $borderRadius, $mobile } from '../../styles/Variables'
 
 const StatusNew = styled.div`
+  justify-self: flex-end;
   display: inline-block;
   font-size: 0.9rem;
   background-color: ${lighten(0.26, $yellow)};

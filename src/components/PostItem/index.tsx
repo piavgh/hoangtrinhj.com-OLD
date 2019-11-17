@@ -36,24 +36,16 @@ const PostItem: FC<Props> = props => {
     <div>
       <Link to={post.path} key={post.title}>
         <Wrapper simple={simple}>
-          <Grid container alignItems="center">
-            <Grid item xs={1}>
-              {thumbnail ? <PostThumbnail fixed={thumbnail} /> : <div />}
-            </Grid>
+          {thumbnail ? <PostThumbnail fixed={thumbnail} /> : null}
 
-            <Grid item xs={9}>
-              <PostTitleWrapper simple={simple}>
-                <PostTitle>{post.title}</PostTitle>
-                {!simple && <PostDate>{date}</PostDate>}
-              </PostTitleWrapper>
-            </Grid>
+          <PostTitleWrapper simple={simple}>
+            <PostTitle>{post.title}</PostTitle>
+            {!simple && <PostDate>{date}</PostDate>}
+          </PostTitleWrapper>
 
-            <Grid item xs={2}>
-              {newest && <StatusNew>New!</StatusNew>}
+          {newest && <StatusNew>New!</StatusNew>}
 
-              {popular && !simple && !newest && <StatusPopular>Popular</StatusPopular>}
-            </Grid>
-          </Grid>
+          {popular && !simple && !newest && <StatusPopular>Popular</StatusPopular>}
         </Wrapper>
       </Link>
     </div>
