@@ -14,13 +14,17 @@ interface PostList {
   date: string
   excerpt: string
   timeToRead: number
+  categories: string[]
 }
 
 interface Props {
   postEdges: Array<PostEdge>
+  simple?: boolean
 }
 
-const PostListing: FC<Props> = ({ postEdges }) => {
+const PostListing: FC<Props> = props => {
+  const { simple, postEdges } = props
+
   const getPostList = () => {
     const postList: Array<PostList> = []
     postEdges.forEach(postEdge => {
@@ -32,6 +36,7 @@ const PostListing: FC<Props> = ({ postEdges }) => {
         date: postEdge.node.fields.date,
         excerpt: postEdge.node.excerpt,
         timeToRead: postEdge.node.timeToRead,
+        categories: postEdge.node.frontmatter.categories,
       })
     })
     return postList
@@ -47,7 +52,7 @@ const PostListing: FC<Props> = ({ postEdges }) => {
           thumbnail = post.thumbnail.childImageSharp.fixed
         }
 
-        return <PostItem key={post.title} post={post} thumbnail={thumbnail} />
+        return <PostItem simple={simple} key={post.title} post={post} thumbnail={thumbnail} />
       })}
     </div>
   )

@@ -60,12 +60,6 @@ const GlobalStyles = () => (
       .twitter-follow-button {
         margin-bottom: 0;
       }
-
-      .gatsby-image-wrapper {
-        margin-right: 1rem;
-        height: 30px !important;
-        width: 30px !important;
-      }
     `}
   />
 )
