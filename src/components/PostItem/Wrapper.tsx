@@ -1,28 +1,21 @@
 import styled from '@emotion/styled'
 
-const Wrapper = styled.div`
-  display: flex;
-  align-items: center;
-  padding: 0.75rem 0;
+import { $light } from '../../styles/Colors'
 
-  & > h2 {
-    font-size: 1.3rem;
-    font-weight: 500;
-    line-height: 1.3;
-    color: rgba(0, 0, 0, 0.6);
-    margin: 0;
-  }
+interface WrapperProps {
+  simple?: boolean
+}
 
-  img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center center;
-    opacity: 0;
-    transition-delay: 500ms;
+const Wrapper = styled.div<WrapperProps>`
+  margin: 0 -1rem;
+  padding: ${props => (props.simple ? '0.5rem 1rem' : `1rem 2rem`)};
+  border: 2px solid transparent;
+  border-bottom-color: ${props => !props.simple && $light};
+
+  .gatsby-image-wrapper {
+    margin-right: 1rem;
+    height: ${props => (props.simple ? '30px' : '50px')} !important;
+    width: ${props => (props.simple ? '30px' : '50px')} !important;
   }
 `
 

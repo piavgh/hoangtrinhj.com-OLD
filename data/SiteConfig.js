@@ -13,7 +13,7 @@ const config = {
   disqusShortname: 'https-hoangtrinhj-com', // Disqus shortname.
   postDefaultCategoryID: 'Tech', // Default category for posts.
   dateFromFormat: 'YYYY-MM-DD', // Date format used in the frontmatter.
-  dateFormat: 'DD/MM/YYYY', // Date format for display.
+  dateFormat: 'MMM Do, YYYY', // Date format for display.
   userName: 'Hoang Trinh', // Username to display in the author segment.
   userEmail: 'hoang.trinhj@gmail.com', // Email used for RSS feed's author segment
   userTwitter: '', // Optionally renders "Follow Me" in the UserInfo segment.

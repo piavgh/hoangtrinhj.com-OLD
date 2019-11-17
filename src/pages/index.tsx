@@ -85,7 +85,7 @@ const Index = ({ data }) => {
             Latest Articles
             <ViewAllButton to="/blog">View all</ViewAllButton>
           </h2>
-          <PostListing postEdges={latestPostEdges} />
+          <PostListing simple postEdges={latestPostEdges} />
         </Section>
 
         <Section last>
@@ -93,7 +93,7 @@ const Index = ({ data }) => {
             Most Popular
             <ViewAllButton to="/categories/popular">View all</ViewAllButton>
           </h2>
-          <PostListing postEdges={popularPostEdges} />
+          <PostListing simple postEdges={popularPostEdges} />
         </Section>
       </Container>
     </Layout>
@@ -122,6 +122,7 @@ export const pageQuery = graphql`
             title
             tags
             date
+            categories
             thumbnail {
               childImageSharp {
                 fixed(width: 150, height: 150) {
@@ -150,6 +151,7 @@ export const pageQuery = graphql`
             title
             tags
             date
+            categories
             thumbnail {
               childImageSharp {
                 fixed(width: 150, height: 150) {
