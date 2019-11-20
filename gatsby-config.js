@@ -77,18 +77,6 @@ module.exports = {
         theme_color: config.themeColor,
         display: 'minimal-ui',
         icon: `content/images/logo.png`,
-        icons: [
-          {
-            src: '/logos/logo-192x192.png',
-            sizes: '192x192',
-            type: 'image/png',
-          },
-          {
-            src: '/logos/logo-512x512.png',
-            sizes: '512x512',
-            type: 'image/png',
-          },
-        ],
       },
     },
     'gatsby-plugin-offline',
