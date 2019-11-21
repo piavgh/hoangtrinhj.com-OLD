@@ -1,10 +1,10 @@
 import React from 'react'
 
-import logoBlack from '../../../content/images/logoBlack.png'
+import logo from '../../../content/images/logoColor.png'
 import Img from './Img'
 
 const Logo = () => {
-  return <Img src={logoBlack} alt="Logo" />
+  return <Img src={logo} alt="Logo" />
 }
 
 export default Logo

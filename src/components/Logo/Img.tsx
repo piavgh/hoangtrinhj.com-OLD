@@ -10,8 +10,8 @@ const Img = styled.img`
   min-height: 50px;
 
   @media (min-width: ${$mobile}) {
-    width: 64px;
-    height: 64px;
+    width: 72px;
+    height: 72px;
   }
 `
 
