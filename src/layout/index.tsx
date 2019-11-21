@@ -13,7 +13,7 @@ const MainLayout = props => {
       <Helmet>
         <meta name="description" content={config.siteDescription} />
       </Helmet>
-      <Header title={config.siteTitleShort} menuLinks={config.menuLinks} />
+      <Header menuLinks={config.menuLinks} />
       <div style={{ marginTop: '92px', minHeight: 'calc(100vh - 219px)' }}>{children}</div>
       <Footer config={config} />
       <GlobalStyles />

@@ -12,33 +12,6 @@ interface StyledLinkGroupProps {
   right?: boolean
 }
 
-export const NavContainer = styled.div`
-  max-width: ${$width};
-  padding: 0 2rem 0;
-  margin-left: auto;
-  margin-right: auto;
-`
-
-export const BrandLink = styled(Link)`
-  color: ${$dark};
-  font-weight: 500;
-
-  &:hover {
-    color: #111;
-  }
-`
-
-export const NavLink = styled(Link)`
-  color: ${$grey};
-  font-weight: 500;
-  margin: 0 1rem;
-  padding: 1rem 0.5rem;
-
-  &:hover {
-    color: #111;
-  }
-`
-
 export const Container = styled.div`
   max-width: ${$width};
   padding: 0 2rem 0;
