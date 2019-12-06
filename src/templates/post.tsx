@@ -8,9 +8,9 @@ import PostTags from '../components/PostTags'
 import SocialLinks from '../components/SocialLinks'
 import SEO from '../components/SEO'
 import { Container } from '../styles/Styles'
+import PostMeta from '../components/Post/PostMeta'
 import config from '../../data/SiteConfig'
 import './b16-tomorrow-dark.css'
-import './post.css'
 
 export default class PostTemplate extends React.Component {
   render() {
@@ -28,16 +28,16 @@ export default class PostTemplate extends React.Component {
       <Layout>
         <div>
           <Helmet>
-            <title>{`${post.title} | ${config.siteTitle}`}</title>
+            <title>{`${post.title} | ${config.siteTitleShort}`}</title>
           </Helmet>
           <SEO postPath={slug} postNode={postNode} postSEO />
           <Container>
             <h1>{post.title}</h1>
             <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
-            <div className="post-meta">
+            <PostMeta>
               <PostTags tags={post.tags} />
               <SocialLinks postPath={slug} postNode={postNode} />
-            </div>
+            </PostMeta>
             <UserInfo config={config} />
           </Container>
         </div>

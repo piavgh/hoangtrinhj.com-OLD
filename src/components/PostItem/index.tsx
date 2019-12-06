@@ -1,7 +1,6 @@
 import React, { FC } from 'react'
 import { Link } from 'gatsby'
 import moment from 'moment'
-import Grid from '@material-ui/core/Grid'
 
 import { formatDate } from '../../utils/global'
 import Wrapper from './Wrapper'
