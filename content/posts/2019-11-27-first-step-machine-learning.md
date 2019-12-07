@@ -47,3 +47,11 @@ You can check more info here https://www.facebook.com/notes/facebook-developer-c
 
 Well, that's all at the moment.
 Hopefully I can complete these 2 Udemy courses this December, and continue with the Deep Learning Nanodegree next year.
+
+---
+### Update 2019-07-12
+I've requested a refund for this course [Deep Learning A-Z™: Hands-On Artificial Neural Networks](https://www.udemy.com/course/deeplearning) because the content is quite outdated. I can't follow the material in this course.
+
+I'm thinking about this specialization [Deep Learning Specialization](https://www.coursera.org/specializations/deep-learning) from Coursera.
+
+But I will wait until I can finish the course [Machine Learning A-Z™: Hands-On Python & R In Data Science](https://www.udemy.com/course/machinelearning)
