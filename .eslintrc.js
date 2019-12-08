@@ -33,6 +33,7 @@ module.exports = {
     'react/prefer-stateless-function': 'off',
     'react/prop-types': 'off', // Disable prop-types as we use TypeScript for type checking
     'react/no-danger': 'off',
+    'react/jsx-one-expression-per-line': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
     'jsx-a11y/anchor-is-valid': [
       'error',
