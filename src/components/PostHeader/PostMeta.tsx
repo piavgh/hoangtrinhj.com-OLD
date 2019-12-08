@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 
-import { $lightFontColor, $primaryColor } from '../../styles/Variables'
+import { $lightFontColor, $primaryColor, $mobile } from '../../styles/Variables'
 
 const PostMeta = styled.div`
   font-size: 0.8rem;
@@ -24,6 +24,10 @@ const PostMeta = styled.div`
     &:hover {
       color: ${$primaryColor};
     }
+  }
+
+  @media (min-width: ${$mobile}) {
+    font-size: 0.9rem;
   }
 `
 

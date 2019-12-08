@@ -9,6 +9,7 @@ categories:
   - Node.js
 tags:
   - node.js
+  - babel
 ---
 
 ### Setup một project Node.js mới

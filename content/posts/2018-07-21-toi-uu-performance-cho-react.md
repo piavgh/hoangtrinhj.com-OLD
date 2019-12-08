@@ -7,6 +7,8 @@ thumbnail: '../thumbnails/react.png'
 template: post
 categories:
   - React.js
+tags:
+  - react.js
 ---
 
 Bạn mới bắt đầu với React? Bạn đang băn khoăn tại sao càng code nhiều thì website chạy càng chậm? Bạn không biết làm sao để khi test trên Google PageSpeed Insights đạt được kết quả tốt hơn?

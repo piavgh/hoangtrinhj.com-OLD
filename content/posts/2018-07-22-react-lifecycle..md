@@ -6,6 +6,7 @@ title: Bàn một chút về React Lifecycle
 template: post
 thumbnail: '../thumbnails/react.png'
 categories:
+  - React.js
   - Popular
 tags:
   - react.js

@@ -6,7 +6,9 @@ title: Sức mạnh của việc không làm gì cả
 template: post
 thumbnail: '../thumbnails/writing.png'
 categories:
-  - Nhảm
+  - Philosophy
+tags:
+  - philosophy
 ---
 
 ### Câu chuyện ngụ ngôn

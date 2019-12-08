@@ -6,7 +6,9 @@ title: 10 sai lầm mà người thông minh thường mắc phải
 template: post
 thumbnail: '../thumbnails/writing.png'
 categories:
-  - Nhảm
+  - Philosophy
+tags:
+  - philosophy
 ---
 
 Sự thông minh không hoàn toàn giúp ngăn bạn tránh khỏi những sai lầm ngốc nghếch – những điều có thể khiến cho doanh nghiệp của bạn phá sản.
