@@ -1,7 +1,7 @@
 import styled from '@emotion/styled'
 import { Link } from 'gatsby'
 
-import { $grey } from '../../styles/Colors'
+import { $grey } from '../../styles/Variables'
 
 const NavLink = styled(Link)`
   color: ${$grey};

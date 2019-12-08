@@ -1,8 +1,7 @@
 import styled from '@emotion/styled'
 import { lighten, darken } from 'polished'
 
-import { $yellow } from '../../styles/Colors'
-import { $borderRadius, $mobile } from '../../styles/Variables'
+import { $borderRadius, $mobile, $yellow } from '../../styles/Variables'
 
 const StatusNew = styled.div`
   justify-self: flex-end;

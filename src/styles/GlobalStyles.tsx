@@ -1,7 +1,7 @@
 import React from 'react'
 import { Global, css } from '@emotion/core'
 
-import { $mobile } from './Variables'
+import { $h1Mobile, $h1, $h2Mobile, $h2, $mobile } from './Variables'
 
 const GlobalStyles = () => (
   <Global
@@ -24,13 +24,24 @@ const GlobalStyles = () => (
         font-size: 1.2rem;
       }
 
-      h2 {
-        font-size: 1.5rem;
+      h1 {
+        font-size: ${$h1Mobile};
+        font-weight: 700;
         font-family: -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, Helvetica, Arial,
           sans-serif;
 
         @media (min-width: ${$mobile}) {
-          font-size: 2.2rem;
+          font-size: ${$h1};
+        }
+      }
+
+      h2 {
+        font-size: ${$h2Mobile};
+        font-family: -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, Helvetica, Arial,
+          sans-serif;
+
+        @media (min-width: ${$mobile}) {
+          font-size: ${$h2};
         }
       }
 

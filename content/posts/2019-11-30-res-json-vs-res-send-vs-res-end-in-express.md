@@ -9,6 +9,9 @@ template: post
 categories:
   - Javascript
 reference: https://blog.fullstacktraining.com/res-json-vs-res-send-vs-res-end-in-express/
+tags:
+  - javascript
+  - express.js
 ---
 
 Express is one of the most popular web frameworks for Node.js - probably used by most Node.js developers. It's an excellent framework that has a myriad of HTTP utility methods, and it also performs well.

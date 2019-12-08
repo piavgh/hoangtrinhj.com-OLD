@@ -1,7 +1,6 @@
 import styled from '@emotion/styled'
 
-import { $light } from '../../styles/Colors'
-import { $mobile } from '../../styles/Variables'
+import { $mobile, $light } from '../../styles/Variables'
 
 interface WrapperProps {
   simple?: boolean
