@@ -21,4 +21,20 @@ export const $yellow = '#fed356'
 export const $green = '#1fc844'
 
 export const $fontColor = '#404040'
+export const $primaryColor = '#5183f5'
 export const $secondaryColor = 'rgb(255, 90, 95)'
+export const $lightFontColor = 'rgba(0, 0, 0, 0.6)'
+
+// Mobile heading font size
+export const $h1Mobile = '1.75rem'
+export const $h2Mobile = '1.5rem'
+export const $h3Mobile = '1.25rem'
+export const $h4Mobile = '1.1rem'
+export const $h5Mobile = '1rem'
+
+// Heading font size
+export const $h1 = '2.25rem'
+export const $h2 = '2.2rem'
+export const $h3 = '1.75rem'
+export const $h4 = '1.6rem'
+export const $h5 = '1.3rem'

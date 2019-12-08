@@ -1,9 +1,10 @@
 const config = {
-  siteTitle: 'Hoang Trinh - Developer & Startup Founder', // Site title.
-  siteTitleShort: "Hoang' Blog", // Short site title for homescreen (PWA). Preferably should be under 12 characters to prevent truncation.
+  siteTitle: 'Hoang Trinh - Developer & Startup Founder',
+  siteTitleShort: 'Hoang Trinh', // Short site title for homescreen (PWA). Preferably should be under 12 characters to prevent truncation.
   siteTitleAlt: 'Hoang Trinh - Developer & Startup Founder', // Alternative site title for SEO.
   siteLogo: '/logos/logo-1024.png', // Logo used for SEO and manifest.
   siteUrl: 'https://hoangtrinhj.com', // Domain of your website without pathPrefix.
+  repo: 'https://github.com/piavgh/hoangtrinhj.com',
   pathPrefix: '/', // Prefixes all links. For cases when deployed to example.github.io/gatsby-advanced-starter/.
   siteDescription:
     'This is my blog, I write about many things include tech, startup, philosophy, ...', // Website description used for RSS feeds/meta description tag.
