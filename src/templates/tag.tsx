@@ -12,7 +12,10 @@ const TagTemplate = ({ pageContext, data }) => {
   return (
     <Layout>
       <Container className="tag-container">
-        <Helmet title={`Posts tagged as "${tag}" | ${config.siteTitle}`} />
+        <Helmet title={`Posts tagged as "${tag}" - ${config.siteTitle}`} />
+        <h1>
+          Posts tagged as <u>{tag}</u>
+        </h1>
         <PostListing postEdges={postEdges} />
       </Container>
     </Layout>
@@ -43,6 +46,13 @@ export const pageQuery = graphql`
             tags
             date
             categories
+            thumbnail {
+              childImageSharp {
+                fixed(width: 150, height: 150) {
+                  ...GatsbyImageSharpFixed
+                }
+              }
+            }
           }
         }
       }
