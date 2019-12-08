@@ -10,6 +10,7 @@ categories:
   - Learning
 tags:
   - machine learning
+  - experience
 ---
 
 Today I start my tiny little step in the long journey of machine learning

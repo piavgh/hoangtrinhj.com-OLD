@@ -9,6 +9,8 @@ thumbnail: '../thumbnails/js.png'
 template: post
 categories:
   - Javascript
+tags:
+  - javascript
 ---
 
 ![what jackia chan](https://lecoder.io/wp-content/uploads/2018/07/what.png)

@@ -8,7 +8,7 @@ thumbnail: '../thumbnails/writing.png'
 categories:
   - Popular
 tags:
-  - nhảm
+  - philosophy
 ---
 
 Giới thiệu với các bạn, đây là Tuấn (tóc Tuấn rẽ ngôi theo kiểu ... Đan Trường ngày xưa)

@@ -7,6 +7,8 @@ template: post
 thumbnail: '../thumbnails/react.png'
 categories:
   - React.js
+tags:
+  - react.js
 ---
 
 Chào các bạn, hôm nay mình sẽ nói về một chủ đề mình tưởng chừng như khá là đơn giản, ai làm React cũng biết rồi nhưng hóa ra là không phải.

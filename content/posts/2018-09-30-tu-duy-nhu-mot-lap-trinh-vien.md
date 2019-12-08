@@ -6,7 +6,10 @@ title: Tư duy như một lập trình viên
 template: post
 thumbnail: '../thumbnails/writing.png'
 categories:
+  - Philosophy
   - Popular
+tags:
+  - philosophy
 ---
 
 Nếu bạn quan tâm đến lập trình, bạn có thể đã thấy câu nói này trước đây:

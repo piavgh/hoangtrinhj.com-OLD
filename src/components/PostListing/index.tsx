@@ -45,7 +45,7 @@ const PostListing: FC<Props> = props => {
   const postList = getPostList()
 
   return (
-    <div>
+    <section>
       {postList.map(post => {
         let thumbnail
         if (post.thumbnail) {
@@ -54,7 +54,7 @@ const PostListing: FC<Props> = props => {
 
         return <PostItem simple={simple} key={post.title} post={post} thumbnail={thumbnail} />
       })}
-    </div>
+    </section>
   )
 }
 

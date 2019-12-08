@@ -1,18 +1,22 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import { graphql } from 'gatsby'
+
+import config from '../../data/SiteConfig'
 import Layout from '../layout'
 import { Container } from '../styles/Styles'
 import PostListing from '../components/PostListing'
-import config from '../../data/SiteConfig'
 
 const TagTemplate = ({ pageContext, data }) => {
   const { tag } = pageContext
   const postEdges = data.allMarkdownRemark.edges
   return (
     <Layout>
+      <Helmet title={`Posts tagged as "${tag}" - ${config.siteTitleShort}`} />
       <Container className="tag-container">
-        <Helmet title={`Posts tagged as "${tag}" | ${config.siteTitle}`} />
+        <h1>
+          Posts tagged as <u>{tag}</u>
+        </h1>
         <PostListing postEdges={postEdges} />
       </Container>
     </Layout>
@@ -43,6 +47,13 @@ export const pageQuery = graphql`
             tags
             date
             categories
+            thumbnail {
+              childImageSharp {
+                fixed(width: 150, height: 150) {
+                  ...GatsbyImageSharpFixed
+                }
+              }
+            }
           }
         }
       }

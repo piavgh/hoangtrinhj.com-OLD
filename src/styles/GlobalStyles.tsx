@@ -24,6 +24,12 @@ const GlobalStyles = () => (
         font-size: 1.2rem;
       }
 
+      section {
+        @media (min-width: ${$mobile}) {
+          margin: 3rem 0;
+        }
+      }
+
       h1 {
         font-size: ${$h1Mobile};
         font-weight: 700;
