@@ -1,8 +1,7 @@
 import { Link } from 'gatsby'
 import styled from '@emotion/styled'
 
-import { $light, $grey, $dark } from './Colors'
-import { $width, $mobile, $borderRadius } from './Variables'
+import { $width, $mobile, $borderRadius, $light, $grey } from './Variables'
 
 interface SectionProps {
   last?: boolean
