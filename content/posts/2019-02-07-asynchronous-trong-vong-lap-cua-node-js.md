@@ -1,5 +1,5 @@
 ---
-author: hoangth
+author: Hoang Trinh
 date: 2019-02-07 09:03:26+00:00
 slug: asynchronous-trong-vong-lap-cua-node-js
 title: Asynchronous trong vòng lặp của Node.js

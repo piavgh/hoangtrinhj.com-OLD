@@ -1,5 +1,5 @@
 ---
-author: hoangth
+author: Hoang Trinh
 date: 2018-07-21 11:30:48+00:00
 slug: toi-uu-performance-cho-react
 title: Tối ưu performance cho React

@@ -1,5 +1,5 @@
 ---
-author: hoangth
+author: Hoang Trinh
 date: 2019-03-17 03:54:03+00:00
 slug: http-request-voi-golang
 title: HTTP Request với Golang

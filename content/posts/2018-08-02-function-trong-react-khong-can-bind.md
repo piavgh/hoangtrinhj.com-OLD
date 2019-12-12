@@ -1,5 +1,5 @@
 ---
-author: hoangth
+author: Hoang Trinh
 date: 2018-08-02 07:36:58+00:00
 slug: function-trong-react-khong-can-bind
 title: Function trong React không cần bind

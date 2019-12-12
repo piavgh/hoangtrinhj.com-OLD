@@ -1,5 +1,5 @@
 ---
-author: hoangth
+author: Hoang Trinh
 date: 2018-09-30 04:44:37+00:00
 slug: 10-sai-lam-ngoc-nghech-ma-nguoi-thong-minh-thuong-mac-phai
 title: 10 sai lầm mà người thông minh thường mắc phải

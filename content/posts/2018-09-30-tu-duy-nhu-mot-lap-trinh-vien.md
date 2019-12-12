@@ -1,5 +1,5 @@
 ---
-author: hoangth
+author: Hoang Trinh
 date: 2018-09-30 09:14:39+00:00
 slug: tu-duy-nhu-mot-lap-trinh-vien
 title: Tư duy như một lập trình viên

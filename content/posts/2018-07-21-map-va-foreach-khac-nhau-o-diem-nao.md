@@ -1,5 +1,5 @@
 ---
-author: hoangth
+author: Hoang Trinh
 date: 2018-07-21 11:42:41+00:00
 layout: post
 link: https://hoangtrinhj.com/map-va-foreach-khac-nhau-o-diem-nao/

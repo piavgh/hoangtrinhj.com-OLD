@@ -1,5 +1,5 @@
 ---
-author: hoangth
+author: Hoang Trinh
 date: 2019-02-06 10:13:39+00:00
 slug: minimal-setup-node-js-voi-babel
 title: Minimal Setup Node.js với Babel
