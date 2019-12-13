@@ -23,8 +23,10 @@ I send out a message whenever I write something new. Sign up for the newsletter 
 
 ### Around the web
 
+- My resume: [resume.hoangtrinhj.com](https://resume.hoangtrinhj.com)
 - **Email**: [hoang.trinhj@gmail.com](mailto:hoang.trinhj@gmail.com)
 - **GitHub**: [piavgh](https://github.com/piavgh)
+- **LinkedIn**: [hoangtrinhj](https://www.linkedin.com/in/hoangtrinhj/)
 - **Twitter**: [hoangtrinhj](https://twitter.com/hoangtrinhj)
 
 ## Currently Using

@@ -1,5 +1,5 @@
 ---
-author: hoangth
+author: Hoang Trinh
 date: 2018-12-01 12:28:49+00:00
 slug: mot-thang-lam-blockchain
 title: Một tháng làm việc với blockchain

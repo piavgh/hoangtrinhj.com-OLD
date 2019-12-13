@@ -1,5 +1,5 @@
 ---
-author: hoangth
+author: Hoang Trinh
 date: 2018-08-25 04:01:31+00:00
 slug: suc-manh-cua-viec-khong-lam-gi-ca
 title: Sức mạnh của việc không làm gì cả

@@ -1,5 +1,5 @@
 ---
-author: hoangth
+author: Hoang Trinh
 date: 2019-11-30 11:53:41+00:00
 layout: post
 slug: res-json-vs-res-send-vs-res-end-in-express

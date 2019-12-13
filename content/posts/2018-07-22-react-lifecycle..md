@@ -1,5 +1,5 @@
 ---
-author: hoangth
+author: Hoang Trinh
 date: 2018-07-22 04:41:29+00:00
 slug: react-lifecycle
 title: Bàn một chút về React Lifecycle

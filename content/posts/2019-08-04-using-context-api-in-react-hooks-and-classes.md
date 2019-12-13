@@ -1,5 +1,5 @@
 ---
-author: hoangth
+author: Hoang Trinh
 date: 2019-08-04 07:52:00+00:00
 slug: using-context-api-in-react-hooks-and-classes
 title: Using Context API in React (Hooks and Classes)

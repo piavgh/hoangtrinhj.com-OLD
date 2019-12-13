@@ -1,5 +1,5 @@
 ---
-author: hoangth
+author: Hoang Trinh
 date: 2018-07-31 15:18:37+00:00
 slug: vi-sao-khong-cam-thay-hanh-phuc
 title: Vì sao thế hệ 8x, 9x không cảm thấy hạnh phúc?

@@ -1,5 +1,5 @@
 ---
-author: hoangth
+author: Hoang Trinh
 date: 2019-11-27 19:29:00+07:00
 layout: post
 slug: first-step-machine-learning

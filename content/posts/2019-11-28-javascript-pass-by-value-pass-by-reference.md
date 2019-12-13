@@ -1,5 +1,5 @@
 ---
-author: hoangth
+author: Hoang Trinh
 date: 2019-11-28 13:46:00+07:00
 layout: post
 slug: javascript-pass-by-value-pass-by-reference

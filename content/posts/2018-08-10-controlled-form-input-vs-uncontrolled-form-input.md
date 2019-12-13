@@ -1,5 +1,5 @@
 ---
-author: hoangth
+author: Hoang Trinh
 date: 2018-08-10 08:31:20+00:00
 slug: controlled-form-input-vs-uncontrolled-form-input
 title: Controlled form input vs Uncontrolled form input

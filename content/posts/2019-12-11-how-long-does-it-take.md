@@ -1,5 +1,5 @@
 ---
-author: hoangth
+author: Hoang Trinh
 date: 2019-12-11 15:38:00+00:00
 layout: post
 slug: how-long-does-it-take
