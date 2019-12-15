@@ -29,7 +29,7 @@ const PostItem: FC<Props> = props => {
 
   const popular = post.categories.includes('Popular')
   const date = formatDate(post.date)
-  const newest = moment(post.date) > moment().subtract(1, 'months')
+  const newest = moment(post.date) > moment().subtract(1, 'weeks')
 
   return (
     <div>
