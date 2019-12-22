@@ -1,10 +1,10 @@
 ---  
 author: Hoang Trinh  
-date: 2019-19-12 10:37:00+00:00  
+date: 2019-12-22 22:58:00+00:00  
 layout: post  
-slug: react-router-catch-all-routes
-title: Handling 404 pages (catch all routes) with React Router v4
-thumbnail: '../thumbnails/react.png'  
+slug: mysql-create-database-with-utf8-character-set
+title: MySQL Create Database with UTF8 Character Set Syntax
+thumbnail: '../thumbnails/mysql.png'  
 template: post  
 categories:  
  - Mysql
