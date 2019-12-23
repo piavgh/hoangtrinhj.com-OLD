@@ -19,6 +19,7 @@ export const $grey = '#8c8c8c'
 export const $dark = '#4d4d4d'
 export const $yellow = '#fed356'
 export const $green = '#1fc844'
+export const $error = '#d33c40'
 
 export const $fontColor = '#404040'
 export const $primaryColor = '#5183f5'
