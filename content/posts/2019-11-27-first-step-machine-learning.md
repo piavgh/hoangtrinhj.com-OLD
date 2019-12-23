@@ -50,9 +50,24 @@ Well, that's all at the moment.
 Hopefully I can complete these 2 Udemy courses this December, and continue with the Deep Learning Nanodegree next year.
 
 ---
-### Update 2019-07-12
+### Update 2019-12-07
 I've requested a refund for this course [Deep Learning A-Z™: Hands-On Artificial Neural Networks](https://www.udemy.com/course/deeplearning) because the content is quite outdated. I can't follow the material in this course.
 
 I'm thinking about this specialization [Deep Learning Specialization](https://www.coursera.org/specializations/deep-learning) from Coursera.
 
 But I will wait until I can finish the course [Machine Learning A-Z™: Hands-On Python & R In Data Science](https://www.udemy.com/course/machinelearning)
+
+---
+### Update 2019-12-23
+I found a course that fit my learning style.
+
+It's [Practical Deep Learning for Coders, v3
+](https://course.fast.ai/)
+
+Because I'm a software developer, so theory in linear algebra, calculus, probabilities make me sleepy.
+
+I think most people are like me, we learn better with top-down approach (just run the code first, then learn the theory later).
+
+The other approach is bottom-up, which is exactly this course from Andrew Ng: [Deep Learning Specialization](https://www.coursera.org/specializations/deep-learning)
+
+So choose it wisely. Not all people can learn bottom-up.
