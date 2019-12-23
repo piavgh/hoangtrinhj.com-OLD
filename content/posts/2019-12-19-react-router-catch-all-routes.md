@@ -1,6 +1,6 @@
 ---  
 author: Hoang Trinh  
-date: 2019-19-12 10:37:00+00:00  
+date: 2019-12-19 10:37:00+00:00  
 layout: post  
 slug: react-router-catch-all-routes
 title: Handling 404 pages (catch all routes) with React Router v4
