@@ -1,11 +1,12 @@
 ---
 author: Hoang Trinh
-date: 2019-02-07 09:03:26+00:00
+date: 2019-02-07 09:03:00+00:00
 slug: asynchronous-trong-vong-lap-cua-node-js
 title: Asynchronous trong vòng lặp của Node.js
 template: post
 thumbnail: '../thumbnails/node.png'
 categories:
+  - Node.js
   - Popular
 tags:
   - async
@@ -125,7 +126,7 @@ done
 
 Đúng như mong đợi! Vậy là do một lí do nào đó mà hàm .forEach chạy không đúng như mình muốn, trong khi vòng for bình thường lại đúng?
 
-<b>Chính xác thì là vì .forEach không làm gì với cái kết quả trả về trong hàm cả, nó cứ thế chạy tiếp vòng lặp tiếp theo mà không đợi hàm return.</b>
+> Chính xác thì là vì .forEach không làm gì với cái kết quả trả về trong hàm cả, nó cứ thế chạy tiếp vòng lặp tiếp theo mà không đợi hàm return.
 
 Trong khi vòng for bình thường thì sẽ đợi hàm trả về kết quả trước khi thực hiện tiếp vòng lặp tiếp theo.
 
