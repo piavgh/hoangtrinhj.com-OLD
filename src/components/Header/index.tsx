@@ -4,14 +4,15 @@ import { Link } from 'gatsby'
 import Logo from '../Logo'
 import Wrapper from './Wrapper'
 import NavContainer from './NavContainer'
-import NavLinkContainer from './NavLinkContainer'
+import MenuContainer from './MenuContainer'
 import NavLink from './NavLink'
+import Toggle from '../Toggle'
 
 interface Props {
   menuLinks: Array<any>
 }
 
-const Header: React.FC<Props> = ({ menuLinks }) => {
+const Header: React.FC<Props> = ({ menuLinks, theme, toggleTheme }) => {
   return (
     <Wrapper>
       <NavContainer>
@@ -20,13 +21,14 @@ const Header: React.FC<Props> = ({ menuLinks }) => {
             <Logo />
           </Link>
         </div>
-        <div>
+        <MenuContainer>
           {menuLinks.map(link => (
-            <NavLinkContainer key={link.title}>
+            <div key={link.title}>
               <NavLink to={link.link}>{link.title}</NavLink>
-            </NavLinkContainer>
+            </div>
           ))}
-        </div>
+          <Toggle theme={theme} toggleTheme={toggleTheme} />
+        </MenuContainer>
       </NavContainer>
     </Wrapper>
   )
