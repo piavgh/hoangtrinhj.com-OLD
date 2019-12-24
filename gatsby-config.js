@@ -169,5 +169,13 @@ module.exports = {
       },
     },
     `gatsby-plugin-emotion`,
+    {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          include: /icons/,
+        },
+      },
+    },
   ],
 }

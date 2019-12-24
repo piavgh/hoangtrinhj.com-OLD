@@ -6,7 +6,7 @@ const Wrapper = styled.div`
   left: 0;
   z-index: 3;
   width: 100%;
-  background-color: #fff;
+  background-color: ${props => props.theme.body};
 `
 
 export default Wrapper
