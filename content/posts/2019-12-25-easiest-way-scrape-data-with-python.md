@@ -5,7 +5,8 @@ layout: post
 slug: easiest-way-scrape-data-with-python
 title: The easiest way to scrape data in a web page with Python
 thumbnail: '../thumbnails/python.png'  
-template: post  
+template: post
+reference: https://medium.com/@ageitgey/quick-tip-the-easiest-way-to-grab-data-out-of-a-web-page-in-python-7153cecfca58
 categories:  
  - Python
  - Pandas
