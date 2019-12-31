@@ -31,12 +31,12 @@ I send out a message whenever I write something new. Sign up for the newsletter 
 
 ## Currently Using
 
-- **Computer:** MacBook Pro 15-inch 2018
+- **Computer:** MacBook Pro 16-inch 2019
 - **Hosting:** [Netlify](https://netlify.com) (blog)
-- **Editor:** [Visual Studio Code](https://code.visualstudio.com/)
+- **Editor:** [Webstorm](https://www.jetbrains.com/webstorm)
 - **Static Site Generator:** [Gatsby](https://gatsbyjs.org)
 - **Syntax Highlighting:** [PrismJS](http://prismjs.com/)
 - **Newsletter:** [Substack](https://substack.com/)
-- **Notes:** [Evernote](https://evernote.com/)
+- **Notes:** [OneNote](https://onenote.com/)
 
 ## Miscellaneous
