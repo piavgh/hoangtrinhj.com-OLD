@@ -1,6 +1,6 @@
 ---  
 author: Hoang Trinh  
-date: 2019-12-30 09:417:00+00:00
+date: 2019-12-30 09:17:00+00:00
 layout: post  
 slug: why-use-serverless
 title: Why should you use serverless?
