@@ -12,6 +12,8 @@ import {
   $borderRadius,
   $green,
   $error,
+  $h3Mobile,
+  $h3,
 } from './Variables'
 
 interface Theme {
@@ -69,6 +71,18 @@ const GlobalStyles = () => {
 
           @media (min-width: ${$mobile}) {
             font-size: ${$h2};
+          }
+        }
+
+        h3 {
+          font-size: ${$h3Mobile};
+          font-family: -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, Helvetica, Arial,
+            sans-serif;
+          margin-top: 30px;
+
+          @media (min-width: ${$mobile}) {
+            font-size: ${$h3};
+            margin-top: 60px;
           }
         }
 
