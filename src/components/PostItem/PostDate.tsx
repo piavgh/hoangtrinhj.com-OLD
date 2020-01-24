@@ -1,9 +1,9 @@
 import styled from '@emotion/styled'
 
 const PostDate = styled.div`
-  font-size: 1rem;
   display: block;
-  color: rgba(0, 0, 0, 0.4);
+  color: ${props => props.theme.excerptColor};
+  font-size: 1rem;
   font-weight: 500;
 `
 
