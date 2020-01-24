@@ -69,9 +69,11 @@ const GlobalStyles = () => {
           font-size: ${$h2Mobile};
           font-family: -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, Helvetica, Arial,
             sans-serif;
+          margin-top: 2rem;
 
           @media (min-width: ${$mobile}) {
             font-size: ${$h2};
+            margin-top: 4rem;
           }
         }
 
@@ -79,11 +81,11 @@ const GlobalStyles = () => {
           font-size: ${$h3Mobile};
           font-family: -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, Helvetica, Arial,
             sans-serif;
-          margin-top: 30px;
+          margin-top: 1rem;
 
           @media (min-width: ${$mobile}) {
             font-size: ${$h3};
-            margin-top: 60px;
+            margin-top: 2rem;
           }
         }
 
