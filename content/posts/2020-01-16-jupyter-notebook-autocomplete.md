@@ -1,19 +1,19 @@
----  
-author: Hoang Trinh  
+---
+author: Hoang Trinh
 date: 2020-01-16 11:22:00+00:00
-layout: post  
+layout: post
 slug: jupyter-notebook-autocomplete
 title: How to use autocomplete in Jupyter Notebook
-thumbnail: '../thumbnails/thinking.png'  
-template: post  
-categories:  
- - Machine Learning
- - AI
- - How To
-tags:  
- - machine-learning
- - ai
- - how-to
+thumbnail: '../thumbnails/machine-learning.png'
+template: post
+categories:
+  - Machine Learning
+  - AI
+  - How To
+tags:
+  - machine-learning
+  - ai
+  - how-to
 ---
 
 > The best productivity tool for Data Scientist you should be using if you are not doing it yet …
@@ -25,7 +25,8 @@ Most of the programmers are fairly familiar with different autocomplete tools. H
 ---
 
 ## What is autocomplete?
-It is a functionality provided by your programming environment to complete the code you are writing. It has been a blessing for most of the programmers' and it will be for you if you start using it now. 
+
+It is a functionality provided by your programming environment to complete the code you are writing. It has been a blessing for most of the programmers' and it will be for you if you start using it now.
 
 These are only a few advantages of using autocomplete:
 
@@ -36,6 +37,7 @@ These are only a few advantages of using autocomplete:
 ---
 
 ## Jupyter notebook autocomplete
+
 How can you use Jupyter notebook autocomplete? The good news is: you do not install anything as it comes with the standard jupyter notebook set up.
 
 ### Autocomplete for variables
@@ -44,9 +46,9 @@ To start using autocomplete you have to start typing your variable name and hit 
 
 ![Jupyter Notebook Variable Autocomplete](../images/jupyterNotebookVariableAutocomplete.png)
 
-In the example above I have typed ‘my_va’ and hit the tab button. 
+In the example above I have typed ‘my_va’ and hit the tab button.
 
-Autocomplete has suggested that there are two variable names that start with ‘my_va’ and that I could use my_variable_1 and my variable_2. 
+Autocomplete has suggested that there are two variable names that start with ‘my_va’ and that I could use my_variable_1 and my variable_2.
 
 If there was just one variable available for the prefix that I have typed instead of showing the choice dropdowns, autocomplete would type the whole variable name for me.
 
@@ -63,6 +65,7 @@ If you have created an object already and assigned it to some variable you can u
 ![Jupyter Notebook Method Autocomplete](../images/jupyterNotebookMethodAutocomplete.png)
 
 ### Autocomplete for modules
+
 Last but not least you can use autocomplete to import the names of your modules.
 
 So you almost remember how this library with many cool algorithms was called but not fully.
