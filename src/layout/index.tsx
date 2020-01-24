@@ -12,7 +12,7 @@ import Footer from '../components/Footer'
 const MainLayout = props => {
   const { children } = props
 
-  const [theme, setTheme] = useState('light')
+  const [theme, setTheme] = useState('dark')
   const toggleTheme = () => {
     if (theme === 'light') {
       setTheme('dark')

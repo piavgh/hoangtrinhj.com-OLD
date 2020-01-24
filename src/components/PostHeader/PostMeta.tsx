@@ -4,7 +4,7 @@ import { $lightFontColor, $primaryColor, $mobile } from '../../styles/Variables'
 
 const PostMeta = styled.div`
   font-size: 0.8rem;
-  color: ${$lightFontColor};
+  color: ${props => props.theme.text};
   display: inline-block;
   margin-bottom: 1rem;
 
@@ -13,16 +13,12 @@ const PostMeta = styled.div`
   }
 
   a {
-    color: ${$lightFontColor};
+    color: ${props => props.theme.text};
 
     &.comment-link,
     &.twitter-link,
     &.github-link {
       margin: 0 0.5rem;
-    }
-
-    &:hover {
-      color: ${$primaryColor};
     }
   }
 

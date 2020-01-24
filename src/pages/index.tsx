@@ -8,7 +8,7 @@ import Layout from '../layout'
 import PostListing from '../components/PostListing'
 import SEO from '../components/SEO'
 import config from '../../data/SiteConfig'
-import hoangAvatar from '../../content/images/hoangtrinh.jpg'
+import hoangAvatar from '../../content/images/hoangtrinh.png'
 import {
   Container,
   Section,
@@ -32,22 +32,12 @@ const Index = ({ data }) => {
         <Grid container spacing={4} alignItems="center">
           <Grid item xs={12} sm={7}>
             <HeadlineSection>
-              <h1>I&apos;m Hoang</h1>
+              <h1>Hi, I'm Hoang</h1>
               <p>
                 I build products on Google Cloud Platform and write about modern JavaScript,
                 Node.js, design and web development.
               </p>
               <SocialButtons>
-                <div>
-                  <a
-                    className="twitter-follow-button"
-                    href="https://twitter.com/hoangtrinhj"
-                    data-size="large"
-                    data-show-screen-name="false"
-                  >
-                    Follow @hoangtrinhj
-                  </a>
-                </div>
                 <div>
                   <GitHubButton
                     href="https://github.com/piavgh"
@@ -70,9 +60,7 @@ const Index = ({ data }) => {
                 alt="Hoang Avatar"
               />
               <div>
-                <h3>Get updates</h3>
-                <p>Open source projects and development tutorials</p>
-                <SubscribeButton href="https://hoang.substack.com">Subscribe</SubscribeButton>
+                <p>"You Only Have to Be Right Once"</p>
               </div>
             </NewsletterSection>
           </Grid>

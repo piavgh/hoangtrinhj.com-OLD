@@ -66,16 +66,16 @@ export const NewsletterSection = styled.div`
   margin: 2rem 0;
   padding: 1.5rem;
   text-align: center;
-  background: ${$light};
+  background: ${props => props.theme.background};
 `
 
 export const NewsletterAvatar = styled.img`
   margin-top: 0.5rem;
-  border-radius: 8px;
-  width: 50px;
+  border-radius: 50%;
+  width: 100px;
 
   @media (min-width: ${$mobile}) {
-    width: 75px;
+    width: 180px;
   }
 `
 

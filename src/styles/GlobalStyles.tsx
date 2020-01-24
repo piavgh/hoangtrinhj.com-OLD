@@ -65,6 +65,7 @@ const GlobalStyles = () => {
         }
 
         h2 {
+          color: ${theme.text};
           font-size: ${$h2Mobile};
           font-family: -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, Helvetica, Arial,
             sans-serif;
@@ -116,7 +117,7 @@ const GlobalStyles = () => {
         }
 
         blockquote {
-          color: rgba(0, 0, 0, 0.7);
+          color: ${theme.text};
           border: 2px solid ${$yellow};
           background: lighten(${$yellow}, 28%);
           border-radius: ${$borderRadius};
