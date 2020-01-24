@@ -7,7 +7,7 @@ thumbnail: '../thumbnails/js.png'
 
 I’m Hoang Trinh, a web developer, technical writer from Ha Noi, Viet Nam. I currently work as a CTO for a startup.
 
-This is my current product: [Form Publisher & Approvals Flow - PerformFlow](https://gsuite.google.com/marketplace/app/form_publisher_approvals_flow_performflo/175817313914 "Form Publisher & Approvals Flow - PerformFlow"), which has more than 60k users in just 2 months after launching.
+This is my current product: [PerformFlow](https://gsuite.google.com/marketplace/app/performflow_form_publisher_approvals_wor/175817313914 'PerformFlow'), which has more than 60k users in just 2 months after launching.
 
 I started this website as a place to document everything I learned. I [love self-learning](/) and [write about everything I know](/blog).
 
@@ -19,7 +19,7 @@ I send out a message whenever I write something new. Sign up for the newsletter 
 
 <a class="button" href="https://hoang.substack.com" target="_blank" rel="noopenner noreferrer">Join the newsletter</a>
 
-![Me](../images/hoangtrinh.jpg)
+![Me](../images/hoangtrinh.png)
 
 ### Around the web
 
