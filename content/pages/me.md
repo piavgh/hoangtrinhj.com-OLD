@@ -23,7 +23,7 @@ I send out a message whenever I write something new. Sign up for the newsletter 
 
 ### Around the web
 
-- My resume: [resume.hoangtrinhj.com](https://resume.hoangtrinhj.com)
+- **My resume**: [resume.hoangtrinhj.com](https://resume.hoangtrinhj.com)
 - **Email**: [hoang.trinhj@gmail.com](mailto:hoang.trinhj@gmail.com)
 - **GitHub**: [piavgh](https://github.com/piavgh)
 - **LinkedIn**: [hoangtrinhj](https://www.linkedin.com/in/hoangtrinhj/)
@@ -32,11 +32,11 @@ I send out a message whenever I write something new. Sign up for the newsletter 
 ## Currently Using
 
 - **Computer:** MacBook Pro 16-inch 2019
-- **Hosting:** [Netlify](https://netlify.com) (blog)
-- **Editor:** [Webstorm](https://www.jetbrains.com/webstorm)
-- **Static Site Generator:** [Gatsby](https://gatsbyjs.org)
+- **Editor:** [Visual Studio Code](https://code.visualstudio.com/)
+- **Notes:** [Evernote](https://evernote.com/)
+- **Web Framework:** [Gatsby](https://gatsbyjs.org)
+- **Hosting:** [Netlify](https://netlify.com)
 - **Syntax Highlighting:** [PrismJS](http://prismjs.com/)
 - **Newsletter:** [Substack](https://substack.com/)
-- **Notes:** [OneNote](https://onenote.com/)
 
 ## Miscellaneous
