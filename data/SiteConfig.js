@@ -24,12 +24,16 @@ const config = {
     "Yeah, I like animals better than people sometimes... Especially dogs. Dogs are the best. Every time you come home, they act like they haven't seen you in a year. And the good thing about dogs... is they got different dogs for different people.", // User description to display in the author segment.
   menuLinks: [
     {
-      title: 'Me',
+      title: 'About Me',
       link: '/me/',
     },
     {
       title: 'Articles',
       link: '/blog/',
+    },
+    {
+      title: 'Contact',
+      link: '/contact/',
     },
   ],
   themeColor: '#c62828', // Used for setting manifest and progress theme colors.
