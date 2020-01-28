@@ -5,8 +5,6 @@ template: page
 thumbnail: '../thumbnails/writing.png'
 ---
 
-I build projects on Google Cloud Platform and write about modern JavaScript, Node.js, Golang, Python, design and web development.
-
 If you have any comments, ideas, or you just want to say hi, don't hesitate to send me an email at [hoang.trinhj@gmail.com](hoang.trinhj@gmail.com)!
 
 ## Newsletter
