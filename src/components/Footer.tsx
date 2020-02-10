@@ -8,9 +8,9 @@ import {
   FooterImage,
   FooterLink,
 } from '../styles/Styles'
-import netlify from '../../content/images/netlify.png'
-import gatsby from '../../content/images/gatsby.png'
-import github from '../../content/images/github.png'
+import netlify from '../../content/thumbnails/netlify.png'
+import gatsby from '../../content/thumbnails/gatsby.png'
+import github from '../../content/thumbnails/github.png'
 
 const Footer = () => {
   return (
