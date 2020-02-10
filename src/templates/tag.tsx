@@ -3,7 +3,6 @@ import { Helmet } from 'react-helmet'
 import { graphql } from 'gatsby'
 
 import config from '../../data/SiteConfig'
-import Layout from '../layout'
 import { Container } from '../styles/Styles'
 import PostListing from '../components/PostListing'
 
@@ -11,7 +10,7 @@ const TagTemplate = ({ pageContext, data }) => {
   const { tag } = pageContext
   const postEdges = data.allMarkdownRemark.edges
   return (
-    <Layout>
+    <div>
       <Helmet title={`Posts tagged as "${tag}" - ${config.siteTitleShort}`} />
       <Container className="tag-container">
         <h1>
@@ -19,7 +18,7 @@ const TagTemplate = ({ pageContext, data }) => {
         </h1>
         <PostListing postEdges={postEdges} />
       </Container>
-    </Layout>
+    </div>
   )
 }
 

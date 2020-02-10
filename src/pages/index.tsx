@@ -4,7 +4,6 @@ import { graphql } from 'gatsby'
 import GitHubButton from 'react-github-btn'
 import Grid from '@material-ui/core/Grid'
 
-import Layout from '../layout'
 import PostListing from '../components/PostListing'
 import SEO from '../components/SEO'
 import config from '../../data/SiteConfig'
@@ -14,7 +13,6 @@ import {
   Section,
   HeadlineSection,
   SocialButtons,
-  SubscribeButton,
   NewsletterSection,
   NewsletterAvatar,
   ViewAllButton,
@@ -25,7 +23,7 @@ const Index = ({ data }) => {
   const popularPostEdges = data.popular.edges
 
   return (
-    <Layout>
+    <div>
       <Helmet title={config.siteTitle} />
       <SEO />
       <Container>
@@ -84,7 +82,7 @@ const Index = ({ data }) => {
           <PostListing simple postEdges={popularPostEdges} />
         </Section>
       </Container>
-    </Layout>
+    </div>
   )
 }
 

@@ -3,7 +3,6 @@ import { Helmet } from 'react-helmet'
 import { graphql } from 'gatsby'
 
 import config from '../../data/SiteConfig'
-import Layout from '../layout'
 import { Container } from '../styles/Styles'
 import PostListing from '../components/PostListing'
 
@@ -11,13 +10,13 @@ const CategoryTemplate = ({ pageContext, data }) => {
   const { category } = pageContext
   const postEdges = data.allMarkdownRemark.edges
   return (
-    <Layout>
+    <div>
       <Helmet title={`Posts in category "${category}" - ${config.siteTitleShort}`} />
       <Container className="category-container">
         <h1>{category}</h1>
         <PostListing postEdges={postEdges} />
       </Container>
-    </Layout>
+    </div>
   )
 }
 

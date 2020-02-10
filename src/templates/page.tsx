@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { Helmet } from 'react-helmet'
 import { graphql } from 'gatsby'
 
-import Layout from '../layout'
 import SEO from '../components/SEO'
 import config from '../../data/SiteConfig'
 import { Container } from '../styles/Styles'
@@ -18,7 +17,7 @@ export default class PageTemplate extends Component {
     }
 
     return (
-      <Layout>
+      <div>
         <Helmet>
           <title>{`${page.title} – ${config.siteTitle}`}</title>
         </Helmet>
@@ -31,7 +30,7 @@ export default class PageTemplate extends Component {
             <div className="page" dangerouslySetInnerHTML={{ __html: postNode.html }} />
           </article>
         </Container>
-      </Layout>
+      </div>
     )
   }
 }
