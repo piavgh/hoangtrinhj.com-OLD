@@ -6,7 +6,6 @@ import Img from 'gatsby-image'
 import config from '../../data/SiteConfig'
 import { formatDate, editOnGithub } from '../utils/global'
 
-import Layout from '../layout'
 import SEO from '../components/SEO'
 import PostHeader from '../components/PostHeader'
 import PostMeta from '../components/PostHeader/PostMeta'
@@ -41,44 +40,42 @@ export default class PostTemplate extends React.Component {
     }/${post.slug}/&via=hoangtrinhj.com`
 
     return (
-      <Layout>
-        <div>
-          <Helmet>
-            <title>{`${post.title} - ${config.siteTitleShort}`}</title>
-          </Helmet>
-          <SEO postPath={slug} postNode={postNode} postSEO />
-          <Container>
-            <PostHeader thumbnail={thumbnail}>
-              {thumbnail && <Img fixed={post.thumbnail.childImageSharp.fixed} />}
+      <div>
+        <Helmet>
+          <title>{`${post.title} - ${config.siteTitleShort}`}</title>
+        </Helmet>
+        <SEO postPath={slug} postNode={postNode} postSEO />
+        <Container>
+          <PostHeader thumbnail={thumbnail}>
+            {thumbnail && <Img fixed={post.thumbnail.childImageSharp.fixed} />}
 
-              <div className="flex">
-                <h1>{post.title}</h1>
-                <PostMeta>
-                  <time className="date">{date}</time>/
-                  <a className="twitter-link" href={twitterShare}>
-                    Share
-                  </a>
-                  /
-                  <a
-                    className="github-link"
-                    href={githubLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Edit
-                    <span role="img" aria-label="Edit">
-                      ✏️
-                    </span>
-                  </a>
-                </PostMeta>
-                <PostTags tags={post.tags} />
-              </div>
-            </PostHeader>
+            <div className="flex">
+              <h1>{post.title}</h1>
+              <PostMeta>
+                <time className="date">{date}</time>/
+                <a className="twitter-link" href={twitterShare}>
+                  Share
+                </a>
+                /
+                <a
+                  className="github-link"
+                  href={githubLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Edit
+                  <span role="img" aria-label="Edit">
+                    ✏️
+                  </span>
+                </a>
+              </PostMeta>
+              <PostTags tags={post.tags} />
+            </div>
+          </PostHeader>
 
-            <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
-          </Container>
-        </div>
-      </Layout>
+          <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
+        </Container>
+      </div>
     )
   }
 }

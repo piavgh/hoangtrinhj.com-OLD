@@ -3,7 +3,6 @@ import { Helmet } from 'react-helmet'
 import { graphql } from 'gatsby'
 
 import config from '../../data/SiteConfig'
-import Layout from '../layout'
 import PostListing from '../components/PostListing'
 import SEO from '../components/SEO'
 import { Container, Section } from '../styles/Styles'
@@ -12,7 +11,7 @@ const BlogPage = ({ data }) => {
   const postEdges = data.posts.edges
 
   return (
-    <Layout>
+    <div>
       <Helmet title={`Articles – ${config.siteTitle}`} />
       <SEO />
 
@@ -22,7 +21,7 @@ const BlogPage = ({ data }) => {
           <PostListing postEdges={postEdges} />
         </Section>
       </Container>
-    </Layout>
+    </div>
   )
 }
 
