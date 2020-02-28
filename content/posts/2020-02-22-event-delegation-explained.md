@@ -16,6 +16,8 @@ tags:
 
 > What is event delegation and why is it useful? Can you show an example of how to use it?
 
+## Answer
+
 Event delegation is a technique of delegating events to a single common ancestor. Due to event bubbling, events "bubble" up the DOM tree by executing any handlers progressively on each ancestor element up to the root that may be listening to it.
 
 DOM events provide useful information about the element that initiated the event via Event.target. This allows the parent element to handle behavior as though the target element was listening to the event, rather than all children of the parent or the parent itself.
