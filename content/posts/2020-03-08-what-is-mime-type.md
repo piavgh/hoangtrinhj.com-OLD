@@ -4,7 +4,7 @@ date: 2020-03-08 18:39:00+00:00
 layout: post
 slug: what-is-mime-type
 title: What is MIME type?
-thumbnail: '../thumbnails/interview-questions.png'
+thumbnail: '../thumbnails/question.png'
 template: post
 categories:
   - Interview Questions
