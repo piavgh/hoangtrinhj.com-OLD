@@ -4,7 +4,7 @@ date: 2020-02-28 08:45:00+00:00
 layout: post
 slug: what-is-a-closure
 title: What is a closure?
-thumbnail: '../thumbnails/interview-questions.png'
+thumbnail: '../thumbnails/question.png'
 template: post
 categories:
   - Interview Questions

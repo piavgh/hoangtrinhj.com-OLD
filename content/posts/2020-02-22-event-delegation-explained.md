@@ -4,7 +4,7 @@ date: 2020-02-22 11:16:00+00:00
 layout: post
 slug: event-delegation-explained
 title: Event Delegation Explained
-thumbnail: '../thumbnails/interview-questions.png'
+thumbnail: '../thumbnails/question.png'
 template: post
 categories:
   - Interview Questions

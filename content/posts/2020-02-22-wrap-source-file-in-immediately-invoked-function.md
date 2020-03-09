@@ -4,7 +4,7 @@ date: 2020-02-28 08:53:00+00:00
 layout: post
 slug: wrap-source-file-in-immediately-invoked-function
 title: Why wrapping source file in an immediately invoked function?
-thumbnail: '../thumbnails/interview-questions.png'
+thumbnail: '../thumbnails/question.png'
 template: post
 categories:
   - Interview Questions
