@@ -1,4 +1,4 @@
-import { $light } from '../styles/Variables'
+import { $light } from './Variables'
 
 export const lightTheme = {
   body: '#FFFFFF',
