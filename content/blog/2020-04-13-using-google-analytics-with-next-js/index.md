@@ -19,19 +19,19 @@ tags:
   - javascript
 ---
 
-There are lots of tutorials online that give you instruction on how to set up Google Analytics with Next.js project.
+There are lots of tutorials online that give you instructions on how to set up Google Analytics with Next.js project.
 
-But most of them requires you to use `react-ga`, a library that basically wrap Google Analytics logic inside a React component.
+But most of them require you to use `react-ga`, a library that basically wraps Google Analytics logic inside a React component.
 
 This is good, but I personally prefer a solution that:
 
 - Does not require an external dependency (`react-ga` in this case)
 - Easy to implement (you don't need to make a thousand lines of custom code)
-- Is recommended officialy
+- Is recommended officially
 
 My solution is based on an official example of Next.js team here: [Example app with analytics](https://github.com/zeit/next.js/tree/canary/examples/with-google-analytics)
 
-You can also check this Github issue for some of other workarounds that people used: [Adding GA script tag? #160](https://github.com/zeit/next.js/issues/160)
+You can also check this Github issue for some of the other workarounds that people used: [Adding GA script tag? #160](https://github.com/zeit/next.js/issues/160)
 
 Let's get started!
 
@@ -44,7 +44,7 @@ Let's get started!
 
 ### 1. Create GA Helper
 
-This helper file stores your Google Analytics tracking ID and provide some methods that you need to track your page views.
+This helper file stores your Google Analytics tracking ID and provides some methods that you need to track your page views.
 
 Add this to `lib/gtag.js`:
 
@@ -68,7 +68,7 @@ export const event = ({ action, category, label, value }) => {
 }
 ```
 
-### Update \_document.js
+### 2. Update \_document.js
 
 Create a custom `_document.js` that will load our Google Analytics script for us. We will only load this script in production so that we don't track items locally. In the pages directory create a new file, `_document.js` and add the following code:
 
@@ -141,7 +141,7 @@ export default class CustomDocument extends Document {
 
 ### 3. Update \_app.js
 
-You will trigger pageview event here, when the router detects route is changed.
+You will trigger pageview event here when the router detects route is changed.
 
 **File:** `pages/_app.js`
 
