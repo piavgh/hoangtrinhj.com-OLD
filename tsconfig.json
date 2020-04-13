@@ -18,6 +18,7 @@
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "typeRoots": ["../../node_modules/@types", "./@types"],
+    "baseUrl": ".",
     "paths": {
       "containers/*": ["src/client/containers/*"],
       "components/*": ["src/client/components/*"]
