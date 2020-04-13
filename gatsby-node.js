@@ -1,56 +1,21 @@
-const path = require('path')
+const path = require(`path`)
 const _ = require('lodash')
-const moment = require('moment')
-const siteConfig = require('./data/SiteConfig')
+const { createFilePath } = require(`gatsby-source-filesystem`)
 
-exports.onCreateNode = ({ node, actions, getNode }) => {
-  const { createNodeField } = actions
-  let slug
-  if (node.internal.type === 'MarkdownRemark') {
-    const fileNode = getNode(node.parent)
-    const parsedFilePath = path.parse(fileNode.relativePath)
-    if (
-      Object.prototype.hasOwnProperty.call(node, 'frontmatter') &&
-      Object.prototype.hasOwnProperty.call(node.frontmatter, 'title')
-    ) {
-      slug = `/${_.kebabCase(node.frontmatter.title)}`
-    } else if (parsedFilePath.name !== 'index' && parsedFilePath.dir !== '') {
-      slug = `/${parsedFilePath.dir}/${parsedFilePath.name}/`
-    } else if (parsedFilePath.dir === '') {
-      slug = `/${parsedFilePath.name}/`
-    } else {
-      slug = `/${parsedFilePath.dir}/`
-    }
-
-    if (Object.prototype.hasOwnProperty.call(node, 'frontmatter')) {
-      if (Object.prototype.hasOwnProperty.call(node.frontmatter, 'slug'))
-        slug = `/${_.kebabCase(node.frontmatter.slug)}`
-      if (Object.prototype.hasOwnProperty.call(node.frontmatter, 'date')) {
-        const date = moment(node.frontmatter.date, siteConfig.dateFromFormat)
-        if (!date.isValid) console.warn(`WARNING: Invalid date.`, node.frontmatter)
-
-        createNodeField({
-          node,
-          name: 'date',
-          value: date.toISOString(),
-        })
-      }
-    }
-    createNodeField({ node, name: 'slug', value: slug })
-  }
-}
-
-exports.createPages = async ({ graphql, actions }) => {
+exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
-  const postPage = path.resolve('src/templates/post.tsx')
-  const pagePage = path.resolve('src/templates/page.tsx')
-  const tagPage = path.resolve('src/templates/tag.tsx')
-  const categoryPage = path.resolve('src/templates/category.tsx')
 
-  const markdownQueryResult = await graphql(
+  const blogPost = path.resolve(`./src/templates/blog-post.tsx`)
+  const blogList = path.resolve(`./src/templates/blog-list.tsx`)
+  const tagTemplate = path.resolve(`./src/templates/tags.tsx`)
+
+  return graphql(
     `
       {
-        allMarkdownRemark {
+        allMarkdownRemark(
+          sort: { fields: [frontmatter___date], order: DESC }
+          limit: 1000
+        ) {
           edges {
             node {
               fields {
@@ -59,102 +24,108 @@ exports.createPages = async ({ graphql, actions }) => {
               frontmatter {
                 title
                 tags
-                categories
-                date
-                template
               }
             }
           }
         }
       }
     `
-  )
+  ).then((result) => {
+    if (result.errors) {
+      throw result.errors
+    }
 
-  if (markdownQueryResult.errors) {
-    console.error(markdownQueryResult.errors)
-    throw markdownQueryResult.errors
+    // Create blog posts pages.
+    const posts = result.data.allMarkdownRemark.edges
+
+    posts.forEach((post, index) => {
+      const previous = index === posts.length - 1 ? null : posts[index + 1].node
+      const next = index === 0 ? null : posts[index - 1].node
+
+      createPage({
+        path: post.node.fields.slug,
+        component: blogPost,
+        context: {
+          slug: post.node.fields.slug,
+          previous,
+          next,
+          tag: post.node.frontmatter.tags,
+        },
+      })
+    })
+
+    // Create blog post list pages
+    const postsPerPage = 5
+    const numPages = Math.ceil(posts.length / postsPerPage)
+
+    Array.from({ length: numPages }).forEach((_, i) => {
+      createPage({
+        path: i === 0 ? `/page/1` : `/page/${i + 1}`,
+        component: blogList,
+        context: {
+          limit: postsPerPage,
+          skip: i * postsPerPage,
+          numPages,
+          currentPage: i + 1,
+        },
+      })
+    })
+
+    // Tag pages:
+    let tags = []
+    // Iterate through each post, putting all found tags into `tags`
+    _.each(posts, (edge) => {
+      if (_.get(edge, 'node.frontmatter.tags')) {
+        tags = tags.concat(edge.node.frontmatter.tags)
+      }
+    })
+    // Eliminate duplicate tags
+    tags = _.uniq(tags)
+
+    // Make tag pages
+    tags.forEach((tag) => {
+      createPage({
+        path: `/tags/${_.kebabCase(tag)}/`,
+        component: tagTemplate,
+        context: {
+          tag,
+        },
+      })
+    })
+
+    return null
+  })
+}
+
+exports.onCreateNode = ({ node, actions, getNode }) => {
+  const { createNodeField } = actions
+
+  if (node.internal.type === `MarkdownRemark`) {
+    const value = createFilePath({ node, getNode })
+    if (typeof node.frontmatter.slug !== 'undefined') {
+      createNodeField({
+        node,
+        name: 'slug',
+        value: node.frontmatter.slug,
+      })
+    } else {
+      const value = createFilePath({ node, getNode })
+      createNodeField({
+        node,
+        name: 'slug',
+        value,
+      })
+    }
   }
+}
 
-  const tagSet = new Set()
-  const categorySet = new Set()
-
-  const postsEdges = markdownQueryResult.data.allMarkdownRemark.edges
-
-  postsEdges.sort((postA, postB) => {
-    const dateA = moment(postA.node.frontmatter.date, siteConfig.dateFromFormat)
-
-    const dateB = moment(postB.node.frontmatter.date, siteConfig.dateFromFormat)
-
-    if (dateA.isBefore(dateB)) return 1
-    if (dateB.isBefore(dateA)) return -1
-
-    return 0
-  })
-
-  postsEdges.forEach((edge, index) => {
-    if (edge.node.frontmatter.tags) {
-      edge.node.frontmatter.tags.forEach(tag => {
-        tagSet.add(tag)
-      })
+// for React-Hot-Loader: react-🔥-dom patch is not detected
+exports.onCreateWebpackConfig = ({ getConfig, stage }) => {
+  const config = getConfig()
+  if (stage.startsWith('develop') && config.resolve) {
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      'react-dom': '@hot-loader/react-dom',
     }
-
-    if (edge.node.frontmatter.categories) {
-      edge.node.frontmatter.categories.forEach(category => {
-        categorySet.add(category)
-      })
-    }
-
-    const nextID = index + 1 < postsEdges.length ? index + 1 : 0
-    const prevID = index - 1 >= 0 ? index - 1 : postsEdges.length - 1
-    const nextEdge = postsEdges[nextID]
-    const prevEdge = postsEdges[prevID]
-
-    if (edge.node.frontmatter.template === 'post') {
-      createPage({
-        path: edge.node.fields.slug,
-        component: postPage,
-        context: {
-          slug: edge.node.fields.slug,
-          nexttitle: nextEdge.node.frontmatter.title,
-          nextslug: nextEdge.node.fields.slug,
-          prevtitle: prevEdge.node.frontmatter.title,
-          prevslug: prevEdge.node.fields.slug,
-        },
-      })
-    }
-
-    if (edge.node.frontmatter.template === 'page') {
-      createPage({
-        path: edge.node.fields.slug,
-        component: pagePage,
-        context: {
-          slug: edge.node.fields.slug,
-          nexttitle: nextEdge.node.frontmatter.title,
-          nextslug: nextEdge.node.fields.slug,
-          prevtitle: prevEdge.node.frontmatter.title,
-          prevslug: prevEdge.node.fields.slug,
-        },
-      })
-    }
-  })
-
-  tagSet.forEach(tag => {
-    createPage({
-      path: `/tags/${_.kebabCase(tag)}/`,
-      component: tagPage,
-      context: {
-        tag,
-      },
-    })
-  })
-
-  categorySet.forEach(category => {
-    createPage({
-      path: `/categories/${_.kebabCase(category)}/`,
-      component: categoryPage,
-      context: {
-        category,
-      },
-    })
-  })
+  }
 }

@@ -1,197 +1,149 @@
-const urljoin = require('url-join')
-const config = require('./data/SiteConfig')
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
 
 module.exports = {
-  pathPrefix: config.pathPrefix === '' ? '/' : config.pathPrefix,
   siteMetadata: {
-    siteUrl: urljoin(config.siteUrl, config.pathPrefix),
-    rssMetadata: {
-      site_url: urljoin(config.siteUrl, config.pathPrefix),
-      feed_url: urljoin(config.siteUrl, config.pathPrefix, config.siteRss),
-      title: config.siteTitle,
-      description: config.siteDescription,
-      image_url: `${urljoin(config.siteUrl, config.pathPrefix)}/logos/logo-512.png`,
-    },
+    title: `hoangtrinhj.com`,
+    author: `Hoang`,
+    contactEmail: 'hoang.trinhj@gmail.com',
+    about: `I build products on Google Cloud Platform and write about modern JavaScript,
+    Node.js, design and web development.`,
+    description: `This is my blog, I write about many things include tech, startup, philosophy, ...`,
+    siteUrl: `https://hoangtrinhj.com`,
   },
   plugins: [
-    'gatsby-plugin-react-helmet',
-    'gatsby-plugin-lodash',
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: `gatsby-plugin-styled-components`,
       options: {
-        name: 'assets',
-        path: `${__dirname}/static/`,
+        minify: false, // Breaks styles if not set to false
       },
     },
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: `gatsby-source-filesystem`,
       options: {
-        name: 'posts',
-        path: `${__dirname}/content/`,
+        path: `${__dirname}/content/blog`,
+        name: `blog`,
       },
     },
     {
-      resolve: 'gatsby-transformer-remark',
+      resolve: `gatsby-source-filesystem`,
       options: {
-        pedantic: false,
+        path: `${__dirname}/content/assets`,
+        name: `assets`,
+      },
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
         plugins: [
           {
-            resolve: 'gatsby-remark-images',
+            resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 800,
+              maxWidth: 590,
+              linkImagesToOriginal: true,
             },
           },
           {
-            resolve: 'gatsby-remark-embed-video',
+            resolve: `gatsby-remark-responsive-iframe`,
             options: {
-              width: 800,
-              ratio: 1.77, // Optional: Defaults to 16/9 = 1.77
-              height: 400, // Optional: Overrides optional.ratio
-              related: false, // Optional: Will remove related videos from the end of an embedded YouTube video.
-              noIframeBorder: true, // Optional: Disable insertion of <style> border: 0
-              urlOverrides: [
-                {
-                  id: 'youtube',
-                  embedURL: videoId => `https://www.youtube-nocookie.com/embed/${videoId}`,
-                },
-              ], // Optional: Override URL of a service provider, e.g to enable youtube-nocookie support
+              wrapperStyle: `margin-bottom: 1.0725rem`,
             },
           },
           {
-            resolve: 'gatsby-remark-responsive-iframe',
-          },
-          'gatsby-remark-prismjs',
-          'gatsby-remark-copy-linked-files',
-          'gatsby-remark-autolink-headers',
-        ],
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-google-analytics',
-      options: {
-        trackingId: config.googleAnalyticsID,
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-nprogress',
-      options: {
-        color: config.themeColor,
-      },
-    },
-    'gatsby-plugin-sharp',
-    'gatsby-transformer-sharp',
-    'gatsby-plugin-catch-links',
-    'gatsby-plugin-twitter',
-    'gatsby-plugin-sitemap',
-    {
-      resolve: 'gatsby-plugin-manifest',
-      options: {
-        name: config.siteTitle,
-        short_name: config.siteTitleShort,
-        description: config.siteDescription,
-        start_url: config.pathPrefix,
-        background_color: config.backgroundColor,
-        theme_color: config.themeColor,
-        display: 'minimal-ui',
-        icon: `content/images/faviconColor.png`,
-      },
-    },
-    'gatsby-plugin-offline',
-    {
-      resolve: 'gatsby-plugin-feed',
-      options: {
-        setup(ref) {
-          const ret = ref.query.site.siteMetadata.rssMetadata
-          ret.allMarkdownRemark = ref.query.allMarkdownRemark
-          ret.generator = "Hoang's Blog"
-          return ret
-        },
-        query: `
-        {
-          site {
-            siteMetadata {
-              rssMetadata {
-                site_url
-                feed_url
-                title
-                description
-                image_url
-              }
-            }
-          }
-        }
-      `,
-        feeds: [
-          {
-            serialize(ctx) {
-              const { rssMetadata } = ctx.query.site.siteMetadata
-              return ctx.query.allMarkdownRemark.edges.map(edge => ({
-                categories: edge.node.frontmatter.tags,
-                date: edge.node.fields.date,
-                title: edge.node.frontmatter.title,
-                description: edge.node.excerpt,
-                url: rssMetadata.site_url + edge.node.fields.slug,
-                guid: rssMetadata.site_url + edge.node.fields.slug,
-                custom_elements: [
-                  { 'content:encoded': edge.node.html },
-                  { author: config.userEmail },
-                ],
-              }))
+            resolve: `gatsby-remark-katex`,
+            options: {
+              // Add any KaTeX options from https://github.com/KaTeX/KaTeX/blob/master/docs/options.md here
+              strict: `ignore`,
             },
-            query: `
-            {
-              allMarkdownRemark(
-                limit: 1000,
-                sort: { order: DESC, fields: [fields___date] },
-              ) {
-                edges {
-                  node {
-                    excerpt
-                    html
-                    timeToRead
-                    fields {
-                      slug
-                      date
-                    }
-                    frontmatter {
-                      title
-                      date
-                      categories
-                      tags
-                    }
-                  }
-                }
-              }
-            }
-          `,
-            output: config.siteRss,
+          },
+          {
+            resolve: `gatsby-remark-mermaid`,
+          },
+          {
+            resolve: `gatsby-remark-prismjs`,
+          },
+          {
+            resolve: `gatsby-remark-prismjs`,
+          },
+
+          {
+            resolve: `gatsby-remark-copy-linked-files`,
+          },
+          {
+            resolve: `gatsby-remark-smartypants`,
           },
         ],
       },
     },
     {
-      resolve: `gatsby-plugin-typography`,
-      options: {
-        pathToConfigModule: `src/utils/typography`,
-      },
+      resolve: `gatsby-transformer-sharp`,
     },
-    `gatsby-plugin-typescript`,
     {
-      resolve: `gatsby-plugin-material-ui`,
-      options: {
-        stylesProvider: {
-          injectFirst: true,
-        },
-      },
+      resolve: `gatsby-plugin-sharp`,
     },
-    `gatsby-plugin-emotion`,
     {
-      resolve: 'gatsby-plugin-react-svg',
+      resolve: `gatsby-plugin-google-analytics`,
       options: {
-        rule: {
-          include: /icons/,
-        },
+        trackingId: process.env.GA_TRACKING_ID,
       },
     },
+    {
+      resolve: `gatsby-plugin-feed`,
+    },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Hoang Trinh - Developer & Startup Founder`,
+        short_name: `Hoang's Blog`,
+        start_url: `/`,
+        background_color: `#ffffff`,
+        theme_color: `#22b7b5`,
+        display: `minimal-ui`,
+        icon: `content/assets/favicon.png`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-offline`,
+    },
+    {
+      resolve: `gatsby-plugin-react-helmet`,
+    },
+    {
+      resolve: `gatsby-plugin-typescript`,
+    },
+    {
+      resolve: `gatsby-plugin-lodash`,
+    },
+    {
+      resolve: `gatsby-source-instagram`,
+      options: {
+        // username: process.env.INSTAGRAM_USERNAME,
+        // access_token: process.env.INSTAGRAM_ACCESS_TOKEN,
+        // instagram_id: process.env.INSTAGRAM_ID,
+      },
+    },
+    // {
+    //   resolve: 'gatsby-plugin-mailchimp',
+    //   options: {
+    //     endpoint: process.env.MAILCHIMP_ENDPOINT,
+    //   },
+    // },
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Poppins`,
+            variants: [`300`, `400`, `500`, `600`, `700`],
+          },
+          {
+            family: `Fira Sans`,
+            variants: [`100`, `300`, `400`, `500`, `600`, `700`],
+          },
+        ],
+      },
+    },
+    `gatsby-alias-imports`,
   ],
 }
