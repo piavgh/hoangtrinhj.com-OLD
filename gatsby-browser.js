@@ -1,7 +1,5 @@
-import React from 'react'
-import Layout from './src/layout'
-
-// Wraps every page in a component
-export const wrapPageElement = ({ element, props }) => {
-  return <Layout {...props}>{element}</Layout>
-}
+// custom typefaces
+import 'typeface-montserrat'
+import 'typeface-merriweather'
+require('prismjs/themes/prism.css')
+require('katex/dist/katex.min.css')

@@ -1,99 +1,97 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Helmet } from 'react-helmet'
-import urljoin from 'url-join'
-import config from '../../data/SiteConfig'
+import { useStaticQuery, graphql } from 'gatsby'
 
-class SEO extends Component {
-  render() {
-    const replacePath = path => (path === `/` ? path : path.replace(/\/$/, ``))
-    const { postNode, postPath, postSEO } = this.props
-    let title
-    let description
-    let image = ''
-    let postURL
-    if (postSEO) {
-      const postMeta = postNode.frontmatter
-      title = postMeta.title
-      description = postMeta.description ? postMeta.description : postNode.excerpt
-      if (postMeta.thumbnail) {
-        image = postMeta.thumbnail.childImageSharp.fixed.src
+type SEOProps = {
+  description?: string
+  lang?: string
+  meta?: any
+  keywords?: any
+  title: string
+}
+
+const SEO: React.FunctionComponent<SEOProps> = ({
+  description,
+  lang,
+  meta,
+  keywords,
+  title,
+}) => {
+  const { site } = useStaticQuery(
+    graphql`
+      query {
+        site {
+          siteMetadata {
+            title
+            description
+            author
+          }
+        }
       }
-      postURL = urljoin(config.siteUrl, config.pathPrefix, replacePath(postPath))
-    } else {
-      title = config.siteTitle
-      description = config.siteDescription
-      image = config.siteLogo
-    }
+    `
+  )
 
-    image = urljoin(config.siteUrl, config.pathPrefix, image)
-    const blogURL = urljoin(config.siteUrl, config.pathPrefix)
-    const schemaOrgJSONLD = [
-      {
-        '@context': 'http://schema.org',
-        '@type': 'WebSite',
-        url: blogURL,
-        name: title,
-        alternateName: config.siteTitleAlt ? config.siteTitleAlt : '',
-      },
-    ]
-    if (postSEO) {
-      schemaOrgJSONLD.push(
+  const metaDescription = description || site.siteMetadata.description
+
+  return (
+    <Helmet
+      htmlAttributes={{
+        lang,
+      }}
+      title={title}
+      titleTemplate={`%s | ${site.siteMetadata.title}`}
+      meta={[
         {
-          '@context': 'http://schema.org',
-          '@type': 'BreadcrumbList',
-          itemListElement: [
-            {
-              '@type': 'ListItem',
-              position: 1,
-              item: {
-                '@id': postURL,
-                name: title,
-                image,
-              },
-            },
-          ],
+          name: `description`,
+          content: metaDescription,
         },
         {
-          '@context': 'http://schema.org',
-          '@type': 'BlogPosting',
-          url: blogURL,
-          name: title,
-          alternateName: config.siteTitleAlt ? config.siteTitleAlt : '',
-          headline: title,
-          image: {
-            '@type': 'ImageObject',
-            url: image,
-          },
-          description,
-        }
-      )
-    }
-    return (
-      <Helmet>
-        {/* General tags */}
-        <meta name="description" content={description} />
-        <meta name="image" content={image} />
+          property: `og:title`,
+          content: title,
+        },
+        {
+          property: `og:description`,
+          content: metaDescription,
+        },
+        {
+          property: `og:type`,
+          content: `website`,
+        },
+        {
+          name: `twitter:card`,
+          content: `summary`,
+        },
+        {
+          name: `twitter:creator`,
+          content: site.siteMetadata.author,
+        },
+        {
+          name: `twitter:title`,
+          content: title,
+        },
+        {
+          name: `twitter:description`,
+          content: metaDescription,
+        },
+      ]
+        .concat(
+          keywords.length > 0
+            ? {
+                name: `keywords`,
+                content: keywords.join(`, `),
+              }
+            : []
+        )
+        .concat(meta)}
+    />
+  )
+}
 
-        {/* Schema.org tags */}
-        <script type="application/ld+json">{JSON.stringify(schemaOrgJSONLD)}</script>
-
-        {/* OpenGraph tags */}
-        <meta property="og:url" content={postSEO ? postURL : blogURL} />
-        {postSEO ? <meta property="og:type" content="article" /> : null}
-        <meta property="og:title" content={title} />
-        <meta property="og:description" content={description} />
-        <meta property="og:image" content={image} />
-        <meta property="fb:app_id" content={config.siteFBAppID ? config.siteFBAppID : ''} />
-
-        {/* Twitter Card tags */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:creator" content={config.userTwitter ? config.userTwitter : ''} />
-        <meta name="twitter:title" content={title} />
-        <meta name="twitter:description" content={description} />
-        <meta name="twitter:image" content={image} />
-      </Helmet>
-    )
-  }
+SEO.defaultProps = {
+  lang: `en`,
+  meta: [],
+  keywords: [],
+  description: ``,
 }
 
 export default SEO
