@@ -80,12 +80,10 @@
     "url": "git+https://github.com:piavgh/hoangtrinhj.com.git"
   },
   "scripts": {
-    "build": "gatsby build",
     "dev": "gatsby develop",
-    "format": "prettier --write src/**/*.{js,jsx}",
-    "start": "npm run develop",
+    "build": "gatsby build",
     "serve": "gatsby serve",
-    "now-build": "yarn run build",
+    "format": "prettier --write src/**/*.{js,jsx}",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   }
 }
