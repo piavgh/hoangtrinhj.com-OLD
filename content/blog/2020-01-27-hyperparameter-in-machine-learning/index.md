@@ -18,8 +18,6 @@ tags:
   - deep-learning
 ---
 
-![What is Hyperparameter in Machine Learning](./hyperparameter-cover.jpg)
-
 It can be confusing when you get started in applied machine learning.
 
 There are so many terms to use and many of the terms may not be used consistently. This is especially true if you have come from another field of study that may use some of the same terms as machine learning, but they are used differently.
