@@ -37,10 +37,10 @@ Let's get started!
 
 ### Table of contents
 
-1. Create GA Helper
-2. Update \_document.js
-3. Update \_app.js
-4. Conclusion
+1. [Create GA Helper](#1-create-ga-helper)
+2. [Update \_document.js](#2-update-_documentjs)
+3. [Update \_app.js](#3-update-_appjs)
+4. [Conclusion](#4-conclusion)
 
 ### 1. Create GA Helper
 
