@@ -20,8 +20,6 @@ tags:
   - how-to
 ---
 
-![Jupyter Notebook In Visual Code](./jupyter-notebook-visual-code.png)
-
 People who work in Python, they love to do their research and experiments in Jupyter Notebook. I am a fan of lightweight code editors like Visual Studio Code (VS Code) and Sublime Text. VS Code is a world class tool to write code in any language. Not just writing code, it supports many DevOps tools like Ansible, Kubernetes, Yaml, Docker and many more.
 
 Most Data Scientists around the globe use Jupyter Notebook as an editor for Machine Learning Development, Research and Experiment. Jupyter Notebook Supports Python, Java, R, Julia, Matlab, Octave, Scheme, Processing, Scala, and many more. It's an editor and to be precise it's a web-based editor designed for python and other Programming Languages. Previously Jupyter notebook was known as iPython. It’s open Source, everyone around the globe uses it.
