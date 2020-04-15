@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components"
+import { createGlobalStyle } from 'styled-components'
 
 const ResetCSS = createGlobalStyle`
   html {
@@ -63,7 +63,11 @@ const ResetCSS = createGlobalStyle`
     line-height: 2;
     margin: 0 0 1.7em 0;
   }
-  
+
+  p > img {
+    max-width: 100%;
+  }
+
   input, textarea, select, button{font-family: 'Fira Sans',sans-serif;}
 
   ul,ol {
@@ -138,7 +142,7 @@ const ResetCSS = createGlobalStyle`
         }
       }
     }
-    
+
   }
 `
 export default ResetCSS
