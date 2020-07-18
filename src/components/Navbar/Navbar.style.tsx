@@ -1,5 +1,5 @@
-import styled from "styled-components"
-import { themeGet } from "styled-system"
+import styled from 'styled-components'
+import { themeGet } from 'styled-system'
 
 const HeaderWrapper = styled.header`
   position: relative;
@@ -11,7 +11,7 @@ export const NavbarWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid ${themeGet("borderColor", "#DBDBDB")};
+  border-bottom: 1px solid ${themeGet('borderColor', '#DBDBDB')};
   padding: 30px 75px;
   background-color: #fff;
   transition: 0.25s ease-in-out;
@@ -60,20 +60,19 @@ export const MenuItem = styled.li`
   margin: 0 20px;
   list-style: none;
   a {
-    padding: 5px 10px;
     white-space: nowrap;
-    font-size: ${themeGet("fontSizes.3", "15")}px;
-    line-height: ${themeGet("lineHeights.normal", "1")};
-    font-weight: ${themeGet("fontWeights.3", "400")};
-    color: ${themeGet("colors.lightTextColor", "#757575")};
+    font-size: ${themeGet('fontSizes.3', '15')}px;
+    line-height: ${themeGet('lineHeights.normal', '1')};
+    font-weight: ${themeGet('fontWeights.3', '400')};
+    color: ${themeGet('colors.lightTextColor', '#757575')};
     transition: 0.15s ease-in-out;
 
     &:hover {
-      color: ${themeGet("colors.textColor", "#292929")};
+      color: ${themeGet('colors.textColor', '#292929')};
     }
     &.active-link {
-      color: ${themeGet("colors.textColor", "#292929")};
-      font-weight: ${themeGet("fontWeights.4", "500")};
+      color: ${themeGet('colors.textColor', '#292929')};
+      font-weight: ${themeGet('fontWeights.4', '500')};
     }
   }
 `
@@ -221,14 +220,14 @@ export const DrawerContentWrapper = styled.div`
           }
         }
         &:before {
-          content: "";
+          content: '';
           position: absolute;
           width: 3px;
           height: 18px;
           top: 50%;
           left: 0;
           opacity: 0;
-          background: ${themeGet("colors.textColor", "#292929")};
+          background: ${themeGet('colors.textColor', '#292929')};
           transform: translateY(-50%);
         }
       }
@@ -271,7 +270,7 @@ export const HamburgerIcon = styled.div`
   span {
     display: block;
     height: 2px;
-    background-color: ${themeGet("colors.textColor", "#292929")};
+    background-color: ${themeGet('colors.textColor', '#292929')};
     margin-bottom: 5px;
     &:last-child {
       margin-bottom: 0;
