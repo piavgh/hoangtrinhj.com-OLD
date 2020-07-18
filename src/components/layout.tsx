@@ -6,7 +6,6 @@ import Navbar from './Navbar/Navbar'
 import Newsletter from './Newsletter/Newsletter'
 import Footer from './Footer/Footer'
 import ScrollUpButton from './ScrollUpButton/ScrollUpButton'
-import InstagramShowcase from '../containers/InstagramShowcase'
 import ResetCss from './resetCSS'
 import { theme } from '../theme'
 
@@ -25,21 +24,14 @@ const Layout: React.FunctionComponent<LayoutProps> = ({ children }) => {
 
         {children}
 
-        {process.env.INSTAGRAM_TOKEN ? <InstagramShowcase /> : ''}
-
-        {process.env.INSTAGRAM_ACCESS_TOKEN ? <Newsletter /> : ''}
+        {process.env.MAILCHIMP_ENDPOINT ? <Newsletter /> : ''}
 
         <Footer>
           Copyright &copy; {new Date().getFullYear()}
           <a href="https://hoangtrinhj.com/"> hoangtrinhj.com.</a>
         </Footer>
 
-        <ScrollToTop
-          showUnder={300}
-          duration={700}
-          easing="easeInOutCubic"
-          style={{ bottom: 30, right: 20 }}
-        >
+        <ScrollToTop showUnder={300} duration={700} easing="easeInOutCubic" style={{ bottom: 30, right: 20 }}>
           <ScrollUpButton />
         </ScrollToTop>
       </>
