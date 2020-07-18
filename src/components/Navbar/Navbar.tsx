@@ -1,26 +1,32 @@
 import React, { useState } from 'react'
 import { Link } from 'gatsby'
-import { IoIosSearch, IoIosClose } from 'react-icons/io'
+import { IoIosClose, IoIosSearch } from 'react-icons/io'
 import { DrawerProvider } from 'components/Drawer/DrawerContext'
 import Menu from './Menu'
 import MobileMenu from './MobileMenu'
 import SearchContainer from '../../containers/SearchContainer/SearchContainer'
 import HeaderWrapper, {
-  NavbarWrapper,
   Logo,
   MenuWrapper,
+  NavbarWrapper,
   NavSearchButton,
+  NavSearchFromWrapper,
   NavSearchWrapper,
   SearchCloseButton,
-  NavSearchFromWrapper,
 } from './Navbar.style'
 import LogoImage from '../../images/logo.png'
+import KofiButton from '../Button/Kofi'
 
 type NavbarProps = {
   className?: string
 }
 
 const MenuItems = [
+  {
+    label: <KofiButton />,
+    url: 'https://ko-fi.com/hoang',
+    external: true,
+  },
   {
     label: 'About Me',
     url: '/me',
@@ -31,10 +37,7 @@ const MenuItems = [
   },
 ]
 
-const Navbar: React.FunctionComponent<NavbarProps> = ({
-  className,
-  ...props
-}) => {
+const Navbar: React.FunctionComponent<NavbarProps> = ({ className, ...props }) => {
   const [state, setState] = useState({
     toggle: false,
     search: '',
@@ -69,11 +72,7 @@ const Navbar: React.FunctionComponent<NavbarProps> = ({
         <MenuWrapper>
           <Menu items={MenuItems} />
         </MenuWrapper>
-        <NavSearchButton
-          type="button"
-          aria-label="search"
-          onClick={toggleHandle}
-        >
+        <NavSearchButton type="button" aria-label="search" onClick={toggleHandle}>
           <IoIosSearch size="23px" />
         </NavSearchButton>
       </NavbarWrapper>
@@ -81,11 +80,7 @@ const Navbar: React.FunctionComponent<NavbarProps> = ({
       <NavSearchWrapper className={state.toggle === true ? 'expand' : ''}>
         <NavSearchFromWrapper>
           <SearchContainer />
-          <SearchCloseButton
-            type="submit"
-            aria-label="close"
-            onClick={toggleHandle}
-          >
+          <SearchCloseButton type="submit" aria-label="close" onClick={toggleHandle}>
             <IoIosClose />
           </SearchCloseButton>
         </NavSearchFromWrapper>

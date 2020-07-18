@@ -1,6 +1,6 @@
-import React from "react"
-import { Link } from "gatsby"
-import { MenuItemWrapper, MenuItem } from "./Navbar.style"
+import React from 'react'
+import { Link } from 'gatsby'
+import { MenuItemWrapper, MenuItem } from './Navbar.style'
 
 type MenuProps = {
   items: MenuItemsProps[]
@@ -13,13 +13,9 @@ type MenuItemsProps = {
   external?: boolean
 }
 
-const Menu: React.FunctionComponent<MenuProps> = ({
-  items,
-  className,
-  ...props
-}) => {
+const Menu: React.FunctionComponent<MenuProps> = ({ items, className, ...props }) => {
   // Add all classs to an array
-  const addAllClasses = ["menu"]
+  const addAllClasses = ['menu']
 
   // className prop checking
   if (className) {
@@ -27,11 +23,13 @@ const Menu: React.FunctionComponent<MenuProps> = ({
   }
 
   return (
-    <MenuItemWrapper className={addAllClasses.join(" ")} {...props}>
+    <MenuItemWrapper className={addAllClasses.join(' ')} {...props}>
       {items.map((item, index) => (
         <MenuItem key={index}>
           {item.external ? (
-            <a href={item.url}>{item.label}</a>
+            <a href={item.url} target="_blank" rel="noopener noreferrer">
+              {item.label}
+            </a>
           ) : (
             <Link to={item.url} activeClassName="active-link">
               {item.label}
