@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { themeGet } from 'styled-system';
+import styled from 'styled-components'
+import { themeGet } from 'styled-system'
 
 export const PostDetailsWrapper = styled.div`
   position: relative;
@@ -34,7 +34,7 @@ export const PostDetailsWrapper = styled.div`
       }
     }
   }
-`;
+`
 
 export const PostTitle = styled.h1`
   font-size: 30px;
@@ -54,7 +54,7 @@ export const PostTitle = styled.h1`
     font-size: 20px;
     margin-bottom: 15px;
   }
-`;
+`
 
 export const PostDate = styled.span`
   display: block;
@@ -68,7 +68,7 @@ export const PostDate = styled.span`
   @media (max-width: 575px) {
     font-size: 13px;
   }
-`;
+`
 
 export const PostPreview = styled.div`
   margin-top: 45px;
@@ -94,7 +94,7 @@ export const PostPreview = styled.div`
     left: 10%;
     filter: blur(15px);
   }
-`;
+`
 
 export const PostDescriptionWrapper = styled.div`
   margin-top: 90px;
@@ -108,7 +108,7 @@ export const PostDescriptionWrapper = styled.div`
   @media (max-width: 575px) {
     margin-top: 30px;
   }
-`;
+`
 
 export const PostDescription = styled.div`
   font-size: ${themeGet('fontSizes.4', '16')}px;
@@ -193,43 +193,41 @@ export const PostDescription = styled.div`
     &:before,
     &:after {
       content: '';
-      width: 30px;
+      width: 40px;
       height: 1px;
       display: block;
       background: #292929;
     }
     &:before {
-      margin-bottom: 60px;
+      margin-bottom: 40px;
       @media (max-width: 1200px) {
-        margin-bottom: 50px;
+        margin-bottom: 30px;
       }
       @media (max-width: 575px) {
-        margin-bottom: 40px;
+        margin-bottom: 20px;
       }
     }
     &:after {
-      margin-top: 60px;
+      margin-top: 40px;
       @media (max-width: 1200px) {
-        margin-top: 50px;
+        margin-top: 30px;
       }
       @media (max-width: 575px) {
-        margin-top: 40px;
+        margin-top: 20px;
       }
     }
 
     p {
-      font-size: 21px;
-      font-weight: 500;
+      font-size: 1.1rem;
+      font-weight: 400;
+      font-style: italic;
       line-height: 2;
       margin-bottom: 23px;
       @media (max-width: 1200px) {
-        font-size: 19px;
-      }
-      @media (max-width: 1200px) {
-        font-size: 17px;
+        font-size: 0.95rem;
       }
       @media (max-width: 575px) {
-        font-size: 15px;
+        font-size: 0.85rem;
       }
       &:last-child {
         margin-bottom: 0;
@@ -248,7 +246,7 @@ export const PostDescription = styled.div`
     transition: 0.15s ease-in-out;
     color: ${themeGet('primary', '#D10068')};
   }
-`;
+`
 
 export const PostTags = styled.div`
   display: flex;
@@ -263,4 +261,4 @@ export const PostTags = styled.div`
     font-weight: 400;
     color: ${themeGet('primary', '#D10068')};
   }
-`;
+`
