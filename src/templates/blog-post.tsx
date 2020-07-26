@@ -1,24 +1,14 @@
-import React from "react"
-import { graphql, Link } from "gatsby"
-import _ from "lodash"
-import urljoin from "url-join"
-import { DiscussionEmbed } from "disqus-react"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import PostCard from "../components/PostCard/postCard"
-import PostDetails from "../components/PostDetails/postDetails"
-import {
-  FacebookShareButton,
-  TwitterShareButton,
-  PinterestShareButton,
-  RedditShareButton,
-} from "react-share"
-import {
-  IoLogoFacebook,
-  IoLogoTwitter,
-  IoLogoPinterest,
-  IoLogoReddit,
-} from "react-icons/io"
+import React from 'react'
+import { graphql, Link } from 'gatsby'
+import _ from 'lodash'
+import urljoin from 'url-join'
+import { DiscussionEmbed } from 'disqus-react'
+import Layout from '../components/layout'
+import SEO from '../components/seo'
+import PostCard from '../components/PostCard/postCard'
+import PostDetails from '../components/PostDetails/postDetails'
+import { FacebookShareButton, TwitterShareButton, PinterestShareButton, RedditShareButton } from 'react-share'
+import { IoLogoFacebook, IoLogoTwitter, IoLogoPinterest, IoLogoReddit } from 'react-icons/io'
 import {
   BlogPostDetailsWrapper,
   RelatedPostWrapper,
@@ -29,7 +19,7 @@ import {
   PostShare,
   PostTags,
   BlogPostComment,
-} from "./templates.style"
+} from './templates.style'
 
 const BlogPostTemplate = (props: any) => {
   const post = props.data.markdownRemark
@@ -45,19 +35,12 @@ const BlogPostTemplate = (props: any) => {
   }
   return (
     <Layout>
-      <SEO
-        title={post.frontmatter.title}
-        description={post.frontmatter.description || post.excerpt}
-      />
+      <SEO title={post.frontmatter.title} description={post.frontmatter.description || post.excerpt} />
       <BlogPostDetailsWrapper>
         <PostDetails
           title={post.frontmatter.title}
           date={post.frontmatter.date}
-          preview={
-            post.frontmatter.cover == null
-              ? null
-              : post.frontmatter.cover.childImageSharp.fluid
-          }
+          preview={post.frontmatter.cover == null ? null : post.frontmatter.cover.childImageSharp.fluid}
           description={post.html}
         />
 
@@ -79,16 +62,10 @@ const BlogPostTemplate = (props: any) => {
             <TwitterShareButton url={shareUrl} title={title}>
               <IoLogoTwitter />
             </TwitterShareButton>
-            <PinterestShareButton
-              url={shareUrl}
-              media={urljoin(siteUrl, post.frontmatter.cover.publicURL)}
-            >
+            <PinterestShareButton url={shareUrl} media={urljoin(siteUrl, post.frontmatter.cover.publicURL)}>
               <IoLogoPinterest />
             </PinterestShareButton>
-            <RedditShareButton
-              url={shareUrl}
-              title={`${post.frontmatter.title}`}
-            >
+            <RedditShareButton url={shareUrl} title={`${post.frontmatter.title}`}>
               <IoLogoReddit />
             </RedditShareButton>
           </PostShare>
@@ -107,11 +84,7 @@ const BlogPostTemplate = (props: any) => {
                 <PostCard
                   title={node.frontmatter.title || node.fields.slug}
                   url={node.fields.slug}
-                  image={
-                    node.frontmatter.cover == null
-                      ? null
-                      : node.frontmatter.cover.childImageSharp.fluid
-                  }
+                  image={node.frontmatter.cover == null ? null : node.frontmatter.cover.childImageSharp.fluid}
                   tags={node.frontmatter.tags}
                 />
               </RelatedPostItem>
@@ -157,10 +130,7 @@ export const pageQuery = graphql`
     allMarkdownRemark(
       limit: 3
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: {
-        frontmatter: { tags: { in: $tag } }
-        fields: { slug: { ne: $slug } }
-      }
+      filter: { frontmatter: { tags: { in: $tag } }, fields: { slug: { ne: $slug } } }
     ) {
       edges {
         node {

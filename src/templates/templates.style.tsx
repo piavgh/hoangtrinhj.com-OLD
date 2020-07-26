@@ -1,5 +1,5 @@
-import styled from "styled-components"
-import { themeGet } from "styled-system"
+import styled from 'styled-components'
+import { themeGet } from 'styled-system'
 
 export const BlogPostsWrapper = styled.div`
   margin: 0 auto;
@@ -53,16 +53,16 @@ export const RelatedPostWrapper = styled.div`
 `
 
 export const RelatedPostTitle = styled.h2`
-  color: ${themeGet("colors.textColor", "#292929")};
+  color: ${themeGet('colors.textColor', '#292929')};
   font-size: 16px;
   font-weight: 500;
-  font-family: ${themeGet("fontFamily.0", "'Fira Sans',sans-serif")};
+  font-family: ${themeGet('fontFamily.0', "'Fira Sans',sans-serif")};
   letter-spacing: 0.17em;
   position: relative;
   margin-bottom: 30px;
 
   &:after {
-    content: "";
+    content: '';
     width: 68px;
     height: 1px;
     background: #292929;
@@ -195,7 +195,7 @@ export const TagPageHeading = styled.div`
   }
 
   &:after {
-    content: "";
+    content: '';
     display: block;
     width: 90px;
     height: 1px;
@@ -207,7 +207,7 @@ export const TagPageHeading = styled.div`
 export const TagName = styled.h1`
   font-size: 30px;
   font-weight: 700;
-  color: ${themeGet("colors.primary", "#D10068")};
+  color: ${themeGet('colors.primary', '#D10068')};
   margin-bottom: 8px;
   @media (max-width: 990px) {
     font-size: 26px;
@@ -246,19 +246,19 @@ export const PostShare = styled.div`
     flex-shrink: 0;
   }
   > div,
-  .SocialMediaShareButton {
+  .react-share__ShareButton {
     cursor: pointer;
-    margin-left: 25px;
+    margin-left: 15px;
     font-size: 22px;
     outline: 0;
-    color: ${themeGet("colors.textColor", "#292929")};
+    color: ${themeGet('colors.textColor', '#292929')};
     transition: 0.15s ease-in-out;
     @media (max-width: 767px) {
       font-size: 18px;
-      margin-left: 20px;
+      margin-left: 10px;
     }
     &:hover {
-      color: ${themeGet("colors.primary", "#D10068")};
+      color: ${themeGet('colors.primary', '#D10068')};
     }
     svg {
       display: block;
@@ -297,7 +297,7 @@ export const PostTags = styled.div`
     margin-right: 30px;
     font-size: 14px;
     font-weight: 400;
-    color: ${themeGet("primary", "#D10068")};
+    color: ${themeGet('primary', '#D10068')};
     @media (max-width: 990px) {
       font-size: 13px;
       margin-right: 25px;
