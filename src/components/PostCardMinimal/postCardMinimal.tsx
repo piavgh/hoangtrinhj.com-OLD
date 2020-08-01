@@ -1,7 +1,7 @@
-import * as React from "react"
-import { Link } from "gatsby"
-import _ from "lodash"
-import Img from "gatsby-image"
+import * as React from 'react'
+import { Link } from 'gatsby'
+import _ from 'lodash'
+import Img from 'gatsby-image'
 import {
   PostCardWrapper,
   PostPreview,
@@ -13,7 +13,7 @@ import {
   PostTags,
   PostDateAndPreview,
   ReadMore,
-} from "./postCardMinimal.style"
+} from './postCardMinimal.style'
 
 interface PostCardMinimalProps {
   image?: any
@@ -23,7 +23,7 @@ interface PostCardMinimalProps {
   date?: string
   tags?: []
   className?: string
-  imageType?: "fixed" | "fluid"
+  imageType?: 'fixed' | 'fluid'
 }
 
 const PostCardMinimal: React.FunctionComponent<PostCardMinimalProps> = ({
@@ -38,7 +38,7 @@ const PostCardMinimal: React.FunctionComponent<PostCardMinimalProps> = ({
   ...props
 }) => {
   // Add all classs to an array
-  const addAllClasses = ["post_card"]
+  const addAllClasses = ['post_card']
 
   // className prop checking
   if (className) {
@@ -46,7 +46,7 @@ const PostCardMinimal: React.FunctionComponent<PostCardMinimalProps> = ({
   }
 
   return (
-    <PostCardWrapper className={addAllClasses.join(" ")} {...props}>
+    <PostCardWrapper className={addAllClasses.join(' ')} {...props}>
       <PostDetails className="post_details">
         <PostDateAndPreview>
           {date && (
@@ -60,7 +60,7 @@ const PostCardMinimal: React.FunctionComponent<PostCardMinimalProps> = ({
           {image == null ? null : (
             <PostPreview className="post_preview">
               <Link to={url}>
-                {imageType === "fluid" ? (
+                {imageType === 'fluid' ? (
                   <Img fluid={image} alt="post preview" />
                 ) : (
                   <Img fixed={image} alt="post preview" />
@@ -101,7 +101,7 @@ const PostCardMinimal: React.FunctionComponent<PostCardMinimalProps> = ({
 }
 
 PostCardMinimal.defaultProps = {
-  imageType: "fluid",
+  imageType: 'fluid',
 }
 
 export default PostCardMinimal

@@ -1,4 +1,4 @@
-import colors from "./colors"
+import colors from './colors'
 
 export const theme = {
   breakpoints: [576, 768, 991, 1220],
@@ -13,21 +13,13 @@ export const theme = {
     text: 2,
   },
   letterSpacings: {
-    normal: "normal",
-    tracked: "0.1em",
-    tight: "-0.05em",
-    mega: "0.25em",
+    normal: 'normal',
+    tracked: '0.1em',
+    tight: '-0.05em',
+    mega: '0.25em',
   },
-  borders: [
-    0,
-    "1px solid",
-    "2px solid",
-    "3px solid",
-    "4px solid",
-    "5px solid",
-    "6px solid",
-  ],
-  radius: [3, 4, 5, 10, 20, 30, 60, 120, "50%"],
+  borders: [0, '1px solid', '2px solid', '3px solid', '4px solid', '5px solid', '6px solid'],
+  radius: [3, 4, 5, 10, 20, 30, 60, 120, '50%'],
   widths: [36, 40, 45, 48, 54, 70, 81, 128, 256],
   heights: [36, 40, 44, 48, 50, 55, 70, 80, 120, 230],
   maxWidths: [16, 32, 64, 128, 256, 512, 768, 1024, 1536],
@@ -37,7 +29,7 @@ export const theme = {
       color: colors.primary,
       backgroundColor: colors.primary,
       borderColor: colors.primary,
-      "&:hover": {
+      '&:hover': {
         backgroundColor: colors.primaryHover,
         borderColor: colors.primaryHover,
       },
