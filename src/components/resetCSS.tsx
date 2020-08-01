@@ -128,6 +128,43 @@ const ResetCSS = createGlobalStyle`
     padding: .4em 1em;
   }
 
+  hr {
+    overflow: visible;
+    border: 0;
+    margin-top: 3.5rem;
+    margin-bottom: 3.5rem;
+    border: 0;
+    content: "";
+    background-color: #757575;
+    display: block;
+    height: 4px;
+    width: 4px;
+    border-radius: 50%;
+    position: relative;
+  }
+
+  hr:before {
+    content: "";
+    background-color: #757575;
+    display: block;
+    height: 4px;
+    width: 4px;
+    border-radius: 50%;
+    position: absolute;
+    left: -32px;
+  }
+
+  hr:after {
+    content: "";
+    background-color: #757575;
+    display: block;
+    height: 4px;
+    width: 4px;
+    border-radius: 50%;
+    position: absolute;
+    left: 32px;
+  }
+
   .nav-sticky{
     .header {
       box-shadow: 0 0 15px rgba(0,0,0,.08);
