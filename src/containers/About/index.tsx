@@ -3,14 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 import Image from 'gatsby-image'
 import SocialProfile from 'components/SocialProfile/SocialProfile'
 import SocialLinks from 'config/SocialLinks'
-import {
-  AboutWrapper,
-  AboutImage,
-  AboutPageTitle,
-  AboutDetails,
-  AboutDesciption,
-  SocialProfiles,
-} from './style'
+import { AboutWrapper, AboutImage, AboutPageTitle, AboutDetails, AboutDesciption, SocialProfiles } from './style'
 
 interface AboutProps {}
 
@@ -45,63 +38,52 @@ const About: React.FunctionComponent<AboutProps> = (props) => {
 
       <AboutDetails>
         <h2>Hi there, what’s up?</h2>
+        <AboutDesciption>I’m Hoang Trinh, a web developer, technical writer from Ha Noi, Viet Nam.</AboutDesciption>
         <AboutDesciption>
-          I’m Hoang Trinh, a web developer, technical writer from Ha Noi, Viet
-          Nam.
+          At present, I am working full time at Linagora, a company dedicated to open-source solution. We provide tools
+          for enterprise such as mail, calendar, contact management, chat, video conference, file sharing ...
         </AboutDesciption>
         <AboutDesciption>
-          Recently, I'm building products on Google ecosystem (G Suite and
-          Google Cloud Platform).
+          At night, I am building products on Google ecosystem (G Suite and Google Cloud Platform).
         </AboutDesciption>
         <AboutDesciption>
           This is my recent product:{' '}
           <a
-            href="https://gsuite.google.com/marketplace/app/performflow_form_publisher_approvals_wor/175817313914"
+            href="https://gsuite.google.com/marketplace/app/choice_removal/570025479237"
             target="_blank"
-            rel="noopener norefer"
+            rel="noopener noreferrer"
           >
-            PerformFlow
+            Choice Removal
           </a>
-          , which has more than 60k users in just 2 months after launching.
+          , which has more than 300k users in just 3 months after launching.
         </AboutDesciption>
         <AboutDesciption>
-          I work mainly as a backend developer (Node.js, Golang) but I can also
-          work with React.js.
+          I work mainly as a backend developer (Node.js, Golang) but I can also work with React.js. My main focus now is
+          to become a cloud native engineer.
         </AboutDesciption>
         <AboutDesciption>
           You can check my resume here for more information:{' '}
-          <a
-            href="https://resume.hoangtrinhj.com/"
-            target="_blank"
-            rel="noopener norefer"
-          >
+          <a href="https://resume.hoangtrinhj.com/" target="_blank" rel="noopener noreferrer">
             resume.hoangtrinhj.com
           </a>
           .
         </AboutDesciption>
         <AboutDesciption>
-          In my free time, I try to learn as much as I can about Machine
-          Learning / Deep Learning with Python. Because I believe those
-          technologies will soon change our world drastically, in a better way
-          (but yeah, I'm also a fan of the{' '}
-          <a
-            href="https://en.wikipedia.org/wiki/Terminator_(character)"
-            target="_blank"
-            rel="noopener norefer"
-          >
+          In my free time, I try to learn as much as I can about Machine Learning / Deep Learning with Python. Because I
+          believe those technologies will soon change our world drastically, in a better way (but yeah, I am also a fan
+          of the{' '}
+          <a href="https://en.wikipedia.org/wiki/Terminator_(character)" target="_blank" rel="noopener noreferrer">
             Terminator
           </a>
           ).
         </AboutDesciption>
         <AboutDesciption>
-          I started this website as a place to document everything I learned. I
-          love self-learning and write about everything I know.
+          I started this website as a place to document everything I learned. I love self-learning and write about
+          everything I know.
         </AboutDesciption>
         <AboutDesciption>
-          I aim to create a beautiful corner of the web free of ads, sponsored
-          posts, newsletter pop-ups, affiliate links, and the rest of the
-          annoying noise we're so accustomed to seeing on the internet these
-          days.
+          I aim to create a beautiful corner of the web free of ads, sponsored posts, newsletter pop-ups, affiliate
+          links, and the rest of the annoying noise we are so accustomed to seeing on the internet these days.
         </AboutDesciption>
 
         <SocialProfiles>
