@@ -113,6 +113,4 @@ If you’re using the Authorization Code flow in a mobile app, or any other type
 
 The code exchange step ensures that an attacker isn’t able to intercept the access token, since the access token is always sent via a secure backchannel between the application and the OAuth server.
 
-
-
-_Source: https://developer.okta.com/blog/2018/04/10/oauth-authorization-code-grant-type_
+_Source: [Okta Developer Blog](https://developer.okta.com/blog/2018/04/10/oauth-authorization-code-grant-type)_
