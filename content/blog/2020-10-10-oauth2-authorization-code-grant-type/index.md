@@ -2,7 +2,7 @@
 author: Hoang Trinh
 date: 2020-10-10 12:26:00+00:00
 layout: post
-slug: oauth-authorization-code-grant-type
+slug: oauth2-authorization-code-grant-type
 title: What is the OAuth 2.0 Authorization Code Grant Type?
 cover: './preview.jpg'
 template: post

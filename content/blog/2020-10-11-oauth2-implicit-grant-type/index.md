@@ -16,7 +16,7 @@ tags:
 
 The Implicit Grant Type is a way for a single-page JavaScript app to get an access token without an intermediate code exchange step. It was originally created for use by JavaScript apps (which don't have a way to safely store secrets) but is only recommended in specific situations.
 
-This post is the second in a series where we explore frequently used OAuth 2.0 grant types. Previously we covered the [Authorization Code](/oauth-authorization-code-grant-type) grant type. If you want to back up a bit and learn more about OAuth 2.0 before we get started, check out [What the Heck is OAuth?](https://developer.okta.com/blog/2017/06/21/what-the-heck-is-oauth), also on the Okta developer blog.
+This post is the second in a series where we explore frequently used OAuth 2.0 grant types. Previously we covered the [Authorization Code](/oauth2-authorization-code-grant-type) grant type. If you want to back up a bit and learn more about OAuth 2.0 before we get started, check out [What the Heck is OAuth?](https://developer.okta.com/blog/2017/06/21/what-the-heck-is-oauth), also on the Okta developer blog.
 
 > Update: [Is the OAuth 2.0 Implicit Flow Dead?](https://developer.okta.com/blog/2019/05/01/is-the-oauth-implicit-flow-dead)
 
@@ -28,7 +28,7 @@ Each grant type is optimized for a particular use case, whether that's a web app
 
 ## The Implicit Grant
 
-Like the [Authorization Code Grant Type](/oauth-authorization-code-grant-type), the Implicit Grant starts out by building a link and directing the user's browser to that URL. At a high level, the flow has the following steps:
+Like the [Authorization Code Grant Type](/oauth2-authorization-code-grant-type), the Implicit Grant starts out by building a link and directing the user's browser to that URL. At a high level, the flow has the following steps:
 
 - The application opens a browser to send the user to the OAuth server
 - The user sees the authorization prompt and approves the app's request
@@ -85,7 +85,7 @@ This token is ready to go! There is no additional step before the app can start 
 
 In general, there are extremely limited circumstances in which it makes sense to use the Implicit grant type. The Implicit grant type was created for JavaScript apps while trying to also be easier to use than the Authorization Code grant. In practice, any benefit gained from the initial simplicity is lost in the other factors required to make this flow secure. When possible, JavaScript apps should use the Authorization Code grant without the client secret. However, the Okta Authorization Code grant requires the client secret, so we've taken a different approach noted below.
 
-The main downside to the Implicit grant type is that the access token is returned in the URL directly, rather than being returned via a trusted back channel like in the [Authorization Code](/oauth-authorization-code-grant-type) flow. The access token itself will be logged in the browser's history, so most servers issue short-lived access tokens to mitigate the risk of the access token being leaked. Because there is no backchannel, the Implicit flow also does not return a refresh token. In order for the application to get a new access token when the short-lived one expires, the application has to either send the user back through the OAuth flow again, or use tricks such as hidden iframes, adding back complexity that the flow was originally created to avoid. On a positive note, the Okta JavaScript SDK handles this seamlessly by essentially providing a “heartbeat” to keep your access token alive.
+The main downside to the Implicit grant type is that the access token is returned in the URL directly, rather than being returned via a trusted back channel like in the [Authorization Code](/oauth2-authorization-code-grant-type) flow. The access token itself will be logged in the browser's history, so most servers issue short-lived access tokens to mitigate the risk of the access token being leaked. Because there is no backchannel, the Implicit flow also does not return a refresh token. In order for the application to get a new access token when the short-lived one expires, the application has to either send the user back through the OAuth flow again, or use tricks such as hidden iframes, adding back complexity that the flow was originally created to avoid. On a positive note, the Okta JavaScript SDK handles this seamlessly by essentially providing a “heartbeat” to keep your access token alive.
 
 One of the historical reasons that the Implicit flow used the URL fragment is that browsers could manipulate the fragment part of the URL without triggering a page reload. However, the [History API](https://developer.mozilla.org/en-US/docs/Web/API/History_API) now means that browsers can update the full path and query string of the URL without a page reload, so this is no longer an advantage of the Implicit flow.
 
