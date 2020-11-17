@@ -188,18 +188,20 @@ module.exports = {
     //   },
     // },
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      resolve: `gatsby-plugin-webfonts`,
       options: {
-        fonts: [
-          {
-            family: `Poppins`,
-            variants: [`300`, `400`, `500`, `600`, `700`],
-          },
-          {
-            family: `Fira Sans`,
-            variants: [`100`, `300`, `400`, `500`, `600`, `700`],
-          },
-        ],
+        fonts: {
+          google: [
+            {
+              family: 'Poppins',
+              variants: [`300`, `400`, `500`, `600`, `700`],
+            },
+            {
+              family: `Fira Sans`,
+              variants: [`100`, `300`, `400`, `500`, `600`, `700`],
+            },
+          ],
+        },
       },
     },
     `gatsby-alias-imports`,
