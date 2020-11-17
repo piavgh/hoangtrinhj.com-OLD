@@ -35,6 +35,11 @@ const MenuItems = [
     label: 'Articles',
     url: '/blog',
   },
+  {
+    label: 'My Résumé',
+    url: 'https://resume.hoangtrinhj.com',
+    external: true,
+  },
 ]
 
 const Navbar: React.FunctionComponent<NavbarProps> = ({ className, ...props }) => {
