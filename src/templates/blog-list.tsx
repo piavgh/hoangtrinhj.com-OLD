@@ -12,8 +12,7 @@ const BlogList = (props: any) => {
   const { currentPage, numPages } = props.pageContext
   const isFirst = currentPage === 1
   const isLast = currentPage === numPages
-  const prevPage =
-    currentPage - 1 === 1 ? '/page/1' : `/page/${(currentPage - 1).toString()}`
+  const prevPage = currentPage - 1 === 1 ? '/page/1' : `/page/${(currentPage - 1).toString()}`
   const nextPage = `/page/${(currentPage + 1).toString()}`
   const PrevLink = !isFirst && prevPage
   const NextLink = !isLast && nextPage
@@ -28,11 +27,7 @@ const BlogList = (props: any) => {
             <PostCardMinimal
               key={node.fields.slug}
               title={node.frontmatter.title || node.fields.slug}
-              image={
-                node.frontmatter.cover == null
-                  ? null
-                  : node.frontmatter.cover.childImageSharp.fluid
-              }
+              image={node.frontmatter.cover == null ? null : node.frontmatter.cover.childImageSharp.fluid}
               url={node.fields.slug}
               description={node.frontmatter.description || node.excerpt}
               date={node.frontmatter.date}
@@ -41,12 +36,7 @@ const BlogList = (props: any) => {
           )
         })}
 
-        <Pagination
-          prevLink={PrevLink}
-          nextLink={NextLink}
-          currentPage={`${currentPage}`}
-          totalPage={`${numPages}`}
-        />
+        <Pagination prevLink={PrevLink} nextLink={NextLink} currentPage={`${currentPage}`} totalPage={`${numPages}`} />
       </BlogPostsWrapper>
     </Layout>
   )
@@ -64,11 +54,7 @@ export const pageQuery = graphql`
     sitePage {
       path
     }
-    allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
-      limit: $limit
-      skip: $skip
-    ) {
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }, limit: $limit, skip: $skip) {
       edges {
         node {
           excerpt(pruneLength: 300)
