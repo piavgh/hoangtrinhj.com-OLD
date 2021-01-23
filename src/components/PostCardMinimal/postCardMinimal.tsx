@@ -59,7 +59,7 @@ const PostCardMinimal: React.FunctionComponent<PostCardMinimalProps> = ({
           )}
           {image == null ? null : (
             <PostPreview className="post_preview">
-              <Link to={url}>
+              <Link to={`/${url}`}>
                 {imageType === 'fluid' ? (
                   <Img fluid={image} alt="post preview" />
                 ) : (
@@ -81,7 +81,7 @@ const PostCardMinimal: React.FunctionComponent<PostCardMinimalProps> = ({
             </PostTags>
           )}
           <PostTitle className="post_title">
-            <Link to={url}>{title}</Link>
+            <Link to={`/${url}`}>{title}</Link>
           </PostTitle>
           {description && (
             <Excerpt
