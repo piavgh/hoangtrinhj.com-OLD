@@ -40,8 +40,9 @@ const About: React.FunctionComponent<AboutProps> = (props) => {
         <h2>Hi there, what’s up?</h2>
         <AboutDesciption>I’m Hoang Trinh, a web developer, technical writer from Ha Noi, Viet Nam.</AboutDesciption>
         <AboutDesciption>
-          At present, I am working full time at Linagora, a company dedicated to open-source solution. We provide tools
-          for enterprise such as mail, calendar, contact management, chat, video conference, file sharing ...
+          At present, I am working full time at Kyber Network, a company dedicated to provide better finance for
+          everyone. Specifically, I am building a dynamic automated market maker called{' '}
+          <a href="dmm.exchange">dmm.exchange</a>
         </AboutDesciption>
         <AboutDesciption>
           At night, I am building products on Google ecosystem (G Suite and Google Cloud Platform).
