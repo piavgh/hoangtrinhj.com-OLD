@@ -2,7 +2,6 @@ import React from 'react'
 import { graphql, Link } from 'gatsby'
 import _ from 'lodash'
 import urljoin from 'url-join'
-import { DiscussionEmbed } from 'disqus-react'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import PostCard from '../components/PostCard/postCard'
@@ -18,7 +17,6 @@ import {
   BlogPostFooter,
   PostShare,
   PostTags,
-  BlogPostComment,
 } from './templates.style'
 
 const BlogPostTemplate = (props: any) => {
@@ -29,10 +27,6 @@ const BlogPostTemplate = (props: any) => {
   const siteUrl = props.data.site.siteMetadata.siteUrl
   const shareUrl = urljoin(siteUrl, slug)
 
-  const disqusConfig = {
-    shortname: process.env.DISQUS_NAME,
-    config: { identifier: slug, title },
-  }
   return (
     <Layout>
       <SEO title={post.frontmatter.title} description={post.frontmatter.description || post.excerpt} />
@@ -70,9 +64,6 @@ const BlogPostTemplate = (props: any) => {
             </RedditShareButton>
           </PostShare>
         </BlogPostFooter>
-        <BlogPostComment>
-          <DiscussionEmbed {...disqusConfig} />
-        </BlogPostComment>
       </BlogPostDetailsWrapper>
 
       {edges.length !== 0 && (
