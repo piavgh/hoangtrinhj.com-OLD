@@ -38,17 +38,15 @@ const About: React.FunctionComponent<AboutProps> = (props) => {
 
       <AboutDetails>
         <h2>Hi there, what’s up?</h2>
-        <AboutDesciption>I’m Hoang Trinh, a web developer, technical writer from Ha Noi, Viet Nam.</AboutDesciption>
+        <AboutDesciption>I’m Hoang Trinh, a software engineer, technical writer from Viet Nam.</AboutDesciption>
         <AboutDesciption>
           At present, I am working full time at Kyber Network, a company dedicated to provide better finance for
           everyone. Specifically, I am building a dynamic automated market maker called{' '}
-          <a href="dmm.exchange">dmm.exchange</a>
+          <a href="https://kyberswap.com">kyberswap.com</a>
         </AboutDesciption>
+
         <AboutDesciption>
-          At night, I am building products on Google ecosystem (G Suite and Google Cloud Platform).
-        </AboutDesciption>
-        <AboutDesciption>
-          This is my recent product:{' '}
+          This is my side project:{' '}
           <a
             href="https://gsuite.google.com/marketplace/app/choice_removal/570025479237"
             target="_blank"
@@ -56,10 +54,11 @@ const About: React.FunctionComponent<AboutProps> = (props) => {
           >
             Choice Removal
           </a>
-          , which has more than 300k users in just 3 months after launching.
+          , which has more than 300k users in just 3 months after launching. Unfortunately, I do not have time to
+          maintain it anymore.
         </AboutDesciption>
         <AboutDesciption>
-          I work mainly as a backend developer (Node.js, Golang) but I can also work with React.js. My main focus now is
+          I work mainly as a backend developer (Golang, Node.js) but I can also work with React.js. My main focus now is
           to become a cloud native engineer.
         </AboutDesciption>
         <AboutDesciption>
@@ -70,13 +69,8 @@ const About: React.FunctionComponent<AboutProps> = (props) => {
           .
         </AboutDesciption>
         <AboutDesciption>
-          In my free time, I try to learn as much as I can about Machine Learning / Deep Learning with Python. Because I
-          believe those technologies will soon change our world drastically, in a better way (but yeah, I am also a fan
-          of the{' '}
-          <a href="https://en.wikipedia.org/wiki/Terminator_(character)" target="_blank" rel="noopener noreferrer">
-            Terminator
-          </a>
-          ).
+          In my free time, I try to learn as much as I can about blockchain, EVM, MEV, flash loan and other blockchain
+          infrastructure. There are so many things to learn in this field.
         </AboutDesciption>
         <AboutDesciption>
           I started this website as a place to document everything I learned. I love self-learning and write about
