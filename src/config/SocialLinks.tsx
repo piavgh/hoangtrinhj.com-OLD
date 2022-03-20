@@ -30,7 +30,7 @@ const SocialLinks = [
   },
   {
     icon: <IoLogoTwitter />,
-    url: 'https://twitter.com/hoangtrinhj',
+    url: 'https://twitter.com/0xh8h',
     tooltip: 'Twitter',
   },
 ]
